@@ -1,0 +1,340 @@
+NAMING CONVENTIONS RULES:
+
+==================================================
+FIGMA + PRODUCT SLUGS (FacePe)
+==================================================
+- Figma file key: `Jms4ZsFFmzbAI1LyBO0x1E`. Frames: Home `3139:29850`, Verify `3139:31023`.
+- Section IDs must match `docs/page-architecture.md` (`hero-section`, `steps-section`, `faq-section`, …).
+- Product slugs (URLs / partials): `facepe-verify`, `facepe-self-checkout`, `facepe-ai-avatar`, `facepe-online`.
+- When adding pages, use kebab-case HTML filenames that match the nav label intent (`verify.html`, not `page2.html`).
+
+GENERAL PRINCIPLES:
+- Use semantic, descriptive, scalable names
+- Prefer readability over short abbreviations
+- Keep naming predictable across the project
+- Use consistent casing conventions everywhere
+- Names should describe purpose, not appearance
+
+==================================================
+FILES & FOLDERS
+==================================================
+
+FILES:
+- Use kebab-case for all file names
+- Keep names lowercase
+- Separate words with hyphens
+
+GOOD:
+- feature-card.html
+- pricing-section.html
+- navigation-menu.js
+- testimonial-slider.js
+- globals.css
+
+BAD:
+- FeatureCard.html
+- pricingSection.html
+- box1.html
+- purpleCard.html
+- myJS.js
+
+FOLDERS:
+- Use kebab-case only
+- Keep folder names semantic
+
+GOOD:
+- components
+- feature-sections
+- layout
+- shared-ui
+
+BAD:
+- stuff
+- randomFiles
+- misc
+- tempFolder
+
+==================================================
+HTML COMPONENT NAMING
+==================================================
+
+SECTIONS:
+- Use descriptive section names
+- Structure:
+  [purpose]-section
+
+GOOD:
+- hero-section
+- faq-section
+- pricing-section
+- testimonial-section
+- cta-section
+
+CARDS:
+- Structure:
+  [purpose]-card
+
+GOOD:
+- feature-card
+- stats-card
+- pricing-card
+- product-card
+
+LAYOUT:
+GOOD:
+- site-header
+- site-footer
+- page-wrapper
+- section-container
+- content-grid
+
+UI ELEMENTS:
+GOOD:
+- primary-button
+- secondary-button
+- icon-button
+- badge-pill
+- nav-link
+
+==================================================
+CSS CLASS NAMING
+==================================================
+
+COMPONENT CLASSES:
+- Use semantic component names
+- Prefer reusable naming
+
+GOOD:
+- hero-title
+- feature-grid
+- stats-wrapper
+- pricing-card
+- faq-item
+
+BAD:
+- purple-text
+- left-box
+- big-card
+- wrapper2
+
+STATE CLASSES:
+- Use clear state prefixes
+
+GOOD:
+- is-active
+- is-open
+- is-hidden
+- is-loading
+- is-disabled
+
+BAD:
+- activeItem
+- openBox
+- hiddenStuff
+
+MODIFIER CLASSES:
+- Use modifier pattern
+
+GOOD:
+- button-primary
+- card-featured
+- section-dark
+- badge-success
+
+UTILITY CLASSES:
+- Use only for true utilities
+
+GOOD:
+- text-balance
+- section-spacing
+- container-wide
+
+==================================================
+JAVASCRIPT NAMING
+==================================================
+
+VARIABLES:
+- Use camelCase
+- Use descriptive names
+
+GOOD:
+- mobileMenu
+- activeAccordion
+- currentSlide
+- pricingCards
+
+BAD:
+- data
+- item1
+- temp
+- box
+
+FUNCTIONS:
+- Use verb-first naming
+
+GOOD:
+- initializeSlider()
+- toggleAccordion()
+- loadComponent()
+- updateNavigation()
+
+BAD:
+- slider()
+- handle()
+- stuff()
+
+BOOLEAN VARIABLES:
+- Prefix with:
+  is
+  has
+  should
+  can
+
+GOOD:
+- isMenuOpen
+- hasScrolled
+- shouldAnimate
+
+BAD:
+- menuOpen
+- scrolled
+
+EVENT HANDLERS:
+- Prefix with:
+  handle
+
+GOOD:
+- handleMenuToggle
+- handleAccordionClick
+- handleScrollAnimation
+
+CONSTANTS:
+- Use UPPER_SNAKE_CASE
+
+GOOD:
+- MOBILE_BREAKPOINT
+- ANIMATION_DURATION
+- MAX_SLIDES
+
+==================================================
+DATA ATTRIBUTES
+==================================================
+
+ACCORDIONS:
+GOOD:
+- data-accordion
+- data-accordion-trigger
+- data-accordion-content
+
+TABS:
+GOOD:
+- data-tab
+- data-tab-panel
+- data-tab-trigger
+
+MODALS:
+GOOD:
+- data-modal
+- data-modal-close
+- data-modal-overlay
+
+SLIDERS:
+GOOD:
+- data-slider
+- data-slide
+- data-slider-next
+
+==================================================
+ANIMATION NAMING
+==================================================
+
+GOOD:
+- fade-up
+- fade-in
+- scale-in
+- slide-up
+- stagger-item
+
+BAD:
+- cool-animation
+- purple-effect
+- motion1
+
+==================================================
+ICON NAMING
+==================================================
+
+GOOD:
+- icon-arrow-right
+- icon-menu
+- icon-check
+- icon-close
+
+BAD:
+- arrowIcon
+- menuThing
+
+==================================================
+IMAGE NAMING
+==================================================
+
+GOOD:
+- hero-dashboard.webp
+- testimonial-john.webp
+- feature-terminal.webp
+
+BAD:
+- image1.png
+- final-final.png
+- screenshot-new.jpg
+
+==================================================
+RESPONSIVE NAMING
+==================================================
+
+GOOD:
+- mobile-menu
+- desktop-navigation
+- tablet-grid
+
+BAD:
+- smallMenu
+- bigLayout
+
+==================================================
+AVOID THESE PATTERNS
+==================================================
+
+DO NOT:
+- use appearance-based names
+- use random abbreviations
+- use vague wrappers
+- use numbered components
+- use temporary naming
+- mix casing styles
+- create inconsistent naming systems
+
+AVOID:
+- box
+- wrapper
+- container2
+- temp
+- final
+- new-section
+- purple-card
+
+==================================================
+NAMING PHILOSOPHY
+==================================================
+
+Names should describe:
+- purpose
+- responsibility
+- behavior
+- hierarchy
+
+NOT:
+- colors
+- positioning
+- temporary ideas
+- visual appearance

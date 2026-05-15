@@ -1,0 +1,87 @@
+You are building the **FacePe** premium fintech SaaS marketing site (HTML + Tailwind + Vite + vanilla JS + Lucide + minimal GSAP).
+
+**Authoritative docs (read before coding):** `docs/design-system.md`, `docs/brand-guidelines.md`, `docs/component-library.md`, `docs/page-architecture.md`, `docs/responsive-system.md`, `docs/animation-system.md`, `docs/seo-system.md`.
+
+**Figma reference:** file `Jms4ZsFFmzbAI1LyBO0x1E` — Home `3139:29850`, Verify `3139:31023`.
+
+---
+
+## STRICT RULES
+
+### Design system
+
+- Use **Tailwind utilities** mapped to **theme tokens** in `tailwind.config.js` (`theme.extend`). Do not scatter raw hex in HTML—add tokens first (see `docs/design-system.md` names: `ink-*`, `brand-600`, `lilac-*`, `border-*`, `surface-*`).
+- **No inline styles** except third-party embeds if unavoidable.
+- **Semantic class grouping** in markup: layout → spacing → typography → color → border → shadow → state.
+
+### Colors (token → hex)
+
+- **Primary gradient (CTA):** `#9c6cfe` → `#5000ea` (single brand gradient only).
+- **Accent (text emphasis / eyebrow):** `#5f15ee` (`brand-600`).
+- **Ink:** `#0f1117` (950), `#212325` (900), `#2a2d36` (800), `#2d3148` (850 for card titles), body `#1e1e1e`.
+- **Surfaces:** page `#fefeff`, white `#ffffff`, lilac fields `#f9f6ff`, icon wells `#f0ebff`.
+- **Borders:** `#e2e4eb` (primary hairline), `#efefef` (chips), `#d9d9d9` (neutral tiles), lilac `#e0d5ff` (dashed frames).
+
+### Typography
+
+- **Logo:** Aeonik Medium (or licensed substitute) ~`23px` for wordmark.
+- **UI / marketing:** Satoshi Regular / Medium / Bold.
+- **Eyebrows:** TT Firs Neue in Figma → use **Inter** `font-medium` `text-xs` uppercase with `tracking-[1.32px]` and `text-brand-600`.
+- **Hero H1:** `64px` (Home) / `68px` (Verify), bold, `tracking` tight (`~ -2.38px`).
+- **Section H2:** `44px` / `50px` line.
+- **Body:** `18px` / `28px` line where Figma uses long copy.
+
+### Spacing
+
+- **Mobile section:** `py-10`; **desktop:** `py-[60px]`.
+- **Container:** inner `max-w-[1240px]`; horizontal **`100px`** at `lg+` (use spacing token `gutter` in config).
+- **Gaps:** CTA row `14–20px`; nav links `28px`; grids `gap-8` default for 4-up cards.
+
+### Radius
+
+- **Primary pill:** `58px` (full pill on `h-14`).
+- **Secondary pill:** `42px`.
+- **Cards:** `28px`.
+- **Tiles / icon holders:** `16px`.
+
+### Shadows
+
+- **Card:** `0 4px 10px 4px rgba(0,0,0,0.04)`.
+- **Chip / small float:** `0 2px 2px rgba(0,0,0,0.1)`.
+- **Primary CTA:** `0 10px 7.5px rgba(0,0,0,0.1), 0 4px 3px rgba(0,0,0,0.1)`.
+
+### Button system
+
+- **Primary:** gradient + white bold text + `h-14` + `shadow-primary` + icon `16px` optional.
+- **Secondary:** white + `border-subtle` + `ink-950` text + `h-14` + pill radius family.
+- **Hover:** subtle brightness or `translate-y-0.5`—pick one project-wide (`animation-rules.mdc`).
+
+### Icons
+
+- **Lucide only**, `stroke-width` **1.5**, sizes **`16px`** (buttons), **`14px`** (inline “learn more” chevrons), **`20px`** (checklist rows).
+
+### Gradients
+
+- **CTA / primary actions:** `9c6cfe → 5000ea` only.
+- **Ambient hero blobs:** very low opacity purple blends—optional; never behind small text.
+
+### Animations
+
+- Prefer **CSS** transitions; **transform + opacity** only; `duration-300` / `duration-500`; easing `cubic-bezier(0.22,1,0.36,1)`.
+- See `docs/animation-system.md`.
+
+### Component rules
+
+- Sections = reusable partials; IDs from `docs/page-architecture.md`.
+- No duplicated 15+ class chains—promote to config `@layer components` or theme shortcuts.
+
+### Code quality
+
+- Mobile-first, accessible landmarks, lazy images, meaningful `alt`, minimal DOM depth.
+
+## DO NOT
+
+- Use random purples outside the documented system.
+- Mix icon libraries.
+- Use Bootstrap or heavy UI kits.
+- Add decorative motion to stars/lines/grids.

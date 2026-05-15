@@ -1,0 +1,75 @@
+---
+description: FacePe component structure — Figma-aligned
+globs: "**/*.{html,js}"
+---
+
+# COMPONENT SYSTEM RULES (FacePe)
+
+## Global
+
+- Every marketing **section** is a self-contained partial: `components/{section-id}.html` (or equivalent) with one root `section` node.
+- **Cards** share: `rounded-card` + `shadow-card` + `p-6 md:p-8` (Figma `24px` inner padding on product cards).
+- **No orphan styles:** if two sections use the same card chrome, they share one utility bundle.
+
+## Site header
+
+- **Height:** `h-[100px]` desktop; inner row `h-14` vertically centered.
+- **Sticky:** `sticky top-0 z-50 bg-surface-0 border-b border-border-subtle` (adjust token names to match `tailwind.config.js`).
+- **CTA position:** right cluster `Contact us` (text) + `Get Started` (gradient pill).
+- **Mobile:** hamburger + drawer; preserve **primary CTA** in header bar when possible.
+
+## Site footer
+
+- **Grid:** `grid-cols-1 md:grid-cols-2 lg:grid-cols-5` with column 1 = brand + socials (`44px` tap targets).
+- **Link columns:** Product, Solutions, Company, Resources (labels from Home footer metadata).
+- **Legal row:** full-width divider, `flex-col md:flex-row md:justify-between gap-4`.
+
+## Section structure (order)
+
+1. Optional **eyebrow** (`12px`, uppercase, `brand-600`, wide tracking).
+2. **H2** (or H1 in hero only).
+3. **Supporting** copy (`18px`, `leading-[28px]`).
+4. **CTA row** (max 2 pills + optional text links).
+5. **Media / grid**.
+
+## Feature & product cards
+
+- **Radius:** `28px` token.
+- **Padding:** `24px` inner (`p-6`).
+- **Top row:** `44px` icon tile + category pill (`h-6`, `px-3`, uppercase `text-[15px]`).
+- **Hover:** `translate-y-[-2px]` + shadow token bump (see `animation-rules.mdc`).
+- **Footer link:** “Learn more” + chevron `14px` — use Lucide `ArrowRight` or `ChevronRight` at `w-3.5 h-3.5`.
+
+## Stats card
+
+- **Number:** `~44px` bold.
+- **Label:** `~21px` medium/bold per token.
+- **Supporting line:** `~20px` regular.
+- **Dividers:** `border-t border-border-subtle` between stat rows.
+
+## Testimonial
+
+- Quote → body → **avatar row** (`48px` square, gradient allowed) → name (`22px`) + title (`16px` muted).
+- Pagination dashes under testimonial: decorative `aria-hidden="true"`.
+
+## FAQ
+
+- **Two-column `lg+`:** intro left (`max-w-md`), questions right (`max-w-[640px]`).
+- **Row height (closed):** `~81px`; **open first item** shows answer block (`~72px`+ text).
+- **Trigger:** `button` `32×32` visual with **44px** hit slop; `aria-expanded` + `aria-controls`.
+
+## Buttons
+
+- **Primary:** gradient + `shadow-primary` + `h-14` + `px-5` + `gap-2.5` + `rounded-pill`.
+- **Secondary:** `bg-surface-0 border border-border-subtle text-ink-950 h-14 px-5 rounded-[42px]` (tokenize as `rounded-pill-secondary`).
+- **Icon:** `16px` left of label on CTAs.
+
+## Pills / badges
+
+- **Category pills:** subtle fill on white, uppercase, **`15px`** tracking normal, **bold**.
+- **Do not** use pills for eyebrows—eyebrows are plain uppercase text.
+
+## DO NOT
+
+- Create a second “outline purple” button style—only **white + gray border** secondary exists in Figma.
+- Duplicate the FAQ row markup with different class orders—extract partial.

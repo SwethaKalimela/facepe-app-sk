@@ -1,0 +1,61 @@
+---
+description: Tailwind usage for FacePe (HTML + Vite) — tokens from Figma
+globs: "**/*.{html,js,css}"
+---
+
+# TAILWIND SYSTEM RULES (FacePe)
+
+## Source of truth
+
+- Canonical values: `docs/design-system.md`, layout: `docs/component-library.md`, responsive: `docs/responsive-system.md`.
+- Figma reference: file `Jms4ZsFFmzbAI1LyBO0x1E` (Home `3139:29850`, Verify `3139:31023`).
+- **Extend** `tailwind.config.js` (`theme.extend`) with FacePe tokens—**do not** paste raw Figma hex in HTML except during one-off spikes (then immediately promote to config).
+
+## General
+
+- **Utility philosophy:** compose with **semantic utilities** (`text-ink-900`, `bg-surface-page`) mapped in config; fall back to closest Tailwind default only when token not yet defined.
+- **Responsive:** mobile-first; see `docs/responsive-system.md` for breakpoint intent.
+- **Components:** repeated patterns → `@layer components` **or** small HTML partials with documented class strings (avoid 40-line chains duplicated 4×).
+
+## Spacing
+
+- **Section padding:** `py-10 md:py-[60px]`; horizontal `px-4 sm:px-8 lg:px-[100px]`.
+- **Allowed scale:** Tailwind spacing scale **`4, 6, 8, 10, 12, 16, 20, 24, 32`**; for Figma-exact **`60`**, **`100`**, use **`theme.extend.spacing`** (`60: '60px'`, `gutter: '100px'`) so markup stays `px-gutter` not arbitrary brackets.
+- **Grid gaps:** `gap-8` (product grid), `gap-5` (CTA pairs), `gap-4` (hero title stack).
+
+## Typography
+
+- **Headings:** map Figma sizes to extended `fontSize` keys: `display-home` (`64px/1.3`), `display-verify` (`68px/1.3`), `heading-2` (`44px/50px`).
+- **Tracking:** `tracking-tight` + extended `letterSpacing.tight-hero: '-0.14875rem'` (~`-2.38px` @ 16 root) for hero only.
+- **Weights:** `font-medium` (nav), `font-bold` (CTAs, headings).
+
+## Colors
+
+- Register extended palette from `docs/design-system.md` (`ink-*`, `brand-600`, `lilac-*`, `border-*`, `surface-*`).
+- **Gradients:** single `bg-gradient-primary` utility via `backgroundImage` in config (`to 98%` stop for parity with Figma).
+- **Borders:** default `border-border-subtle` on outline buttons + nav.
+
+## Radius
+
+- `rounded-pill` → `9999px` on `h-14` buttons **or** explicit `58px` via extended `borderRadius.pill`.
+- `rounded-card` → `28px`.
+- `rounded-tile` → `16px`.
+
+## Shadows
+
+- Define `boxShadow.card`, `boxShadow.chip`, `boxShadow.primary` per design-system doc—reference by name in HTML.
+
+## Custom CSS
+
+- **Allowed:** `@layer base` for font-face; `@layer components` for `.faq-row`, `.segmented-steps`; CSS variables if preferred over long Tailwind config.
+- **Avoid:** per-page `style=""`, `!important` chains, magic numbers not in tokens.
+
+## Class ordering (suggested)
+
+`layout → box → spacing → typography → color → border → shadow → state → motion → responsive`
+
+## DO NOT
+
+- Introduce extra accent colors or second brand gradients.
+- Animate `width`, `height`, `margin`, `top` (layout thrash).
+- Use `mix-blend-mode` on text for “effect” unless explicitly designed.

@@ -1,0 +1,56 @@
+---
+description: A11y for FacePe marketing (WCAG-oriented)
+globs: "**/*.{html,js}"
+---
+
+# ACCESSIBILITY RULES (FacePe)
+
+## Semantic HTML
+
+- **Header:** one per page; logo links to `/`.
+- **Nav:** wrap primary links in `nav` with **visible label** (`aria-label="Primary"`).
+- **Main:** exactly one `main` landmark wrapping all sections.
+- **Footer:** `footer` with secondary nav.
+- **Sections:** `section` + `aria-labelledby` referencing visible `h2`/`h3` ids.
+
+## Keyboard
+
+- **Skip link:** first focusable element on every page.
+- **Drawer:** `Esc` closes; focus trap inside; return focus to menu button.
+- **FAQ:** each question is a `button`; arrow keys optional enhancement only—**Tab** must work naturally.
+
+## Focus
+
+- **Visible ring:** `outline` or `ring-2 ring-brand-600 ring-offset-2` on all interactive elements (match purple brand, not browser default unless themed).
+- **Never** `outline-none` without replacement.
+
+## Color
+
+- **Body text** `ink-body` on `surface-0` / `surface-page`: target **≥ 4.5:1** contrast.
+- **`brand-600` on white:** verify **≥ 4.5:1** for small text; if not, reserve purple for **≥18px** bold or larger only.
+- **Gradient buttons:** white text must meet **≥ 4.5:1** against **darkest gradient stop** (`#5000ea`).
+
+## Images
+
+- Meaningful images: descriptive `alt`.
+- Decorative stars/lines/dividers: `alt=""` and `aria-hidden="true"`.
+- **Hero:** `fetchpriority="high"` only for LCP image.
+
+## FAQ / accordion
+
+- `button` + `aria-expanded` + `aria-controls` pointing to `id` on answer panel.
+- First item may be open by default: set `aria-expanded="true"` on that trigger.
+
+## Motion
+
+- Respect `prefers-reduced-motion` (see `docs/animation-system.md`).
+
+## Forms (future CMS)
+
+- Every input has visible `<label>`; errors tied with `aria-describedby`.
+
+## DO NOT
+
+- Remove focus outlines.
+- Use color alone for state (underline links on hover/focus too).
+- Create hover-only tooltips for critical info.
