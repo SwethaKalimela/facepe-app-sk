@@ -28,7 +28,8 @@ globs: "**/*.{html,js}"
 
 - **Body text** `ink-body` on `surface-0` / `surface-page`: target **≥ 4.5:1** contrast.
 - **`brand-600` on white:** verify **≥ 4.5:1** for small text; if not, reserve purple for **≥18px** bold or larger only.
-- **Gradient buttons:** white text must meet **≥ 4.5:1** against **darkest gradient stop** (`#5000ea`).
+- **Footer links** `text-footer-link` on `bg-ink-950`: hover **brighten to white** (`hover:text-white`)—do not rely on purple alone.
+- **FAQ answers** `text-ink-700` (**#5e6472**) on `surface-0`: verify **≥ 4.5:1**; if a background changes, re-check contrast.
 
 ## Images
 

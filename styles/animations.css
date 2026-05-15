@@ -1,0 +1,86 @@
+/* Steps panel — gradient grid behind step visuals (all tabs) */
+.steps-panel__visual-bg {
+  background-color: #f9f6ff;
+  background-image: url("../assets/images/gradient-grid.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.steps-panel__visual-bg::after {
+  background: linear-gradient(
+    155deg,
+    rgb(245 240 255 / 0.35) 0%,
+    rgb(249 246 255 / 0.2) 45%,
+    rgb(254 254 255 / 0.1) 100%
+  );
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+/* Steps tabs — content + image fade in sync */
+.steps-panel__content,
+.steps-panel__visual {
+  transition: opacity 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-steps-panel].is-step-transitioning .steps-panel__content,
+[data-steps-panel].is-step-transitioning .steps-panel__visual {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .steps-panel__content,
+  .steps-panel__visual {
+    transition: none;
+  }
+}
+
+/* Logo banner — social proof strip (Figma fade masks 3139:29966 / 3139:29967) */
+
+@keyframes logo-marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.logo-marquee__track {
+  animation: logo-marquee-scroll 36s linear infinite;
+  will-change: transform;
+}
+
+.logo-marquee:hover .logo-marquee__track,
+.logo-marquee:focus-within .logo-marquee__track {
+  animation-play-state: paused;
+}
+
+.logo-marquee.is-paused .logo-marquee__track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee__viewport {
+    overflow: visible;
+  }
+
+  .logo-marquee__track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    will-change: auto;
+  }
+
+  .logo-marquee__set[aria-hidden="true"] {
+    display: none;
+  }
+
+  .logo-marquee__set {
+    justify-content: center;
+    gap: 2rem;
+  }
+}

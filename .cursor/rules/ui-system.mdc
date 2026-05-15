@@ -10,7 +10,7 @@ You are building the **FacePe** premium fintech SaaS marketing site (HTML + Tail
 
 ### Design system
 
-- Use **Tailwind utilities** mapped to **theme tokens** in `tailwind.config.js` (`theme.extend`). Do not scatter raw hex in HTML—add tokens first (see `docs/design-system.md` names: `ink-*`, `brand-600`, `lilac-*`, `border-*`, `surface-*`).
+- Use **Tailwind utilities** from **`tailwind.config.js`** (`text-ink-*`, `px-gutter`, `bg-gradient-primary`, `text-footer-*`, …). Do not scatter raw hex in HTML—extend the theme if a value is missing (`docs/design-system.md`).
 - **No inline styles** except third-party embeds if unavoidable.
 - **Semantic class grouping** in markup: layout → spacing → typography → color → border → shadow → state.
 
@@ -18,42 +18,40 @@ You are building the **FacePe** premium fintech SaaS marketing site (HTML + Tail
 
 - **Primary gradient (CTA):** `#9c6cfe` → `#5000ea` (single brand gradient only).
 - **Accent (text emphasis / eyebrow):** `#5f15ee` (`brand-600`).
-- **Ink:** `#0f1117` (950), `#212325` (900), `#2a2d36` (800), `#2d3148` (850 for card titles), body `#1e1e1e`.
-- **Surfaces:** page `#fefeff`, white `#ffffff`, lilac fields `#f9f6ff`, icon wells `#f0ebff`.
-- **Borders:** `#e2e4eb` (primary hairline), `#efefef` (chips), `#d9d9d9` (neutral tiles), lilac `#e0d5ff` (dashed frames).
+- **Ink:** `#0f1117` (950), `#212325` (900), `#2a2d36` (800), `#2d3148` (850), `#5e6472` (700 FAQ answer), body `#1e1e1e`.
+- **Surfaces:** page `#fefeff`, white `#ffffff`, lilac `#f9f6ff` / `#f0ebff`, FAQ pill `#f5f0ff` (`lilac-25`).
+- **Borders:** `#e2e4eb` (`border-border-subtle`), `#efefef`, `#d9d9d9`, lilac `#e0d5ff`.
+- **Footer (Home MCP):** background `#0f1117`; column labels `#c4aaff` (**JetBrains Mono**); body links `rgba(255,255,255,0.7)`; tagline `0.55` opacity; legal `0.4` / `0.5` tiers.
 
 ### Typography
 
 - **Logo:** Aeonik Medium (or licensed substitute) ~`23px` for wordmark.
 - **UI / marketing:** Satoshi Regular / Medium / Bold.
-- **Eyebrows:** TT Firs Neue in Figma → use **Inter** `font-medium` `text-xs` uppercase with `tracking-[1.32px]` and `text-brand-600`.
-- **Hero H1:** `64px` (Home) / `68px` (Verify), bold, `tracking` tight (`~ -2.38px`).
-- **Section H2:** `44px` / `50px` line.
-- **Body:** `18px` / `28px` line where Figma uses long copy.
+- **Eyebrows / FAQ pill:** TT Firs in Figma → `font-display` + `text-faq-badge` or `text-eyebrow` + `text-brand-600` per context.
+- **Footer column titles:** `font-mono text-eyebrow-mono text-footer-label uppercase`.
+- **Hero H1:** `text-display-home` / `text-display-verify`.
+- **Section H2:** `text-heading-2` (Verify-style **50px** lh) or `text-heading-faq` for FAQ block (**44px** / **44px**).
+- **Body:** `text-body-lg`; FAQ answers `text-body-faq text-ink-700`.
 
 ### Spacing
 
-- **Mobile section:** `py-10`; **desktop:** `py-[60px]`.
-- **Container:** inner `max-w-[1240px]`; horizontal **`100px`** at `lg+` (use spacing token `gutter` in config).
+- **Mobile section:** `py-10`; **desktop:** `lg:py-section-y` (**60px**); **footer:** `lg:py-section-y-footer` (**74px**).
+- **Container:** `max-w-content mx-auto px-4 sm:px-8 lg:px-gutter`.
 - **Gaps:** CTA row `14–20px`; nav links `28px`; grids `gap-8` default for 4-up cards.
 
 ### Radius
 
-- **Primary pill:** `58px` (full pill on `h-14`).
-- **Secondary pill:** `42px`.
-- **Cards:** `28px`.
-- **Tiles / icon holders:** `16px`.
+- **Primary pill:** `rounded-pill` on `h-14`; **secondary hero pill:** `rounded-pill-secondary` (**42px**); **cards:** `rounded-card`; **ghost CTAs:** `rounded-pill-soft`.
 
 ### Shadows
 
-- **Card:** `0 4px 10px 4px rgba(0,0,0,0.04)`.
-- **Chip / small float:** `0 2px 2px rgba(0,0,0,0.1)`.
-- **Primary CTA:** `0 10px 7.5px rgba(0,0,0,0.1), 0 4px 3px rgba(0,0,0,0.1)`.
+- **Card / chip / primary:** use `shadow-card`, `shadow-chip`, `shadow-primary` utilities from config.
 
 ### Button system
 
 - **Primary:** gradient + white bold text + `h-14` + `shadow-primary` + icon `16px` optional.
-- **Secondary:** white + `border-subtle` + `ink-950` text + `h-14` + pill radius family.
+- **Secondary:** white + `border-border-subtle` + `text-ink-950` + `h-14` + `rounded-pill-secondary`.
+- **Ghost outline CTA:** `h-btn-ghost px-btn-ghost-x rounded-pill-soft border-border-subtle` (e.g. “Choose your path”, “Contact our team”).
 - **Hover:** subtle brightness or `translate-y-0.5`—pick one project-wide (`animation-rules.mdc`).
 
 ### Icons
@@ -67,7 +65,7 @@ You are building the **FacePe** premium fintech SaaS marketing site (HTML + Tail
 
 ### Animations
 
-- Prefer **CSS** transitions; **transform + opacity** only; `duration-300` / `duration-500`; easing `cubic-bezier(0.22,1,0.36,1)`.
+- Prefer **CSS** transitions; **transform + opacity** only; `duration-md` / `duration-slow`; easing **`ease-premium`**.
 - See `docs/animation-system.md`.
 
 ### Component rules

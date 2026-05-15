@@ -3,8 +3,8 @@
 ## Global primitives
 
 - **Marketing shell:** `site-header` (sticky) → `main` → `site-footer`.
-- **Content width:** `max-w-[1240px]` inner; **horizontal padding** `100px` at `lg+` (Figma `x:100` content blocks).
-- **Section default:** `py-[60px]` horizontal band; alternate **white** vs **near-white** (`surface-page`) only when Figma shows a tonal shift.
+- **Content width:** `max-w-content` + **`px-gutter`** (`tailwind.config.js`).
+- **Section default:** `py-section-y` (**60px**) at `lg+`; **`py-10`** mobile. Alternate **white** vs **`surface-page`** only when Figma shows a tonal shift.
 
 ## Home page (`3139:29850` — “Home Page”)
 
@@ -23,7 +23,7 @@ Vertical order from Figma structure (names are canonical **section IDs** for HTM
 | 9 | `deployments-section` | “Real Deployments” + wide media + **accordion** industry list (`72px` rows) |
 |10 | `testimonial-section` | Quote + avatar + pagination dashes |
 |11 | `faq-section` | Two-column FAQ (per `3139:30758`) |
-|12 | `site-footer` | Multi-column + legal |
+| 12 | `site-footer` | **Dark** footer (`bg-ink-950`): logo + tagline + socials + 4 link columns (mono labels) + legal row — tokens in `docs/design-system.md` |
 
 **Note:** Decorative lines/stars are **non-semantic**; implement as a single absolutely positioned `aria-hidden="true"` layer per section max.
 

@@ -9,7 +9,7 @@ globs: "**/*.{html,js,css}"
 
 - Canonical values: `docs/design-system.md`, layout: `docs/component-library.md`, responsive: `docs/responsive-system.md`.
 - Figma reference: file `Jms4ZsFFmzbAI1LyBO0x1E` (Home `3139:29850`, Verify `3139:31023`).
-- **Extend** `tailwind.config.js` (`theme.extend`) with FacePe tokens—**do not** paste raw Figma hex in HTML except during one-off spikes (then immediately promote to config).
+- **`tailwind.config.js`** already defines FacePe `colors`, `spacing` (`gutter`, `section-y`, …), `maxWidth.content`, `fontSize`, `backgroundImage.gradient-primary`, `boxShadow`, `borderRadius`, and motion tokens—**consume these utilities**; do not paste hex in HTML.
 
 ## General
 
@@ -19,8 +19,8 @@ globs: "**/*.{html,js,css}"
 
 ## Spacing
 
-- **Section padding:** `py-10 md:py-[60px]`; horizontal `px-4 sm:px-8 lg:px-[100px]`.
-- **Allowed scale:** Tailwind spacing scale **`4, 6, 8, 10, 12, 16, 20, 24, 32`**; for Figma-exact **`60`**, **`100`**, use **`theme.extend.spacing`** (`60: '60px'`, `gutter: '100px'`) so markup stays `px-gutter` not arbitrary brackets.
+- **Section padding:** `py-10 lg:py-section-y`; horizontal `px-4 sm:px-8 lg:px-gutter`.
+- **Allowed scale:** default Tailwind scale **plus** named keys in config (`gutter`, `section-y`, `faq-split`, `15`, `33`, …)—prefer **`gap-15`** over `gap-[15px]`.
 - **Grid gaps:** `gap-8` (product grid), `gap-5` (CTA pairs), `gap-4` (hero title stack).
 
 ## Typography

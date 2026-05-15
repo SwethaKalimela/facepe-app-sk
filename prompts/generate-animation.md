@@ -12,10 +12,10 @@
 
 ## Parameters
 
-| Name | Allowed |
-|------|---------|
-| Duration | `150ms`, `300ms`, `480ms` |
-| Easing | `cubic-bezier(0.22, 1, 0.36, 1)` |
+| Name | Use from `tailwind.config.js` |
+|------|-------------------------------|
+| Duration | `duration-fast`, `duration-md`, `duration-slow` |
+| Easing | `ease-premium` |
 | Properties | `opacity`, `transform` only |
 | Translate | ≤ `12px` for reveals; `2px` for hovers |
 

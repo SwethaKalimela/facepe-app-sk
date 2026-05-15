@@ -8,7 +8,7 @@
 
 ## Tech
 
-- **Tailwind** + small `@layer components` only if the same 15+ classes repeat **3+** times.  
+- **Tailwind:** map styles to `tailwind.config.js` theme keys (see `docs/design-system.md` quick reference).  
 - **Icons:** Lucide (`createIcons` or inline SVG from Lucide sprite pattern used in repo).  
 - **JS:** minimal, `data-*` hooks (`data-accordion`, `data-nav-toggle`, …).
 
@@ -21,7 +21,7 @@
 ## Visual rules (from Figma)
 
 - **Primary button:** `h-14`, gradient `9c6cfe → 5000ea`, `shadow-primary`, `rounded-pill`, `text-white font-bold text-[15px]` or `text-base` per context.  
-- **Secondary button:** white + `border-border-subtle` + `text-ink-950` + `rounded-[42px]` (tokenize).  
+- **Secondary button:** white + `border-border-subtle` + `text-ink-950` + `rounded-pill-secondary`.
 - **Cards:** `rounded-card`, `shadow-card`, `p-6` / `p-8`.
 
 ## Accessibility

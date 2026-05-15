@@ -14,7 +14,7 @@ You are implementing **static HTML** in a **Vite + Tailwind + vanilla JS** repo.
 ## Stack constraints
 
 - **HTML** partials / pages under `pages/` or `components/` per repo layout  
-- **Tailwind** only for styling; **extend** `tailwind.config.js` with tokens—avoid raw hex in markup  
+- **Tailwind** only for styling; **use the tokens already defined** in `tailwind.config.js` (`colors`, `spacing.gutter`, `maxWidth.content`, `fontSize`, `backgroundImage.gradient-primary`, `boxShadow`, etc.)—avoid raw hex / arbitrary values in markup  
 - **Icons:** **Lucide** (`stroke-width` **1.5**, `16px` default)  
 - **Motion:** **GSAP** only where `docs/animation-system.md` allows; prefer CSS + `IntersectionObserver`  
 - **Deploy:** Vercel-ready (no Node APIs assumed)
@@ -28,7 +28,7 @@ You are implementing **static HTML** in a **Vite + Tailwind + vanilla JS** repo.
 
 ## Design fidelity
 
-- **Nav / CTAs / hero** must match Figma tokens (e.g. gradient `#9c6cfe` → `#5000ea`, `ink-950`, `border-subtle`, pill radii).  
+- **Nav / CTAs / hero** must match theme utilities (`bg-gradient-primary`, `text-ink-*`, `border-border-subtle`, `rounded-pill-secondary`, …).  
 - **Do not** invent new section types or accent colors.  
 - **Decorative** grid lines/stars: `aria-hidden="true"`; omit on small screens if cluttered.
 

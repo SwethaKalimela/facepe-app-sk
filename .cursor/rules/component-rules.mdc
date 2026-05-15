@@ -18,11 +18,14 @@ globs: "**/*.{html,js}"
 - **CTA position:** right cluster `Contact us` (text) + `Get Started` (gradient pill).
 - **Mobile:** hamburger + drawer; preserve **primary CTA** in header bar when possible.
 
-## Site footer
+## Site footer (Home `3139:30809`)
 
-- **Grid:** `grid-cols-1 md:grid-cols-2 lg:grid-cols-5` with column 1 = brand + socials (`44px` tap targets).
-- **Link columns:** Product, Solutions, Company, Resources (labels from Home footer metadata).
-- **Legal row:** full-width divider, `flex-col md:flex-row md:justify-between gap-4`.
+- **Surface:** `bg-ink-950 text-white`; padding `px-gutter py-section-y-footer`.
+- **Layout:** `gap-10` between main grid and legal strip; brand column uses `gap-33` between logo block and social row (Figma **33px**).
+- **Typography:** column headings `font-mono text-eyebrow-mono text-footer-label uppercase`; links `text-footer-link`; tagline `text-sm leading-5 text-footer-muted`.
+- **Social:** `size-9` wells + `border` `border-footer-icon-ring` + `bg-footer-icon-well`; increase to **44px** tap target (`p-1` wrapper).
+- **Columns:** horizontal `gap-footer-columns` between Product / Solutions / Company / Resources groups at `lg+`.
+- **Legal:** `border-t border-white/10`; copyright `text-footer-legal uppercase`; links `text-footer-legal-link gap-9 flex`.
 
 ## Section structure (order)
 
@@ -54,15 +57,18 @@ globs: "**/*.{html,js}"
 
 ## FAQ
 
-- **Two-column `lg+`:** intro left (`max-w-md`), questions right (`max-w-[640px]`).
-- **Row height (closed):** `~81px`; **open first item** shows answer block (`~72px`+ text).
-- **Trigger:** `button` `32×32` visual with **44px** hit slop; `aria-expanded` + `aria-controls`.
+- **Layout:** `lg:flex-row lg:gap-faq-split`; left column intro; right **`max-w-[640px]`** accordion stack `gap-5`.
+- **Badge:** `bg-lilac-25 border border-lilac-200 rounded-pill` + dot `bg-brand-600 shadow-faq-dot`.
+- **States:** expanded toggle = `bg-gradient-primary`; collapsed = `bg-accordion-toggle-idle`.
+- **Row height (closed):** `~81px`; **open first item** in design reference.
+- **Trigger:** `button` **`32px`** visual, **44px** min hit target; `aria-expanded` + `aria-controls`.
 
 ## Buttons
 
-- **Primary:** gradient + `shadow-primary` + `h-14` + `px-5` + `gap-2.5` + `rounded-pill`.
-- **Secondary:** `bg-surface-0 border border-border-subtle text-ink-950 h-14 px-5 rounded-[42px]` (tokenize as `rounded-pill-secondary`).
-- **Icon:** `16px` left of label on CTAs.
+- **Primary:** `bg-gradient-primary` + `shadow-primary` + `h-14` + `px-5` + `gap-2.5` + `rounded-pill`.
+- **Secondary (hero):** `bg-surface-0 border border-border-subtle text-ink-950 h-14 px-5 rounded-pill-secondary`.
+- **Ghost text CTA (e.g. “Choose your path”, “Contact our team”):** `rounded-pill-soft border border-border-subtle h-btn-ghost px-btn-ghost-x gap-3 text-sm font-bold text-ink-950`.
+- **Icons on CTAs:** Lucide **`16px`** default on primary/secondary hero buttons.
 
 ## Pills / badges
 

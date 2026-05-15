@@ -17,15 +17,15 @@
 
 ## Durations
 
-| Token | Time | Use |
-|--------|------|-----|
-| `fast` | `150ms` | Micro-interactions (color, opacity) |
-| `medium` | `280–320ms` | Hovers, accordion height (if CSS) |
-| `slow` | `450–500ms` | Section reveal on scroll |
+| Concept | Time | Tailwind utility |
+|---------|------|------------------|
+| Fast | `150ms` | `duration-fast` |
+| Medium | `280–320ms` (use **300ms** token) | `duration-md` |
+| Slow | `450–500ms` (use **480ms** token) | `duration-slow` |
 
 ## Easing
 
-- Default: **`cubic-bezier(0.22, 1, 0.36, 1)`** (same family as existing project prompts—smooth deceleration).
+- Default: **`ease-premium`** in Tailwind → `cubic-bezier(0.22, 1, 0.36, 1)` (smooth deceleration).
 - **No** `ease-in` on enter (feels sluggish for premium SaaS).
 
 ## Scroll behavior

@@ -19,7 +19,8 @@ FacePe is the **identity layer for payments**: biometric verification, device-fr
 
 - **Typography-led heroes** with one accent color (`#5f15ee`) for proof points—not rainbow gradients on text.
 - **Single brand gradient** reserved for **primary actions** and small highlights (`#9c6cfe` → `#5000ea`).
-- **Soft lilac fields** (`#f9f6ff`, `#f0ebff`) for “tech” surfaces; keep **body areas white** for readability.
+- **Soft lilac fields** (`#f9f6ff`, `#f0ebff`, FAQ pill `#f5f0ff`) for “tech” surfaces; keep **body areas white** for readability.
+- **Footer as dark terminal:** `ink-950` field, **lavender** mono column labels (`#c4aaff`), **white / translucent white** text tiers—signals “infrastructure / trust” without extra illustration.
 - **Decorative motif:** thin orthogonal lines + small stars—optional; **never** required for comprehension (omit on mobile if busy).
 
 ## Voice & tone (inferred from UI strings)

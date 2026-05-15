@@ -3,7 +3,7 @@
 ## Context
 
 - **Stack:** Vite, HTML, Tailwind, vanilla JS, Lucide, minimal GSAP.  
-- **Design system:** `docs/design-system.md`, `docs/component-library.md`, `docs/responsive-system.md`.  
+- **Design system:** `docs/design-system.md`, `docs/component-library.md`, `docs/responsive-system.md`, and **`tailwind.config.js`** theme keys.  
 - **Figma:** `Jms4ZsFFmzbAI1LyBO0x1E` — reuse patterns from Home / Verify frames.
 
 ## Input from author
@@ -14,8 +14,8 @@
 ## Requirements
 
 - **Semantic:** one section root `<section id="…" aria-labelledby="…">`.  
-- **Spacing:** section `py-10 md:py-[60px]`; inner `max-w-[1240px] mx-auto` + horizontal padding per `docs/responsive-system.md`.  
-- **Typography:** eyebrow (if any) = `12px` uppercase `brand-600` + `tracking-[1.32px]`; H2 = `44px` / `50px` leading where applicable.  
+- **Spacing:** section `py-10 lg:py-section-y`; inner `max-w-content mx-auto px-4 sm:px-8 lg:px-gutter`.
+- **Typography:** use `text-eyebrow` / `text-heading-2` / `text-body-lg` etc. from `tailwind.config.js` where applicable; eyebrow purple + wide tracking per `docs/design-system.md`.  
 - **CTAs:** max **1 primary + 1 secondary** in hero-like sections; elsewhere text links with chevron.  
 - **Icons:** Lucide only, `16px` in buttons, `14px` in inline links where Figma shows smaller chevrons.
 
