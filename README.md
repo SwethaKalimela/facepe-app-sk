@@ -10,7 +10,7 @@ HTML partials use `fetch`, so serve the folder (do not open as `file://`):
 npx --yes serve . -l 3000
 ```
 
-Open [http://localhost:3000/](http://localhost:3000/)
+Open [http://localhost:3000/](http://localhost:3000/) (product pages: `/verify`, `/selfcheckout`, etc.)
 
 ## Tailwind
 
