@@ -3,6 +3,7 @@
 
 export default {
   content: [
+    "./index.html",
     "./pages/**/*.{html,js}",
     "./components/**/*.{html,js}",
     "./js/**/*.{js}",
