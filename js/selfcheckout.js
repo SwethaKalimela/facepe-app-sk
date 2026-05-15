@@ -105,63 +105,8 @@ function initSelfcheckoutFlowTabs(root = document) {
 }
 
 /** @param {ParentNode} [root] */
-function debugRolloutLayout(root = document) {
-  const section = root.querySelector("#rollout-section");
-  if (!section) return;
-
-  const logLayout = () => {
-    const container = section.querySelector(".container-page");
-    const grid = section.querySelector(".grid");
-    const article = section.querySelector("article");
-    const firstLi = section.querySelector("ol > li");
-    const firstBenefit = section.querySelector("ul > li");
-    const ol = section.querySelector("ol");
-
-    const rect = (el) => (el ? el.getBoundingClientRect() : null);
-    const cs = (el, prop) => (el ? getComputedStyle(el).getPropertyValue(prop) : null);
-
-    const data = {
-      viewportW: window.innerWidth,
-      sectionW: rect(section)?.width,
-      containerW: rect(container)?.width,
-      gridCols: cs(grid, "grid-template-columns"),
-      gridDisplay: cs(grid, "display"),
-      articleW: rect(article)?.width,
-      articleScrollW: article?.scrollWidth,
-      olScrollW: ol?.scrollWidth,
-      olClientW: ol?.clientWidth,
-      olOverflowX: cs(ol, "overflow-x"),
-      firstLiW: rect(firstLi)?.width,
-      firstBenefitW: rect(firstBenefit)?.width,
-      firstBenefitMaxW: cs(firstBenefit, "max-width"),
-      bodyOverflowX: document.documentElement.scrollWidth > window.innerWidth,
-    };
-
-    // #region agent log
-    fetch("http://127.0.0.1:7601/ingest/47d748dd-ca9d-40e0-98f5-d0e0e158fae5", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "f0f21b" },
-      body: JSON.stringify({
-        sessionId: "f0f21b",
-        runId: "pre-fix",
-        hypothesisId: "A-E",
-        location: "selfcheckout.js:debugRolloutLayout",
-        message: "rollout layout metrics",
-        data,
-        timestamp: Date.now(),
-      }),
-    }).catch(() => {});
-    // #endregion
-  };
-
-  logLayout();
-  window.addEventListener("resize", logLayout);
-}
-
-/** @param {ParentNode} [root] */
 export function initSelfcheckoutPage(root = document) {
   mountIcons(root);
   initSelfcheckoutFlowTabs(root);
   initFaqAccordion(root);
-  debugRolloutLayout(root);
 }

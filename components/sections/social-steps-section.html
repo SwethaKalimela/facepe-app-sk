@@ -1,4 +1,4 @@
-<!-- Figma 3139:29953 (social proof + steps) -->
+<!-- Figma 3139:29953 (social proof) + 3139:29968 (steps) -->
 <section id="social-proof-section" class="bg-surface-0 pt-section-y" aria-labelledby="social-proof-heading">
   <div class="container-page">
     <h2 id="social-proof-heading" class="sr-only">Trusted by top companies</h2>
@@ -52,10 +52,10 @@
   </div>
 </section>
 
-<section id="steps-section" class="bg-surface-0 pb-section-y pt-20" aria-labelledby="steps-heading">
+<section id="steps-section" class="bg-surface-0 pb-section-y pt-12 lg:pt-16" aria-labelledby="steps-heading">
   <div class="container-page">
-    <div class="flex flex-col items-center gap-10">
-      <div class="mx-auto flex w-full max-w-[508px] flex-col items-center gap-10 text-center">
+    <div class="flex flex-col items-center gap-6 lg:gap-8">
+      <div class="mx-auto flex w-full max-w-[508px] flex-col items-center gap-6 text-center lg:gap-8">
         <div class="flex w-full max-w-[467px] flex-col items-center gap-5">
           <div class="flex w-full flex-col items-center gap-3">
             <p class="w-full text-eyebrow font-medium uppercase tracking-eyebrow-wide text-brand-600">
@@ -126,13 +126,13 @@
         </div>
       </div>
 
-      <!-- Figma 3139:29988 — active step card -->
+      <!-- Figma 3139:29988 — height capped to viewport (Figma 527px, reduced) -->
       <div
-        class="relative w-full overflow-hidden rounded-[36px] border-[0.2px] border-[#5b21ff] bg-surface-0 shadow-steps-panel lg:h-[527px]"
+        class="relative flex w-full min-w-0 max-h-[min(560px,calc(100dvh-11rem))] flex-col overflow-hidden rounded-[36px] border-[0.2px] border-[#5b21ff] bg-surface-0 shadow-steps-panel lg:block lg:h-[min(380px,calc(100dvh-15rem))] lg:max-h-none xl:h-[min(400px,calc(100dvh-13rem))]"
         data-steps-panel
       >
         <div
-          class="steps-panel__content relative z-10 flex flex-col gap-[60px] px-8 py-10 sm:px-12 lg:absolute lg:left-[60px] lg:top-[60px] lg:w-[394px] lg:p-0"
+          class="steps-panel__content relative z-10 flex shrink-0 flex-col gap-6 overflow-y-auto px-6 pb-8 pt-6 sm:gap-8 sm:px-8 sm:pb-10 sm:pt-8 lg:absolute lg:inset-x-auto lg:bottom-10 lg:left-8 lg:right-auto lg:top-8 lg:w-[min(394px,44%)] lg:gap-8 lg:overflow-visible lg:px-0 lg:py-0 xl:bottom-12 xl:left-10 xl:top-10"
           data-step-content
         >
           <div class="flex flex-col gap-4">
@@ -144,7 +144,7 @@
             </p>
             <div class="flex flex-col gap-3">
               <h3
-                class="text-[36px] font-bold leading-normal tracking-[-0.9px] text-[#2d2d2d]"
+                class="text-[32px] font-bold leading-tight tracking-[-0.9px] text-[#2d2d2d] sm:text-[36px]"
                 data-step-title
               >
                 Enroll Your Face &amp; Link <span class="text-[#5b21ff]">Your Card</span>
@@ -156,7 +156,7 @@
           </div>
           <div data-step-list>
             <ul
-              class="max-w-[334px] list-disc space-y-3 pl-6 text-base leading-normal text-[#545454] marker:text-ink-950"
+              class="max-w-[334px] list-disc space-y-2.5 pl-6 text-base leading-normal text-[#545454] marker:text-ink-950 sm:space-y-3"
             >
               <li><span class="font-semibold text-ink-950">3D face</span> scan via front camera</li>
               <li>
@@ -172,13 +172,13 @@
         </div>
 
         <div
-          class="steps-panel__visual relative mt-6 h-[200px] overflow-hidden sm:h-[240px] md:h-[280px] lg:absolute lg:inset-y-0 lg:right-0 lg:mt-0 lg:h-full lg:w-[620px]"
+          class="steps-panel__visual relative mt-4 min-h-[160px] flex-1 overflow-hidden sm:mt-5 sm:min-h-[180px] lg:absolute lg:inset-y-0 lg:right-0 lg:mt-0 lg:h-full lg:min-h-0 lg:w-[min(540px,54%)]"
           data-step-visual
           data-step-align="end"
         >
           <div class="steps-panel__visual-bg absolute inset-0" aria-hidden="true">
             <img
-              src="https://www.figma.com/api/mcp/asset/34433e07-d008-4b9d-bfe8-30bfbf96f85c"
+              src="https://www.figma.com/api/mcp/asset/4e500c36-8781-4836-8f1c-ca30c74c853f"
               alt=""
               width="620"
               height="527"

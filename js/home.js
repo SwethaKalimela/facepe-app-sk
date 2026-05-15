@@ -281,6 +281,7 @@ function initStepsTabs(root = document) {
       switchStep(/** @type {keyof typeof STEPS} */ (step), /** @type {HTMLButtonElement} */ (btn));
     });
   });
+
 }
 
 

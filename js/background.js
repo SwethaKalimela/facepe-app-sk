@@ -1,4 +1,5 @@
 import { createIcons, icons } from "lucide";
+import { initFaqAccordion } from "./home.js";
 
 const BACKGROUND_FLOW = {
   pullup: {
@@ -118,4 +119,5 @@ function initBackgroundFlowTabs(root = document) {
 export function initBackgroundPage(root = document) {
   mountIcons(root);
   initBackgroundFlowTabs(root);
+  initFaqAccordion(root);
 }

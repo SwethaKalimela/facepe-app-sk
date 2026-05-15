@@ -11,6 +11,7 @@ const [
   caseStudiesHtml,
   pricingHtml,
   ctaHtml,
+  faqHtml,
 ] = await Promise.all([
   loadPartial("../components/layout/navbar.html"),
   loadPartial("../components/layout/footer.html"),
@@ -20,6 +21,7 @@ const [
   loadPartial("../components/background/case-studies-section.html"),
   loadPartial("../components/background/pricing-section.html"),
   loadPartial("../components/background/cta-section.html"),
+  loadPartial("../components/background/faq-section.html"),
 ]);
 
 const main = document.getElementById("main");
@@ -31,6 +33,7 @@ if (main) {
     caseStudiesHtml,
     pricingHtml,
     ctaHtml,
+    faqHtml,
   ]
     .map((html) => html.trim())
     .join("\n");

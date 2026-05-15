@@ -49,7 +49,7 @@ tailwind.config = {
         "section-y": "60px",
         "section-y-footer": "74px",
         "nav-h": "100px",
-        "faq-split": "193px",
+        "faq-split": "80px",
         "footer-columns": "170px",
         15: "15px",
         33: "33px",
