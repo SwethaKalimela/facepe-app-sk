@@ -2,6 +2,8 @@ import { createIcons, icons } from "lucide";
 
 import { initFaqAccordion } from "./home.js";
 
+const ONLINE_IMG = "/assets/images/online";
+
 const ONLINE_FLOW = {
   pay: {
     step: "STEP 01",
@@ -9,7 +11,7 @@ const ONLINE_FLOW = {
     titleHtml: 'Customer clicks &ldquo;Pay with <span class="text-brand-600">FacePe</span>&rdquo;',
     desc: "At checkout, the FacePe button appears alongside other payment methods — embedded, single-click, no redirect.",
     showPills: true,
-    image: "https://www.figma.com/api/mcp/asset/5bd45443-2b3a-45fd-ac59-11f0dd367f12",
+    image: `${ONLINE_IMG}/flow-step-01-pay-with-facepe.png`,
     imageAlt: "Mobile checkout screen showing Pay with FacePe button",
   },
   face: {
@@ -18,7 +20,7 @@ const ONLINE_FLOW = {
     titleHtml: "Face <span class=\"text-brand-600\">detected</span>",
     desc: "3D liveness runs in the browser or app. A depth map confirms a real person — not a photo or video replay.",
     showPills: false,
-    image: "https://www.figma.com/api/mcp/asset/a856bcf9-1b6e-4660-b175-54b2601c893b",
+    image: `${ONLINE_IMG}/flow-step-02-face-detected.png`,
     imageAlt: "FacePe scanning a customer's face during online checkout",
   },
   identity: {
@@ -27,7 +29,7 @@ const ONLINE_FLOW = {
     titleHtml: "Identity <span class=\"text-brand-600\">verified</span>",
     desc: "Biometric template matched against enrollment. Risk score and device fingerprint checked in parallel.",
     showPills: false,
-    image: "https://www.figma.com/api/mcp/asset/a856bcf9-1b6e-4660-b175-54b2601c893b",
+    image: `${ONLINE_IMG}/flow-step-03-identity-verified.png`,
     imageAlt: "Identity verification confirmed on FacePe checkout",
   },
   payment: {
@@ -36,7 +38,7 @@ const ONLINE_FLOW = {
     titleHtml: "Payment <span class=\"text-brand-600\">authorized</span>",
     desc: "Payment token sent to your processor — Stripe, Razorpay, PayPal, or Cashfree. No OTP or CVV step required.",
     showPills: false,
-    image: "https://www.figma.com/api/mcp/asset/a856bcf9-1b6e-4660-b175-54b2601c893b",
+    image: `${ONLINE_IMG}/flow-step-04-payment-authorized.png`,
     imageAlt: "Payment authorization completing via FacePe",
   },
   receipt: {
@@ -45,7 +47,7 @@ const ONLINE_FLOW = {
     titleHtml: "Receipt <span class=\"text-brand-600\">delivered</span>",
     desc: "Order confirmed, digital receipt sent, and an immutable audit log written for chargeback defense.",
     showPills: false,
-    image: "https://www.figma.com/api/mcp/asset/a856bcf9-1b6e-4660-b175-54b2601c893b",
+    image: `${ONLINE_IMG}/flow-step-05-receipt-delivered.jpg`,
     imageAlt: "Checkout complete with receipt delivered",
   },
 };
