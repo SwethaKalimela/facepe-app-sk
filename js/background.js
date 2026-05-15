@@ -1,13 +1,15 @@
 import { createIcons, icons } from "lucide";
 import { initFaqAccordion } from "./home.js";
 
+const BG_IMG = "/assets/images/background";
+
 const BACKGROUND_FLOW = {
   pullup: {
     step: "Step 1 · customer pulls up",
     title: "The lane recognizes the car before they reach the window.",
     desc: "The vehicle enters the lane. The 3D depth camera activates automatically — no button, no app, no interaction needed from the customer.",
     pills: ["3D depth sensing", "Auto-activates on approach", "Privacy-first"],
-    image: "https://www.figma.com/api/mcp/asset/3161d71c-dbe9-4e58-b305-3bd14d9e231e",
+    image: `${BG_IMG}/flow-pullup.png`,
     imageAlt: "Vehicle detected in drive-thru lane with 3D sensing",
   },
   recognized: {
@@ -15,7 +17,7 @@ const BACKGROUND_FLOW = {
     titleHtml: "Face recognized in<br />under 1 second.",
     desc: "The 3D camera captures facial geometry and matches it against enrolled biometrics. Liveness detection runs simultaneously, rejecting photos, masks, and videos.",
     pills: ["Under 1 second", "99%+ accuracy", "Anti-spoof active"],
-    image: "https://www.figma.com/api/mcp/asset/b677b2e1-34e0-4d0f-8269-5ecdfb462ae5",
+    image: `${BG_IMG}/flow-recognized.png`,
     imageAlt: "3D camera recognizing a customer at the drive-thru",
   },
   avatar: {
@@ -23,7 +25,7 @@ const BACKGROUND_FLOW = {
     titleHtml: "AI avatar greets &amp;<br />takes the order.",
     desc: "The AI avatar greets the customer by name, shows their usual items, and asks if they want them. The voice is natural and conversational.",
     pills: ["Personalized greeting", "Order history recalled", "Anti-spoof active"],
-    image: "https://www.figma.com/api/mcp/asset/12eba1c9-8bf3-4a38-8b4e-8fdc9d35e84b",
+    image: `${BG_IMG}/flow-avatar.png`,
     imageAlt: "AI avatar greeting a customer and taking their order",
   },
   confirmed: {
@@ -31,7 +33,7 @@ const BACKGROUND_FLOW = {
     titleHtml: "Order confirmed.<br />Payment authorized by face.",
     desc: "The customer confirms their order. Payment is authorized instantly, with no card or PIN needed. The transaction completes before reaching the pickup.",
     pills: ["Face-based payment", "Zero card contact", "Under 2 seconds total"],
-    image: "https://www.figma.com/api/mcp/asset/0860375b-705c-4c85-a873-23c532e7f4e0",
+    image: `${BG_IMG}/flow-confirmed.png`,
     imageAlt: "Order confirmed with face-based payment at drive-thru",
   },
   receipt: {
@@ -39,7 +41,7 @@ const BACKGROUND_FLOW = {
     titleHtml: "Receipt sent.<br />Loyalty updated. Done.",
     desc: "A digital receipt is sent to the customer's phone upon payment. Loyalty points are added automatically, and the merchant dashboard logs the transaction.",
     pills: ["Face-based payment", "Zero card contact", "Under 2 seconds total"],
-    image: "https://www.figma.com/api/mcp/asset/a778f68b-99c3-43d0-bcb1-8e09f2ffc331",
+    image: `${BG_IMG}/flow-receipt.png`,
     imageAlt: "Digital receipt sent and loyalty updated after checkout",
   },
 };
