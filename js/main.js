@@ -1,17 +1,32 @@
-import navbarHtml from "../components/layout/navbar.html?raw";
-import footerHtml from "../components/layout/footer.html?raw";
-import heroHtml from "../components/sections/hero-section.html?raw";
-import socialStepsHtml from "../components/sections/social-steps-section.html?raw";
-import productsHtml from "../components/sections/products-grid-section.html?raw";
-import demoImpactHtml from "../components/sections/demo-impact-section.html?raw";
-import bridgeHtml from "../components/sections/bridge-section.html?raw";
-import comparisonHtml from "../components/sections/comparison-section.html?raw";
-import deploymentsHtml from "../components/sections/deployments-section.html?raw";
-import testimonialHtml from "../components/sections/testimonial-section.html?raw";
-import faqHtml from "../components/sections/faq-section.html?raw";
-
+import { loadPartial } from "./load-partial.js";
 import { initNavbar } from "./navbar.js";
 import { initHomePage } from "./home.js";
+
+const [
+  navbarHtml,
+  footerHtml,
+  heroHtml,
+  socialStepsHtml,
+  productsHtml,
+  demoImpactHtml,
+  bridgeHtml,
+  comparisonHtml,
+  deploymentsHtml,
+  testimonialHtml,
+  faqHtml,
+] = await Promise.all([
+  loadPartial("../components/layout/navbar.html"),
+  loadPartial("../components/layout/footer.html"),
+  loadPartial("../components/sections/hero-section.html"),
+  loadPartial("../components/sections/social-steps-section.html"),
+  loadPartial("../components/sections/products-grid-section.html"),
+  loadPartial("../components/sections/demo-impact-section.html"),
+  loadPartial("../components/sections/bridge-section.html"),
+  loadPartial("../components/sections/comparison-section.html"),
+  loadPartial("../components/sections/deployments-section.html"),
+  loadPartial("../components/sections/testimonial-section.html"),
+  loadPartial("../components/sections/faq-section.html"),
+]);
 
 const main = document.getElementById("main");
 if (main) {

@@ -1,10 +1,67 @@
-/* Steps panel — gradient grid behind step visuals (all tabs) */
+/* Steps panel — Figma 3139:29988 / 3139:30001 gradient grid (40% opacity) */
 .steps-panel__visual-bg {
   background-color: #f9f6ff;
-  background-image: url("../assets/images/gradient-grid.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  pointer-events: none;
+}
+
+.steps-panel__visual-grid {
+  opacity: 0.4;
+}
+
+/* Figma 3139:30002 — hero fills visual column height for every step */
+.steps-panel__hero-wrap {
+  align-items: flex-end;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .steps-panel__hero-wrap {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.steps-panel__hero-image {
+  display: block;
+  height: 100%;
+  max-height: 100%;
+  max-width: min(280px, 88%);
+  object-fit: contain;
+  object-position: bottom center;
+  width: auto;
+}
+
+@media (min-width: 640px) {
+  .steps-panel__hero-image {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .steps-panel__hero-image {
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .steps-panel__hero-image {
+    max-width: 395px;
+  }
+}
+
+/* Step 1 — top-aligned; steps 2–3 — bottom-centered (default) */
+[data-step-visual][data-step-align="start"] .steps-panel__hero-wrap {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+[data-step-visual][data-step-align="start"] .steps-panel__hero-image {
+  object-position: left top;
 }
 
 .steps-panel__visual-bg::after {
@@ -19,7 +76,6 @@
   position: absolute;
 }
 
-/* Steps tabs — content + image fade in sync */
 .steps-panel__content,
 .steps-panel__visual {
   transition: opacity 300ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -36,8 +92,6 @@
     transition: none;
   }
 }
-
-/* Logo banner — social proof strip (Figma fade masks 3139:29966 / 3139:29967) */
 
 @keyframes logo-marquee-scroll {
   from {
@@ -60,6 +114,47 @@
 
 .logo-marquee.is-paused .logo-marquee__track {
   animation-play-state: paused;
+}
+
+/* FAQ accordion — smooth expand/collapse via grid row transition */
+[data-faq-accordion] .faq-accordion__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-faq-accordion] details[open] .faq-accordion__panel {
+  grid-template-rows: 1fr;
+}
+
+[data-faq-accordion] .faq-accordion__inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+[data-faq-accordion] .faq-accordion__inner > * {
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-faq-accordion] details[open] .faq-accordion__inner > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-faq-accordion] .faq-accordion__panel,
+  [data-faq-accordion] .faq-accordion__inner > * {
+    transition: none;
+  }
+
+  [data-faq-accordion] .faq-accordion__inner > * {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

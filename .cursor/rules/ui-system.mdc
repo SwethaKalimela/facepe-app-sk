@@ -1,4 +1,4 @@
-You are building the **FacePe** premium fintech SaaS marketing site (HTML + Tailwind + Vite + vanilla JS + Lucide + minimal GSAP).
+You are building the **FacePe** premium fintech SaaS marketing site (HTML + Tailwind Play CDN + vanilla JS + Lucide CDN + minimal GSAP). Tailwind loads via `cdn.tailwindcss.com` + `js/tailwind-config.js` (no build step).
 
 **Authoritative docs (read before coding):** `docs/design-system.md`, `docs/brand-guidelines.md`, `docs/component-library.md`, `docs/page-architecture.md`, `docs/responsive-system.md`, `docs/animation-system.md`, `docs/seo-system.md`.
 

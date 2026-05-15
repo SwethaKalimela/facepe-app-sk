@@ -1,5 +1,5 @@
 ---
-description: Tailwind usage for FacePe (HTML + Vite) — tokens from Figma
+description: Tailwind usage for FacePe (HTML + Tailwind CDN + JS) — tokens from Figma
 globs: "**/*.{html,js,css}"
 ---
 
@@ -10,6 +10,11 @@ globs: "**/*.{html,js,css}"
 - Canonical values: `docs/design-system.md`, layout: `docs/component-library.md`, responsive: `docs/responsive-system.md`.
 - Figma reference: file `Jms4ZsFFmzbAI1LyBO0x1E` (Home `3139:29850`, Verify `3139:31023`).
 - **`tailwind.config.js`** already defines FacePe `colors`, `spacing` (`gutter`, `section-y`, …), `maxWidth.content`, `fontSize`, `backgroundImage.gradient-primary`, `boxShadow`, `borderRadius`, and motion tokens—**consume these utilities**; do not paste hex in HTML.
+
+## CDN setup
+
+- Pages include `<script src="https://cdn.tailwindcss.com"></script>` then `<script src="../js/tailwind-config.js"></script>`.
+- Theme tokens live in `js/tailwind-config.js` (keep `tailwind.config.js` in sync for documentation).
 
 ## General
 

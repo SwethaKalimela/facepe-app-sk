@@ -10,7 +10,7 @@ const STEPS = {
 
     label: "01",
 
-    title: 'Download <span class="text-brand-600">&amp; Register</span>',
+    title: 'Download <span class="text-[#5b21ff]">&amp; Register</span>',
 
     desc: "Download FacePe, create your account with name, email & phone. Takes under a minute.",
 
@@ -18,7 +18,7 @@ const STEPS = {
 
       <div class="flex flex-wrap items-center gap-6">
 
-        <a href="/contact.html" class="inline-flex items-center gap-3 no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">
+        <a href="contact.html" class="inline-flex items-center gap-3 no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">
 
           <span class="flex size-11 shrink-0 items-center justify-center rounded-[10px] bg-ink-950">
 
@@ -36,7 +36,7 @@ const STEPS = {
 
         </a>
 
-        <a href="/contact.html" class="inline-flex items-center gap-3 no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">
+        <a href="contact.html" class="inline-flex items-center gap-3 no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">
 
           <span class="flex size-11 shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-ink-950">
 
@@ -56,7 +56,7 @@ const STEPS = {
 
       </div>`,
 
-    image: "https://www.figma.com/api/mcp/asset/31b27530-e8bf-4cf5-9a3a-7c70f9594b56",
+    image: "https://www.figma.com/api/mcp/asset/39ef6bb0-96f0-4fe5-afbe-1ca760377c72",
 
     imageAlt: "Person downloading the FacePe app on a smartphone",
 
@@ -66,7 +66,7 @@ const STEPS = {
 
     label: "02",
 
-    title: 'Enroll Your Face &amp; Link <span class="text-brand-600">Your Card</span>',
+    title: 'Enroll Your Face &amp; Link <span class="text-[#5b21ff]">Your Card</span>',
 
     desc: "Scan your face in 30 seconds. Link a secure card; details aren't stored.",
 
@@ -78,11 +78,11 @@ const STEPS = {
 
       '<span class="font-semibold text-ink-950">Set your default</span> card for payments',
 
-      '<span class="font-semibold text-ink-950">One-time setup,</span> <span class="text-brand-600">never repeat this again</span>',
+      '<span class="font-semibold text-ink-950">One-time setup,</span> <span class="text-[#5b21ff]">never repeat this again</span>',
 
     ],
 
-    image: "https://www.figma.com/api/mcp/asset/f4069f90-f667-4686-bd64-2fb31ef86d52",
+    image: "https://www.figma.com/api/mcp/asset/50e52fb9-b569-4855-8d49-3726453ebc3a",
 
     imageAlt: "User completing a 3D face scan and linking a payment card in FacePe",
 
@@ -92,7 +92,7 @@ const STEPS = {
 
     label: "03",
 
-    title: 'Walk Up. <span class="text-brand-600">Look. Done.</span>',
+    title: 'Walk Up. <span class="text-[#5b21ff]">Look. Done.</span>',
 
     desc: "Walk up to any FacePe terminal, look at the camera, and you're done.",
 
@@ -108,7 +108,7 @@ const STEPS = {
 
     ],
 
-    image: "https://www.figma.com/api/mcp/asset/394e63ea-3254-404d-b019-cb963dbe60d8",
+    image: "https://www.figma.com/api/mcp/asset/31822284-0a6c-4a9d-9810-4dfb921e3f36",
 
     imageAlt: "Customer paying at a FacePe self-checkout kiosk",
 
@@ -205,6 +205,8 @@ function initStepsTabs(root = document) {
   const setTabActive = (btn, active) => {
     const badge = btn.querySelector("span:first-child");
     btn.setAttribute("aria-selected", active ? "true" : "false");
+    btn.classList.toggle("rounded-[48px]", active);
+    btn.classList.toggle("rounded-full", !active);
     btn.classList.toggle("bg-lilac-100", active);
     btn.classList.toggle("text-ink-950", active);
     btn.classList.toggle("text-ink-700", !active);
@@ -227,7 +229,7 @@ function initStepsTabs(root = document) {
       if ("listHtml" in data && data.listHtml) {
         list.innerHTML = data.listHtml;
       } else if ("list" in data && data.list) {
-        list.innerHTML = `<ul class="max-w-[334px] list-disc space-y-3 pl-6 text-base text-[#545454] marker:text-ink-950">${data.list
+        list.innerHTML = `<ul class="max-w-[334px] list-disc space-y-3 pl-6 text-base leading-normal text-[#545454] marker:text-ink-950">${data.list
           .map((item) => `<li>${item}</li>`)
           .join("")}</ul>`;
       }
@@ -236,13 +238,10 @@ function initStepsTabs(root = document) {
     if (image instanceof HTMLImageElement) {
       image.src = data.image;
       image.alt = data.imageAlt;
-      image.classList.toggle("object-left", step === "1");
     }
 
     if (visual instanceof HTMLElement) {
-      const alignStart = step === "1";
-      visual.classList.toggle("justify-start", alignStart);
-      visual.classList.toggle("justify-center", !alignStart);
+      visual.dataset.stepAlign = step === "1" ? "start" : "end";
     }
   };
 
@@ -287,8 +286,22 @@ function initStepsTabs(root = document) {
 
 
 /** @param {ParentNode} root */
+function initDeploymentsAccordion(root = document) {
+  const container = root.querySelector("[data-deployments-accordion]");
+  if (!container) return;
 
-function initFaqAccordion(root = document) {
+  container.querySelectorAll("details").forEach((item) => {
+    item.addEventListener("toggle", () => {
+      if (!item.open) return;
+      container.querySelectorAll("details").forEach((other) => {
+        if (other !== item) other.open = false;
+      });
+    });
+  });
+}
+
+/** @param {ParentNode} root */
+export function initFaqAccordion(root = document) {
 
   const container = root.querySelector("[data-faq-accordion]");
 
@@ -325,6 +338,8 @@ export function initHomePage(root = document) {
   initLogoMarquee(root);
 
   initStepsTabs(root);
+
+  initDeploymentsAccordion(root);
 
   initFaqAccordion(root);
 

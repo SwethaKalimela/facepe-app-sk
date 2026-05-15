@@ -1,0 +1,14 @@
+---
+description: FacePe stack — static HTML, Tailwind Play CDN, no bundler
+globs: "**/*"
+alwaysApply: true
+---
+
+# Project stack
+
+- **No Vite**, npm build, or bundler.
+- **HTML** in `pages/` and `components/`; **JS** loads partials with `fetch` via `js/load-partial.js`.
+- **Tailwind:** Play CDN (`https://cdn.tailwindcss.com`) + theme in `js/tailwind-config.js` (must load immediately after the CDN script).
+- **CSS:** `styles/globals.css` (layout), `styles/animations.css` (marquee, steps transitions).
+- **Icons:** Lucide via import map → `https://esm.sh/lucide@1.16.0`.
+- **Preview:** static server required (`npx serve .` or Live Server) — not `file://`.

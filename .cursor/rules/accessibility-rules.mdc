@@ -7,7 +7,7 @@ globs: "**/*.{html,js}"
 
 ## Semantic HTML
 
-- **Header:** one per page; logo links to `/`.
+- **Header:** one per page; logo links to `index.html` (home).
 - **Nav:** wrap primary links in `nav` with **visible label** (`aria-label="Primary"`).
 - **Main:** exactly one `main` landmark wrapping all sections.
 - **Footer:** `footer` with secondary nav.

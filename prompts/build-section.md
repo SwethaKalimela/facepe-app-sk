@@ -2,7 +2,7 @@
 
 ## Context
 
-- **Stack:** Vite, HTML, Tailwind, vanilla JS, Lucide, minimal GSAP.  
+- **Stack:** HTML, Tailwind Play CDN + `js/tailwind-config.js`, vanilla JS, Lucide CDN, minimal GSAP. Partials via `js/load-partial.js`.  
 - **Design system:** `docs/design-system.md`, `docs/component-library.md`, `docs/responsive-system.md`, and **`tailwind.config.js`** theme keys.  
 - **Figma:** `Jms4ZsFFmzbAI1LyBO0x1E` — reuse patterns from Home / Verify frames.
 

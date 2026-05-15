@@ -1,6 +1,6 @@
 # Prompt: Build marketing page (FacePe)
 
-You are implementing **static HTML** in a **Vite + Tailwind + vanilla JS** repo. Visual source: Figma file `Jms4ZsFFmzbAI1LyBO0x1E` (Home `3139:29850`, Verify `3139:31023`).
+You are implementing **static HTML** in a **HTML + Tailwind CDN + vanilla JS** repo (no Vite, npm, or bundler). Visual source: Figma file `Jms4ZsFFmzbAI1LyBO0x1E` (Home `3139:29850`, Verify `3139:31023`).
 
 ## Mandatory reading (project)
 
@@ -13,11 +13,13 @@ You are implementing **static HTML** in a **Vite + Tailwind + vanilla JS** repo.
 
 ## Stack constraints
 
-- **HTML** partials / pages under `pages/` or `components/` per repo layout  
-- **Tailwind** only for styling; **use the tokens already defined** in `tailwind.config.js` (`colors`, `spacing.gutter`, `maxWidth.content`, `fontSize`, `backgroundImage.gradient-primary`, `boxShadow`, etc.)—avoid raw hex / arbitrary values in markup  
-- **Icons:** **Lucide** (`stroke-width` **1.5**, `16px` default)  
+- **HTML** partials under `components/`, pages under `pages/`; assemble with `js/load-partial.js` + `fetch` (no bundler)  
+- **CSS:** Tailwind Play CDN + `js/tailwind-config.js` + `styles/globals.css` + `styles/animations.css`  
+- **Tailwind** only for styling; **use the tokens already defined** in `tailwind.config.js`—avoid raw hex in markup  
+- **Links:** page-relative (`verify.html`, not `/verify.html`) because pages live in `pages/`  
+- **Icons:** **Lucide** via import map + `createIcons` (`stroke-width` **1.5**, `16px` default)  
 - **Motion:** **GSAP** only where `docs/animation-system.md` allows; prefer CSS + `IntersectionObserver`  
-- **Deploy:** Vercel-ready (no Node APIs assumed)
+- **Local preview:** static server required for `fetch` partials (`npx serve .` or Live Server)
 
 ## Page structure template
 

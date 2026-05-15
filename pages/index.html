@@ -19,10 +19,20 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles/globals.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../styles/globals.css" />
+    <link rel="stylesheet" href="../styles/animations.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "lucide": "https://esm.sh/lucide@1.16.0"
+        }
+      }
+    </script>
   </head>
   <body class="min-h-dvh bg-surface-page font-sans text-ink-body antialiased">
     <main id="main"></main>
-    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="../js/main.js"></script>
   </body>
 </html>
