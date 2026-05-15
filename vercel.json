@@ -2,26 +2,23 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    {
-      "source": "/page/:page(verify|selfcheckout|background|online)",
-      "destination": "/:page",
-      "permanent": true
-    },
-    {
-      "source": "/pages/:page(verify|selfcheckout|background|online)",
-      "destination": "/:page",
-      "permanent": true
-    },
-    {
-      "source": "/pages/:page(verify|selfcheckout|background|online).html",
-      "destination": "/:page",
-      "permanent": true
-    }
+    { "source": "/page/verify", "destination": "/verify", "permanent": true },
+    { "source": "/page/selfcheckout", "destination": "/selfcheckout", "permanent": true },
+    { "source": "/page/background", "destination": "/background", "permanent": true },
+    { "source": "/page/online", "destination": "/online", "permanent": true },
+    { "source": "/pages/verify", "destination": "/verify", "permanent": true },
+    { "source": "/pages/verify.html", "destination": "/verify", "permanent": true },
+    { "source": "/pages/selfcheckout", "destination": "/selfcheckout", "permanent": true },
+    { "source": "/pages/selfcheckout.html", "destination": "/selfcheckout", "permanent": true },
+    { "source": "/pages/background", "destination": "/background", "permanent": true },
+    { "source": "/pages/background.html", "destination": "/background", "permanent": true },
+    { "source": "/pages/online", "destination": "/online", "permanent": true },
+    { "source": "/pages/online.html", "destination": "/online", "permanent": true }
   ],
   "rewrites": [
-    {
-      "source": "/:page(verify|selfcheckout|background|online)",
-      "destination": "/pages/:page.html"
-    }
+    { "source": "/verify", "destination": "/pages/verify.html" },
+    { "source": "/selfcheckout", "destination": "/pages/selfcheckout.html" },
+    { "source": "/background", "destination": "/pages/background.html" },
+    { "source": "/online", "destination": "/pages/online.html" }
   ]
 }
