@@ -1,0 +1,22 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/page/:page(verify|selfcheckout|background|online)",
+      "destination": "/:page",
+      "permanent": true
+    },
+    {
+      "source": "/pages/:page(verify|selfcheckout|background|online).html",
+      "destination": "/:page",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/:page(verify|selfcheckout|background|online)",
+      "destination": "/pages/:page.html"
+    }
+  ]
+}
