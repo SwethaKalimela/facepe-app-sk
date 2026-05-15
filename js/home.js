@@ -3,12 +3,8 @@ import { createIcons, icons } from "lucide";
 import { initLogoMarquee } from "./animation.js";
 import { initUnifiedCommerceStack } from "./unified-commerce.js";
 
-
-
 const STEPS = {
-
   1: {
-
     label: "01",
 
     title: 'Download <span class="text-[#5b21ff]">&amp; Register</span>',
@@ -19,7 +15,7 @@ const STEPS = {
 
       <div class="flex flex-wrap items-center gap-6">
 
-        <a href="contact.html" class="inline-flex items-center gap-3 no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">
+        <a href="/pages/contact.html" class="inline-flex items-center gap-3 no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">
 
           <span class="flex size-11 shrink-0 items-center justify-center rounded-[10px] bg-ink-950">
 
@@ -37,7 +33,7 @@ const STEPS = {
 
         </a>
 
-        <a href="contact.html" class="inline-flex items-center gap-3 no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">
+        <a href="/pages/contact.html" class="inline-flex items-center gap-3 no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">
 
           <span class="flex size-11 shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-ink-950">
 
@@ -57,22 +53,21 @@ const STEPS = {
 
       </div>`,
 
-    image: "https://www.figma.com/api/mcp/asset/ca79870d-4d29-4455-9737-9c07c08d753b",
+    image:
+      "https://www.figma.com/api/mcp/asset/ca79870d-4d29-4455-9737-9c07c08d753b",
 
     imageAlt: "Person downloading the FacePe app on a smartphone",
-
   },
 
   2: {
-
     label: "02",
 
-    title: 'Enroll Your Face &amp; Link <span class="text-[#5b21ff]">Your Card</span>',
+    title:
+      'Enroll Your Face &amp; Link <span class="text-[#5b21ff]">Your Card</span>',
 
     desc: "Scan your face in 30 seconds. Link a secure card; details aren't stored.",
 
     list: [
-
       '<span class="font-semibold text-ink-950">3D face</span> scan via front camera',
 
       '<span class="font-semibold text-ink-950">Card tokenized by Stripe,</span> not stored raw',
@@ -80,17 +75,16 @@ const STEPS = {
       '<span class="font-semibold text-ink-950">Set your default</span> card for payments',
 
       '<span class="font-semibold text-ink-950">One-time setup,</span> <span class="text-[#5b21ff]">never repeat this again</span>',
-
     ],
 
-    image: "https://www.figma.com/api/mcp/asset/e260ead0-39a5-47a3-b5fa-3876661e4a15",
+    image:
+      "https://www.figma.com/api/mcp/asset/e260ead0-39a5-47a3-b5fa-3876661e4a15",
 
-    imageAlt: "User completing a 3D face scan and linking a payment card in FacePe",
-
+    imageAlt:
+      "User completing a 3D face scan and linking a payment card in FacePe",
   },
 
   3: {
-
     label: "03",
 
     title: 'Walk Up. <span class="text-[#5b21ff]">Look. Done.</span>',
@@ -98,7 +92,6 @@ const STEPS = {
     desc: "Walk up to any FacePe terminal, look at the camera, and you're done.",
 
     list: [
-
       "Face scanned in under 1 second",
 
       "Identity verified and payment authorized.",
@@ -106,25 +99,19 @@ const STEPS = {
       "Push notification confirms payment",
 
       "Works in retail, banking, QSR, online.",
-
     ],
 
-    image: "https://www.figma.com/api/mcp/asset/891fc3ad-389a-40b7-b599-6448e20e5522",
+    image:
+      "https://www.figma.com/api/mcp/asset/891fc3ad-389a-40b7-b599-6448e20e5522",
 
     imageAlt: "Customer paying at a FacePe self-checkout kiosk",
-
   },
-
 };
-
-
 
 /** @param {ParentNode} root */
 
 function mountIcons(root = document) {
-
   createIcons({
-
     icons,
 
     attrs: { "stroke-width": 1.5 },
@@ -132,12 +119,8 @@ function mountIcons(root = document) {
     nameAttr: "data-lucide",
 
     root,
-
   });
-
 }
-
-
 
 const STEP_TRANSITION_MS = 300;
 /** @type {Map<string, HTMLImageElement>} */
@@ -285,7 +268,10 @@ function initStepsTabs(root = document) {
     btn.addEventListener("click", () => {
       const step = btn.getAttribute("data-step-tab");
       if (!step || !(step in STEPS)) return;
-      switchStep(/** @type {keyof typeof STEPS} */ (step), /** @type {HTMLButtonElement} */ (btn));
+      switchStep(
+        /** @type {keyof typeof STEPS} */ (step),
+        /** @type {HTMLButtonElement} */ (btn),
+      );
     });
   });
 
@@ -308,7 +294,8 @@ function initStepsPanelLayoutDebug(panel, content, visual) {
     const visualStyle = getComputedStyle(visual);
     const heroWrapStyle = heroWrap ? getComputedStyle(heroWrap) : null;
     const contentClipped =
-      contentRect.bottom > panelRect.bottom + 1 || contentRect.top < panelRect.top - 1;
+      contentRect.bottom > panelRect.bottom + 1 ||
+      contentRect.top < panelRect.top - 1;
     const contentBelowVisual = contentRect.top < visualRect.bottom - 4;
     const panelOverflows = panel.scrollHeight > panel.clientHeight + 1;
 
@@ -348,10 +335,14 @@ function initStepsPanelLayoutDebug(panel, content, visual) {
           contentBelowVisual,
           heroWrapPosition: heroWrapStyle?.position ?? null,
           heroWrapZIndex: heroWrapStyle?.zIndex ?? null,
-          heroImgBottom: heroImg ? Math.round(heroImg.getBoundingClientRect().bottom) : null,
+          heroImgBottom: heroImg
+            ? Math.round(heroImg.getBoundingClientRect().bottom)
+            : null,
           contentTopVsHeroBottom:
             heroImg && contentRect.top < heroImg.getBoundingClientRect().bottom
-              ? Math.round(heroImg.getBoundingClientRect().bottom - contentRect.top)
+              ? Math.round(
+                  heroImg.getBoundingClientRect().bottom - contentRect.top,
+                )
               : 0,
         },
         timestamp: Date.now(),
@@ -361,10 +352,10 @@ function initStepsPanelLayoutDebug(panel, content, visual) {
   };
 
   requestAnimationFrame(measure);
-  window.addEventListener("resize", () => requestAnimationFrame(measure), { passive: true });
+  window.addEventListener("resize", () => requestAnimationFrame(measure), {
+    passive: true,
+  });
 }
-
-
 
 /** @param {ParentNode} root */
 function initDeploymentsAccordion(root = document) {
@@ -383,32 +374,20 @@ function initDeploymentsAccordion(root = document) {
 
 /** @param {ParentNode} root */
 export function initFaqAccordion(root = document) {
-
   const container = root.querySelector("[data-faq-accordion]");
 
   if (!container) return;
 
-
-
   container.querySelectorAll("details").forEach((item) => {
-
     item.addEventListener("toggle", () => {
-
       if (!item.open) return;
 
       container.querySelectorAll("details").forEach((other) => {
-
         if (other !== item) other.open = false;
-
       });
-
     });
-
   });
-
 }
-
-
 
 /** @param {ParentNode} [root] */
 function initDemoImpactEyebrowDebug(root = document) {
@@ -438,7 +417,8 @@ function initDemoImpactEyebrowDebug(root = document) {
         data: {
           pillWidth: Math.round(pillRect.width),
           columnWidth: Math.round(columnRect.width),
-          widthRatio: Math.round((pillRect.width / columnRect.width) * 100) / 100,
+          widthRatio:
+            Math.round((pillRect.width / columnRect.width) * 100) / 100,
           columnAlignItems: columnStyle.alignItems,
           columnDisplay: columnStyle.display,
           pillAlignSelf: pillStyle.alignSelf,
@@ -470,45 +450,50 @@ function initFuturePaymentsCtaButtonDebug(root = document) {
       const textWraps = btn.scrollHeight > lineHeight + 4;
 
       // #region agent log
-      fetch("http://127.0.0.1:7601/ingest/47d748dd-ca9d-40e0-98f5-d0e0e158fae5", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Debug-Session-Id": "22ae1d",
-        },
-        body: JSON.stringify({
-          sessionId: "22ae1d",
-          runId: "pre-fix",
-          hypothesisId: index === 0 ? "H1-H3" : "H1-H2",
-          location: "home.js:initFuturePaymentsCtaButtonDebug",
-          message: "Future payments CTA button layout",
-          data: {
-            index,
-            label,
-            viewportWidth: window.innerWidth,
-            buttonWidth: Math.round(rect.width),
-            buttonHeight: Math.round(rect.height),
-            scrollWidth: btn.scrollWidth,
-            scrollHeight: btn.scrollHeight,
-            clientWidth: btn.clientWidth,
-            whiteSpace: style.whiteSpace,
-            widthComputed: style.width,
-            minWidth: style.minWidth,
-            flexWrap: style.flexWrap,
-            paddingLeft: style.paddingLeft,
-            paddingRight: style.paddingRight,
-            textWraps,
-            overflowsWidth: btn.scrollWidth > btn.clientWidth + 1,
+      fetch(
+        "http://127.0.0.1:7601/ingest/47d748dd-ca9d-40e0-98f5-d0e0e158fae5",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Debug-Session-Id": "22ae1d",
           },
-          timestamp: Date.now(),
-        }),
-      }).catch(() => {});
+          body: JSON.stringify({
+            sessionId: "22ae1d",
+            runId: "pre-fix",
+            hypothesisId: index === 0 ? "H1-H3" : "H1-H2",
+            location: "home.js:initFuturePaymentsCtaButtonDebug",
+            message: "Future payments CTA button layout",
+            data: {
+              index,
+              label,
+              viewportWidth: window.innerWidth,
+              buttonWidth: Math.round(rect.width),
+              buttonHeight: Math.round(rect.height),
+              scrollWidth: btn.scrollWidth,
+              scrollHeight: btn.scrollHeight,
+              clientWidth: btn.clientWidth,
+              whiteSpace: style.whiteSpace,
+              widthComputed: style.width,
+              minWidth: style.minWidth,
+              flexWrap: style.flexWrap,
+              paddingLeft: style.paddingLeft,
+              paddingRight: style.paddingRight,
+              textWraps,
+              overflowsWidth: btn.scrollWidth > btn.clientWidth + 1,
+            },
+            timestamp: Date.now(),
+          }),
+        },
+      ).catch(() => {});
       // #endregion
     });
   };
 
   requestAnimationFrame(measure);
-  window.addEventListener("resize", () => requestAnimationFrame(measure), { passive: true });
+  window.addEventListener("resize", () => requestAnimationFrame(measure), {
+    passive: true,
+  });
 }
 
 /** @param {ParentNode} [root] */
@@ -522,5 +507,3 @@ export function initHomePage(root = document) {
   initDemoImpactEyebrowDebug(root);
   initFuturePaymentsCtaButtonDebug(root);
 }
-
-
