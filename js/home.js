@@ -289,6 +289,79 @@ function initStepsTabs(root = document) {
     });
   });
 
+  initStepsPanelLayoutDebug(panel, content, visual);
+}
+
+/** @param {HTMLElement | null} panel @param {HTMLElement | null} content @param {HTMLElement | null} visual */
+function initStepsPanelLayoutDebug(panel, content, visual) {
+  if (!panel || !content || !visual) return;
+
+  const heroWrap = visual.querySelector(".steps-panel__hero-wrap");
+  const heroImg = visual.querySelector("[data-step-image]");
+
+  const measure = () => {
+    const panelRect = panel.getBoundingClientRect();
+    const contentRect = content.getBoundingClientRect();
+    const visualRect = visual.getBoundingClientRect();
+    const panelStyle = getComputedStyle(panel);
+    const contentStyle = getComputedStyle(content);
+    const visualStyle = getComputedStyle(visual);
+    const heroWrapStyle = heroWrap ? getComputedStyle(heroWrap) : null;
+    const contentClipped =
+      contentRect.bottom > panelRect.bottom + 1 || contentRect.top < panelRect.top - 1;
+    const contentBelowVisual = contentRect.top < visualRect.bottom - 4;
+    const panelOverflows = panel.scrollHeight > panel.clientHeight + 1;
+
+    // #region agent log
+    fetch("http://127.0.0.1:7601/ingest/47d748dd-ca9d-40e0-98f5-d0e0e158fae5", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Debug-Session-Id": "14494e",
+      },
+      body: JSON.stringify({
+        sessionId: "14494e",
+        runId: "pre-fix",
+        hypothesisId: "H1-H5",
+        location: "home.js:initStepsPanelLayoutDebug",
+        message: "Steps panel layout geometry",
+        data: {
+          viewportWidth: window.innerWidth,
+          panelClientH: panel.clientHeight,
+          panelScrollH: panel.scrollHeight,
+          panelMaxHeight: panelStyle.maxHeight,
+          panelOverflow: panelStyle.overflow,
+          panelOverflows,
+          visualOffsetH: visual.offsetHeight,
+          visualClientH: visual.clientHeight,
+          visualPosition: visualStyle.position,
+          contentOffsetH: content.offsetHeight,
+          contentClientH: content.clientHeight,
+          contentScrollH: content.scrollHeight,
+          contentOverflowY: contentStyle.overflowY,
+          contentZIndex: contentStyle.zIndex,
+          contentTop: Math.round(contentRect.top),
+          contentBottom: Math.round(contentRect.bottom),
+          panelBottom: Math.round(panelRect.bottom),
+          visualBottom: Math.round(visualRect.bottom),
+          contentClipped,
+          contentBelowVisual,
+          heroWrapPosition: heroWrapStyle?.position ?? null,
+          heroWrapZIndex: heroWrapStyle?.zIndex ?? null,
+          heroImgBottom: heroImg ? Math.round(heroImg.getBoundingClientRect().bottom) : null,
+          contentTopVsHeroBottom:
+            heroImg && contentRect.top < heroImg.getBoundingClientRect().bottom
+              ? Math.round(heroImg.getBoundingClientRect().bottom - contentRect.top)
+              : 0,
+        },
+        timestamp: Date.now(),
+      }),
+    }).catch(() => {});
+    // #endregion
+  };
+
+  requestAnimationFrame(measure);
+  window.addEventListener("resize", () => requestAnimationFrame(measure), { passive: true });
 }
 
 
