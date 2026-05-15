@@ -86,7 +86,7 @@
 
   const el = document.createElement("script");
   el.type = "module";
-  el.src = new URL(moduleSrc, location.href).href;
+  el.src = moduleSrc;
   el.addEventListener("error", () => {
     // #region agent log
     log("H2", "boot-page.js", "Module script failed to load", { moduleSrc });

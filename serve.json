@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/verify", "destination": "/pages/verify.html" },
-    { "source": "/selfcheckout", "destination": "/pages/selfcheckout.html" },
-    { "source": "/background", "destination": "/pages/background.html" },
-    { "source": "/online", "destination": "/pages/online.html" }
-  ]
-}
