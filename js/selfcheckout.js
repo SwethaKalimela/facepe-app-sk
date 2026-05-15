@@ -8,7 +8,7 @@ const SELFCHECKOUT_FLOW = {
     title: "Download app",
     desc: "Sign up with your name, email, and phone in just 3 minutes and you're all set!",
     showStores: true,
-    image: "https://www.figma.com/api/mcp/asset/00871601-06cb-4472-ab15-c3299c6748e5",
+    image: "../assets/images/figma-mcp/00871601-06cb-4472-ab15-c3299c6748e5.png",
     imageAlt: "FacePe app download and enrollment flow",
   },
   enroll: {
@@ -16,7 +16,7 @@ const SELFCHECKOUT_FLOW = {
     title: "Enroll face & ID",
     desc: "Complete a 3D face scan and link your government ID once. Every future visit skips enrollment entirely.",
     showStores: false,
-    image: "https://www.figma.com/api/mcp/asset/3fc422e5-604d-483d-9c00-caba04f97f35",
+    image: "../assets/images/figma-mcp/3fc422e5-604d-483d-9c00-caba04f97f35.png",
     imageAlt: "Customer enrolling face and ID in the FacePe app",
   },
   shop: {
@@ -24,7 +24,7 @@ const SELFCHECKOUT_FLOW = {
     title: "Shop & scan items",
     desc: "Scan groceries at the self-checkout lane as usual. Your basket builds in real time on the terminal.",
     showStores: false,
-    image: "https://www.figma.com/api/mcp/asset/a4367200-1ecd-47b4-b721-a1d0a2ad8fc0",
+    image: "../assets/images/figma-mcp/a4367200-1ecd-47b4-b721-a1d0a2ad8fc0.png",
     imageAlt: "Shopper scanning items at a FacePe self-checkout lane",
   },
   look: {
@@ -32,7 +32,7 @@ const SELFCHECKOUT_FLOW = {
     title: "Look at the camera",
     desc: "3D liveness and facial match confirm identity in under two seconds. Age-restricted items gate automatically.",
     showStores: false,
-    image: "https://www.figma.com/api/mcp/asset/a4367200-1ecd-47b4-b721-a1d0a2ad8fc0",
+    image: "../assets/images/figma-mcp/a4367200-1ecd-47b4-b721-a1d0a2ad8fc0.png",
     imageAlt: "Customer completing face payment at checkout terminal",
   },
   receipt: {
@@ -40,7 +40,7 @@ const SELFCHECKOUT_FLOW = {
     title: "Receipt & out",
     desc: "Payment clears, digital receipt sends instantly, and an immutable audit record logs the transaction.",
     showStores: false,
-    image: "https://www.figma.com/api/mcp/asset/a4367200-1ecd-47b4-b721-a1d0a2ad8fc0",
+    image: "../assets/images/figma-mcp/a4367200-1ecd-47b4-b721-a1d0a2ad8fc0.png",
     imageAlt: "Checkout complete with receipt sent on FacePe terminal",
   },
 };

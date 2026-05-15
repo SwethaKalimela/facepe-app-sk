@@ -19,7 +19,7 @@ const STEPS = {
 
           <span class="flex size-11 shrink-0 items-center justify-center rounded-[10px] bg-ink-950">
 
-            <img src="https://www.figma.com/api/mcp/asset/dc065a9f-fb7b-4b5a-aa0c-13e77267018c" alt="" width="20" height="20" class="size-5" decoding="async" />
+            <img src="../assets/images/figma-mcp/dc065a9f-fb7b-4b5a-aa0c-13e77267018c.svg" alt="" width="20" height="20" class="size-5" decoding="async" />
 
           </span>
 
@@ -37,7 +37,7 @@ const STEPS = {
 
           <span class="flex size-11 shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-ink-950">
 
-            <img src="https://www.figma.com/api/mcp/asset/9cc4ba50-ca7a-417b-8827-0e26d98f4dac" alt="" width="24" height="25" class="size-6 object-contain" decoding="async" />
+            <img src="../assets/images/figma-mcp/9cc4ba50-ca7a-417b-8827-0e26d98f4dac.png" alt="" width="24" height="25" class="size-6 object-contain" decoding="async" />
 
           </span>
 
