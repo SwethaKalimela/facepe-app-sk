@@ -1,9 +1,9 @@
 <!-- Figma 3139:30142 -->
 <section id="demo-impact-section" class="bg-surface-page py-section-y" aria-labelledby="demo-impact-heading">
   <div class="container-page">
-    <div class="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-10 xl:grid-cols-[1fr_420px] xl:gap-16">
-      <div>
-        <span class="inline-flex items-center gap-2 rounded-full border border-border-subtle bg-surface-0 px-5 py-2 text-eyebrow font-medium uppercase tracking-eyebrow-wide text-brand-600">
+    <div class="grid gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-10 xl:grid-cols-[1fr_420px] xl:gap-16">
+      <div class="flex flex-col">
+        <span data-demo-impact-eyebrow class="inline-flex w-fit items-center gap-2 rounded-full border border-border-subtle bg-surface-0 px-5 py-2 text-eyebrow font-medium uppercase tracking-eyebrow-wide text-brand-600">
           <span class="size-1.5 rounded-full bg-brand-600 shadow-faq-dot" aria-hidden="true"></span>
           Proven impact
         </span>
@@ -16,7 +16,7 @@
             Explore FacePe&rsquo;s payment operations. Demos highlight checkout flows, biometric verification, and instant confirmations.
           </p>
         </div>
-        <div class="relative mt-10 overflow-hidden rounded-card border border-lilac-200 bg-gradient-to-br from-lilac-50 to-surface-0 p-6 shadow-card lg:min-h-[426px]">
+        <div class="relative mt-10 flex min-h-[320px] flex-1 flex-col overflow-hidden rounded-card border border-lilac-200 bg-gradient-to-br from-lilac-50 to-surface-0 p-6 shadow-card lg:min-h-[426px]">
           <div class="absolute left-6 top-6 size-[26px] rounded border border-lilac-200" aria-hidden="true"></div>
           <div class="absolute right-6 top-6 size-[26px] rounded border border-lilac-200" aria-hidden="true"></div>
           <div class="absolute bottom-6 left-6 flex items-center gap-3">
@@ -35,43 +35,48 @@
         </div>
       </div>
 
-      <aside class="lg:pt-14">
+      <aside class="flex flex-col lg:pt-14">
         <p class="text-body-lg text-ink-body">
           See how FacePe transforms payment authentication, and delivers measurable results for both customers and merchants.
         </p>
-        <div class="relative mt-10 h-[520px] w-full overflow-hidden rounded-[36px] border border-[#ddd] bg-surface-0 shadow-card">
-          <div
-            class="pointer-events-none absolute left-1/2 top-[-1px] h-[521px] w-full -translate-x-1/2 opacity-[0.36]"
-            aria-hidden="true"
-          >
-            <div class="absolute inset-0 overflow-hidden">
-              <img
-                src="../assets/images/gradient-grid.png"
-                alt=""
-                width="926"
-                height="521"
-                class="absolute top-0 h-full max-w-none w-[220.53%] left-[-60.15%]"
-                decoding="async"
-              />
-            </div>
+        <div class="relative mt-10 flex min-h-[520px] w-full flex-1 flex-col overflow-hidden rounded-[36px] border border-[#ddd] bg-surface-0 shadow-card lg:min-h-0">
+          <div class="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.36]" aria-hidden="true">
+            <img
+              src="../assets/images/gradient-grid.png"
+              alt=""
+              width="926"
+              height="521"
+              class="absolute left-[-60.15%] top-0 h-full max-w-none w-[220.53%]"
+              decoding="async"
+            />
           </div>
-          <div class="absolute left-1/2 top-1/2 flex w-full max-w-[400px] -translate-x-1/2 -translate-y-1/2 flex-col gap-7 pl-5">
-            <h3 class="text-heading-3 text-ink-950">Performance that speaks for itself.</h3>
-            <dl class="space-y-7">
-              <div class="border-b border-border-subtle pb-7">
-                <dt class="text-[44px] font-bold leading-none text-ink-950">2s</dt>
-                <dd class="mt-2 text-[21px] text-ink-800">Authentication</dd>
-                <p class="mt-1 text-[19.5px] text-ink-700">Frictionless consumer experience</p>
+          <div class="relative z-10 mx-auto flex w-full max-w-[400px] flex-1 flex-col justify-center gap-7 py-[38px] pl-5 pr-4">
+            <h3 class="text-2xl font-bold tracking-[-0.48px] text-ink-950">Performance that speaks for itself.</h3>
+            <dl class="flex flex-col gap-7">
+              <div class="h-[119.5px] border-b border-accordion-toggle-idle">
+                <div class="flex flex-col gap-1">
+                  <div class="flex flex-col gap-2">
+                    <dt class="text-[44px] font-black leading-[44px] tracking-[-1.32px] text-ink-950">2s</dt>
+                    <dd class="text-sm font-bold leading-[21px] text-ink-950">Authentication</dd>
+                  </div>
+                  <p class="text-[13px] leading-[19.5px] text-ink-body">Frictionless consumer experience</p>
+                </div>
               </div>
-              <div class="border-b border-border-subtle pb-7">
-                <dt class="text-[44px] font-bold leading-none text-ink-950">60%</dt>
-                <dd class="mt-2 text-[21px] text-ink-800">Fraud reduction</dd>
-                <p class="mt-1 text-[19.5px] text-ink-700">Stronger merchant protection</p>
+              <div class="h-[119.5px] border-b border-accordion-toggle-idle">
+                <div class="flex flex-col gap-1">
+                  <div class="flex flex-col gap-2">
+                    <dt class="text-[44px] font-black leading-[44px] tracking-[-1.32px] text-ink-950">60%</dt>
+                    <dd class="text-sm font-bold leading-[21px] text-ink-950">Fraud reduction</dd>
+                  </div>
+                  <p class="text-[13px] leading-[19.5px] text-ink-body">Stronger merchant protection</p>
+                </div>
               </div>
-              <div>
-                <dt class="text-[44px] font-bold leading-none text-ink-950">99.8%</dt>
-                <dd class="mt-2 text-[21px] text-ink-800">Verification accuracy</dd>
-                <p class="mt-1 text-[19.5px] text-ink-700">Enterprise-grade precision</p>
+              <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-2">
+                  <dt class="text-[44px] font-black leading-[44px] tracking-[-1.32px] text-ink-950">99.8%</dt>
+                  <dd class="text-sm font-bold leading-[21px] text-ink-950">Verification accuracy</dd>
+                </div>
+                <p class="text-[13px] leading-[19.5px] text-ink-body">Enterprise-grade precision</p>
               </div>
             </dl>
           </div>

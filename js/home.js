@@ -1,6 +1,7 @@
 import { createIcons, icons } from "lucide";
 
 import { initLogoMarquee } from "./animation.js";
+import { initUnifiedCommerceStack } from "./unified-commerce.js";
 
 
 
@@ -56,7 +57,7 @@ const STEPS = {
 
       </div>`,
 
-    image: "https://www.figma.com/api/mcp/asset/39ef6bb0-96f0-4fe5-afbe-1ca760377c72",
+    image: "https://www.figma.com/api/mcp/asset/ca79870d-4d29-4455-9737-9c07c08d753b",
 
     imageAlt: "Person downloading the FacePe app on a smartphone",
 
@@ -82,7 +83,7 @@ const STEPS = {
 
     ],
 
-    image: "https://www.figma.com/api/mcp/asset/50e52fb9-b569-4855-8d49-3726453ebc3a",
+    image: "https://www.figma.com/api/mcp/asset/e260ead0-39a5-47a3-b5fa-3876661e4a15",
 
     imageAlt: "User completing a 3D face scan and linking a payment card in FacePe",
 
@@ -108,7 +109,7 @@ const STEPS = {
 
     ],
 
-    image: "https://www.figma.com/api/mcp/asset/31822284-0a6c-4a9d-9810-4dfb921e3f36",
+    image: "https://www.figma.com/api/mcp/asset/891fc3ad-389a-40b7-b599-6448e20e5522",
 
     imageAlt: "Customer paying at a FacePe self-checkout kiosk",
 
@@ -189,6 +190,7 @@ function initStepsTabs(root = document) {
   if (!tablist) return;
 
   const panel = root.querySelector("[data-steps-panel]");
+  const content = root.querySelector("[data-step-content]");
   const label = root.querySelector("[data-step-label]");
   const title = root.querySelector("[data-step-title]");
   const desc = root.querySelector("[data-step-desc]");
@@ -229,7 +231,7 @@ function initStepsTabs(root = document) {
       if ("listHtml" in data && data.listHtml) {
         list.innerHTML = data.listHtml;
       } else if ("list" in data && data.list) {
-        list.innerHTML = `<ul class="max-w-[334px] list-disc space-y-3 pl-6 text-base leading-normal text-[#545454] marker:text-ink-950">${data.list
+        list.innerHTML = `<ul class="list-disc space-y-3 pl-6 text-base leading-normal text-[#545454] marker:text-ink-950">${data.list
           .map((item) => `<li>${item}</li>`)
           .join("")}</ul>`;
       }
@@ -242,6 +244,11 @@ function initStepsTabs(root = document) {
 
     if (visual instanceof HTMLElement) {
       visual.dataset.stepAlign = step === "1" ? "start" : "end";
+      visual.dataset.stepVisual = step;
+    }
+
+    if (content instanceof HTMLElement) {
+      content.classList.toggle("steps-panel__content--wide", step === "1");
     }
   };
 
@@ -331,19 +338,116 @@ export function initFaqAccordion(root = document) {
 
 
 /** @param {ParentNode} [root] */
+function initDemoImpactEyebrowDebug(root = document) {
+  const pill = root.querySelector("[data-demo-impact-eyebrow]");
+  const column = pill?.parentElement;
+  if (!pill || !column) return;
 
+  const measure = () => {
+    const pillRect = pill.getBoundingClientRect();
+    const columnRect = column.getBoundingClientRect();
+    const pillStyle = getComputedStyle(pill);
+    const columnStyle = getComputedStyle(column);
+
+    // #region agent log
+    fetch("http://127.0.0.1:7601/ingest/47d748dd-ca9d-40e0-98f5-d0e0e158fae5", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Debug-Session-Id": "e4aafc",
+      },
+      body: JSON.stringify({
+        sessionId: "e4aafc",
+        runId: "pre-fix",
+        hypothesisId: "H1-H4",
+        location: "home.js:initDemoImpactEyebrowDebug",
+        message: "Proven impact pill width",
+        data: {
+          pillWidth: Math.round(pillRect.width),
+          columnWidth: Math.round(columnRect.width),
+          widthRatio: Math.round((pillRect.width / columnRect.width) * 100) / 100,
+          columnAlignItems: columnStyle.alignItems,
+          columnDisplay: columnStyle.display,
+          pillAlignSelf: pillStyle.alignSelf,
+          pillDisplay: pillStyle.display,
+          pillWidthComputed: pillStyle.width,
+        },
+        timestamp: Date.now(),
+      }),
+    }).catch(() => {});
+    // #endregion
+  };
+
+  requestAnimationFrame(measure);
+}
+
+/** @param {ParentNode} [root] */
+function initFuturePaymentsCtaButtonDebug(root = document) {
+  const section = root.querySelector("#future-payments-cta-section");
+  if (!section) return;
+
+  const buttons = [...section.querySelectorAll("a[href='contact.html']")];
+
+  const measure = () => {
+    buttons.forEach((btn, index) => {
+      const rect = btn.getBoundingClientRect();
+      const style = getComputedStyle(btn);
+      const label = btn.textContent.replace(/\s+/g, " ").trim();
+      const lineHeight = parseFloat(style.lineHeight) || 19;
+      const textWraps = btn.scrollHeight > lineHeight + 4;
+
+      // #region agent log
+      fetch("http://127.0.0.1:7601/ingest/47d748dd-ca9d-40e0-98f5-d0e0e158fae5", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Debug-Session-Id": "22ae1d",
+        },
+        body: JSON.stringify({
+          sessionId: "22ae1d",
+          runId: "pre-fix",
+          hypothesisId: index === 0 ? "H1-H3" : "H1-H2",
+          location: "home.js:initFuturePaymentsCtaButtonDebug",
+          message: "Future payments CTA button layout",
+          data: {
+            index,
+            label,
+            viewportWidth: window.innerWidth,
+            buttonWidth: Math.round(rect.width),
+            buttonHeight: Math.round(rect.height),
+            scrollWidth: btn.scrollWidth,
+            scrollHeight: btn.scrollHeight,
+            clientWidth: btn.clientWidth,
+            whiteSpace: style.whiteSpace,
+            widthComputed: style.width,
+            minWidth: style.minWidth,
+            flexWrap: style.flexWrap,
+            paddingLeft: style.paddingLeft,
+            paddingRight: style.paddingRight,
+            textWraps,
+            overflowsWidth: btn.scrollWidth > btn.clientWidth + 1,
+          },
+          timestamp: Date.now(),
+        }),
+      }).catch(() => {});
+      // #endregion
+    });
+  };
+
+  requestAnimationFrame(measure);
+  window.addEventListener("resize", () => requestAnimationFrame(measure), { passive: true });
+}
+
+/** @param {ParentNode} [root] */
 export function initHomePage(root = document) {
-
   mountIcons(root);
-
   initLogoMarquee(root);
-
   initStepsTabs(root);
-
   initDeploymentsAccordion(root);
-
+  initUnifiedCommerceStack(root);
   initFaqAccordion(root);
-
+  initDemoImpactEyebrowDebug(root);
+  initFuturePaymentsCtaButtonDebug(root);
 }
 
 
