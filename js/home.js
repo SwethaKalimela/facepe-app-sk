@@ -53,8 +53,7 @@ const STEPS = {
 
       </div>`,
 
-    image:
-      "https://www.figma.com/api/mcp/asset/ca79870d-4d29-4455-9737-9c07c08d753b",
+    image: "../../assets/images/home/step-01.png",
 
     imageAlt: "Person downloading the FacePe app on a smartphone",
   },
@@ -77,8 +76,7 @@ const STEPS = {
       '<span class="font-semibold text-ink-950">One-time setup,</span> <span class="text-[#5b21ff]">never repeat this again</span>',
     ],
 
-    image:
-      "https://www.figma.com/api/mcp/asset/e260ead0-39a5-47a3-b5fa-3876661e4a15",
+    image: "../../assets/images/home/step-02.png",
 
     imageAlt:
       "User completing a 3D face scan and linking a payment card in FacePe",
@@ -101,8 +99,7 @@ const STEPS = {
       "Works in retail, banking, QSR, online.",
     ],
 
-    image:
-      "https://www.figma.com/api/mcp/asset/891fc3ad-389a-40b7-b599-6448e20e5522",
+    image: "../../assets/images/home/step-03.png",
 
     imageAlt: "Customer paying at a FacePe self-checkout kiosk",
   },

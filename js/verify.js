@@ -5,38 +5,47 @@ import { initFaqAccordion } from "./home.js";
 const VERIFY_FLOW = {
   enroll: {
     label: "STEP 01 · ONE-TIME SETUP",
-    title: "Download & Register",
+    titlePre: "Enroll ",
+    titleEm: "Once",
+    titlePost: "",
     desc: "Customer downloads the FacePe app, registers their face via 3D scan, and uploads a government-issued ID for matching. The whole flow takes under 3 minutes and it's done forever.",
-    badges: ["2 Minutes", "No staff Handling No Paper"],
+    badges: ["2 Minutes", "No staff handling, no paper"],
     showStores: true,
-    image: "https://www.figma.com/api/mcp/asset/31822284-0a6c-4a9d-9810-4dfb921e3f36",
+    image: "/assets/images/verify/card-01.jpeg",
     imageAlt: "FacePe app enrollment and face registration",
   },
   arrive: {
-    label: "STEP 02 · AT THE BRANCH",
-    title: "Arrive at Branch",
-    desc: "Customer walks straight to the FacePe kiosk — no queue for ID checks. The terminal recognizes enrolled users instantly.",
+    label: "STEP 02 · IN-BRANCH",
+    titlePre: "Arrive at the ",
+    titleEm: "branch",
+    titlePost: ".",
+    desc: "Walk straight past the queue. Identity is matched the moment the customer steps in front of the FacePe terminal — no documents, no staff handling, no friction.",
     badges: ["No queue", "No physical ID"],
     showStores: false,
-    image: "https://www.figma.com/api/mcp/asset/ff898ccf-3afe-4181-90bf-b82939b86047",
-    imageAlt: "Customer approaching a FacePe verification kiosk at a bank branch",
+    image: "../../assets/images/verify/card-02.jpeg",
+    imageAlt:
+      "Customer approaching a FacePe verification kiosk at a bank branch",
   },
   scan: {
-    label: "STEP 03 · VERIFICATION",
-    title: "Face scan <5 sec",
-    desc: "3D liveness check and AI facial matching confirm identity in under five seconds. The teller is notified automatically.",
+    label: "STEP 03 · BIOMETRIC MATCH",
+    titlePre: "Face scan in ",
+    titleEm: "under 5 seconds",
+    titlePost: ".",
+    desc: "The 3D depth camera captures a liveness-verified scan. Our facial-matching engine compares the scan to the on-device template at 99.8% confidence.",
     badges: ["Under 5 sec", "99% accuracy"],
     showStores: false,
-    image: "https://www.figma.com/api/mcp/asset/264bc9bb-fd9c-4020-866c-d2f4ad87c069",
+    image: "../../assets/images/verify/card-03.jpeg",
     imageAlt: "Biometric face scan at a FacePe terminal",
   },
   verified: {
-    label: "STEP 04 · COMPLETE",
-    title: "Verified",
-    desc: "Identity confirmed. Immutable audit record generated. Service begins immediately with no manual data entry.",
+    label: "STEP 04 · DONE",
+    titlePre: "",
+    titleEm: "Verified",
+    titlePost: "",
+    desc: "An immutable audit record is written. The customer's profile is unlocked at the staff terminal. The whole exchange takes less time than a card swipe.",
     badges: ["Audit trail", "SOC 2 compliant"],
     showStores: false,
-    image: "https://www.figma.com/api/mcp/asset/50e52fb9-b569-4855-8d49-3726453ebc3a",
+    image: "../../assets/images/verify/card-04.jpeg",
     imageAlt: "Verification complete notification on FacePe terminal",
   },
 };
@@ -55,7 +64,8 @@ const VERIFY_DEPLOY = {
       { value: "66%", lines: ["Account takeover", "fraud reduction"] },
       { value: "<1hr", lines: ["Per device", "installation time"] },
     ],
-    image: "https://www.figma.com/api/mcp/asset/ff898ccf-3afe-4181-90bf-b82939b86047",
+    image:
+      "https://www.figma.com/api/mcp/asset/ff898ccf-3afe-4181-90bf-b82939b86047",
     imageAlt: "FacePe Verify deployment at a bank branch",
   },
   atm: {
@@ -71,7 +81,8 @@ const VERIFY_DEPLOY = {
       { value: "99%", lines: ["Verification", "accuracy"] },
       { value: "24/7", lines: ["Self-service", "availability"] },
     ],
-    image: "https://www.figma.com/api/mcp/asset/264bc9bb-fd9c-4020-866c-d2f4ad87c069",
+    image:
+      "https://www.figma.com/api/mcp/asset/264bc9bb-fd9c-4020-866c-d2f4ad87c069",
     imageAlt: "FacePe Verify at an ATM network",
   },
   healthcare: {
@@ -87,7 +98,8 @@ const VERIFY_DEPLOY = {
       { value: "80%", lines: ["Fewer manual", "ID checks"] },
       { value: "99%", lines: ["Match", "accuracy"] },
     ],
-    image: "https://www.figma.com/api/mcp/asset/50e52fb9-b569-4855-8d49-3726453ebc3a",
+    image:
+      "https://www.figma.com/api/mcp/asset/50e52fb9-b569-4855-8d49-3726453ebc3a",
     imageAlt: "FacePe Verify in a healthcare setting",
   },
   enterprise: {
@@ -103,7 +115,8 @@ const VERIFY_DEPLOY = {
       { value: "99%", lines: ["Identity match", "accuracy"] },
       { value: "SOC 2", lines: ["Type II", "compliant"] },
     ],
-    image: "https://www.figma.com/api/mcp/asset/31822284-0a6c-4a9d-9810-4dfb921e3f36",
+    image:
+      "https://www.figma.com/api/mcp/asset/31822284-0a6c-4a9d-9810-4dfb921e3f36",
     imageAlt: "FacePe Verify for enterprise onboarding",
   },
 };
@@ -122,9 +135,9 @@ function mountIcons(root = document) {
 function setTabActive(btn, active) {
   btn.setAttribute("aria-selected", active ? "true" : "false");
   btn.classList.toggle("bg-lilac-100", active);
-  btn.classList.toggle("font-bold", active);
   btn.classList.toggle("text-ink-950", active);
-  btn.classList.toggle("font-medium", !active);
+  btn.classList.toggle("px-4", active);
+  btn.classList.toggle("px-2.5", !active);
   btn.classList.toggle("text-ink-700", !active);
 }
 
@@ -134,7 +147,9 @@ function initVerifyFlowTabs(root = document) {
   if (!container) return;
 
   const label = container.querySelector("[data-verify-flow-label]");
-  const title = container.querySelector("[data-verify-flow-title]");
+  const titlePre = container.querySelector("[data-verify-flow-title-pre]");
+  const titleEm = container.querySelector("[data-verify-flow-title-em]");
+  const titlePost = container.querySelector("[data-verify-flow-title-post]");
   const desc = container.querySelector("[data-verify-flow-desc]");
   const badges = container.querySelector("[data-verify-flow-badges]");
   const stores = container.querySelector("[data-verify-flow-stores]");
@@ -145,7 +160,9 @@ function initVerifyFlowTabs(root = document) {
     const data = VERIFY_FLOW[key];
     if (!data) return;
     if (label) label.textContent = data.label;
-    if (title) title.textContent = data.title;
+    if (titlePre) titlePre.textContent = data.titlePre;
+    if (titleEm) titleEm.textContent = data.titleEm;
+    if (titlePost) titlePost.textContent = data.titlePost;
     if (desc) desc.textContent = data.desc;
     if (image instanceof HTMLImageElement) {
       image.src = data.image;
@@ -153,9 +170,10 @@ function initVerifyFlowTabs(root = document) {
     }
     if (badges) {
       badges.innerHTML = data.badges
-        .map(
-          (b) =>
-            `<span class="rounded-3xl border border-border-neutral/40 bg-white/20 px-3 py-3 text-[13px] font-medium text-ink-950">${b}</span>`,
+        .map((b, i) =>
+          i === 0
+            ? `<span class="inline-flex h-[43px] items-center rounded-[24px] bg-lilac-25 px-3 text-[13px] font-medium text-brand-600">${b}</span>`
+            : `<span class="inline-flex h-[43px] items-center rounded-[24px] border border-border-neutral/60 bg-white/20 px-3 text-[13px] font-medium text-ink-body">${b}</span>`,
         )
         .join("");
     }
