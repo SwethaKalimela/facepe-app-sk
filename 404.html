@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <meta
@@ -21,9 +22,9 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/tailwind-config.js"></script>
-    <link rel="stylesheet" href="styles/globals.css" />
-    <link rel="stylesheet" href="styles/animations.css" />
+    <script src="/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="/styles/globals.css" />
+    <link rel="stylesheet" href="/styles/animations.css" />
     <script type="importmap">
       {
         "imports": {
@@ -36,14 +37,14 @@
     <main id="main">
       <section
         id="notfound-section"
-        class="notfound relative overflow-hidden bg-surface-page pb-10 pt-12 sm:pb-16 sm:pt-16 lg:min-h-[760px] lg:py-0"
+        class="notfound relative overflow-hidden bg-surface-page pb-5 pt-8 sm:pb-8 sm:pt-10 lg:min-h-[856px] lg:py-0"
         aria-labelledby="notfound-heading"
       >
         <div class="notfound__decor pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-          <div class="absolute -left-36 top-[280px] size-[287px] rounded-full bg-brand-600/5 blur-3xl"></div>
-          <div class="absolute -right-20 top-[520px] size-[287px] rounded-full bg-brand-600/5 blur-3xl"></div>
+          <div class="absolute -left-36 top-[354px] size-[287px] rounded-full bg-brand-600/5 blur-3xl"></div>
+          <div class="absolute -right-20 top-[717px] size-[287px] rounded-full bg-brand-600/5 blur-3xl"></div>
           <div
-            class="absolute right-[8%] top-[420px] h-[120px] w-[363px] opacity-5 bg-gradient-to-r from-brand-600 via-lilac-300 to-lilac-200"
+            class="absolute right-[8%] top-[562px] h-[120px] w-[363px] opacity-5 bg-gradient-to-r from-brand-600 via-lilac-300 to-lilac-200"
           ></div>
           <div
             class="absolute -left-44 bottom-0 h-[167px] w-[450px] opacity-5 bg-gradient-to-br from-lilac-300 via-lilac-200 to-brand-600"
@@ -51,32 +52,20 @@
         </div>
 
         <div class="container-page relative">
-          <div class="flex flex-col items-center gap-8 pt-4 sm:gap-10 sm:pt-8 lg:gap-12 lg:pt-[88px]">
-            <div class="relative flex items-center justify-center">
-              <div
-                class="absolute left-1/2 top-1/2 size-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-dashed border-lilac-200 opacity-80 sm:size-[320px] lg:size-[380px]"
-              ></div>
-              <div
-                class="absolute left-1/2 top-1/2 size-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-lilac-200 opacity-50 sm:size-[250px] lg:size-[300px]"
-              ></div>
-              <p
-                class="relative z-10 bg-gradient-primary bg-clip-text font-sans text-[120px] font-black leading-none text-transparent sm:text-[160px] lg:text-[200px]"
-              >
-                404
-              </p>
-            </div>
-
+          <div class="flex flex-col items-center gap-8 pt-4 sm:gap-10 sm:pt-8 lg:gap-12 lg:pt-[72px]">
             <div class="max-w-[641px] text-center">
-              <h1 id="notfound-heading" class="text-display-home-r font-bold text-ink-900">
-                This page doesn&rsquo;t exist.
+              <p class="font-mono text-xs font-bold uppercase tracking-[0.16em] text-brand-600">Error 404</p>
+              <h1 id="notfound-heading" class="mt-3 text-display-home-r font-bold text-ink-900">
+                We can&rsquo;t find that page.<br />
+                Let&rsquo;s get you back.
               </h1>
               <p class="mt-3 text-body-lg-r text-ink-body sm:mt-4">
-                The link may be broken or the page may have moved. Let&rsquo;s get you back to something that does.
+                The link may be broken or the page may have moved. Try one of our products below — or head home.
               </p>
               <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row">
                 <a
                   href="/index.html"
-                  class="inline-flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-gradient-primary px-5 font-sans text-[15px] font-bold text-white transition duration-fast ease-premium hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 sm:w-auto"
+                  class="inline-flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-gradient-primary px-5 font-sans text-[15px] font-bold text-white shadow-primary transition duration-fast ease-premium hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 sm:w-auto"
                 >
                   <i data-lucide="home" class="h-4 w-4 shrink-0" aria-hidden="true"></i>
                   Back to Home
@@ -91,43 +80,113 @@
               </div>
             </div>
 
-            <nav aria-label="Popular pages" class="w-full max-w-[760px] pb-10 sm:pb-16">
-              <p class="text-center font-mono text-xs font-bold uppercase tracking-[0.1em] text-ink-body">Popular pages</p>
-              <ul class="mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            <div class="relative w-full max-w-[685px] pb-10 sm:pb-16 lg:pb-24">
+              <div class="relative mx-auto flex justify-center">
+                <div
+                  class="absolute left-1/2 top-8 size-[300px] -translate-x-1/2 rounded-full border-2 border-dashed border-lilac-200 opacity-80 lg:size-[367px]"
+                ></div>
+                <div
+                  class="absolute left-1/2 top-14 size-[240px] -translate-x-1/2 rounded-full border border-dashed border-lilac-200 opacity-50 lg:size-[300px]"
+                ></div>
+                <img
+                  src="/assets/images/home/hero-image.png"
+                  alt="FacePe identity illustration"
+                  width="438"
+                  height="404"
+                  class="relative z-10 w-full max-w-[438px] object-contain"
+                  decoding="async"
+                />
+              </div>
+
+              <div
+                class="hero-chip hero-chip--verified flex max-w-[9.5rem] items-center gap-2 rounded-xl border border-border-hairline bg-surface-0 px-2 py-2 shadow-chip sm:max-w-none sm:gap-3 sm:rounded-2xl sm:px-3 sm:py-3"
+              >
+                <span
+                  class="flex size-5 shrink-0 items-center justify-center rounded-full bg-[rgba(255,140,140,0.85)] sm:size-[26px]"
+                >
+                  <i data-lucide="x" class="h-3 w-3 text-white sm:h-3.5 sm:w-3.5" aria-hidden="true"></i>
+                </span>
+                <span class="font-sans text-xs font-bold leading-tight text-ink-950 sm:text-[17px]">Page not found</span>
+              </div>
+
+              <div
+                class="hero-chip hero-chip--liveness flex max-w-[8.5rem] items-center gap-2 rounded-xl border border-border-hairline bg-surface-0 px-2 py-2 shadow-card sm:max-w-none sm:gap-3 sm:rounded-2xl sm:px-3 sm:py-3"
+              >
+                <span class="flex size-5 shrink-0 items-center justify-center rounded-full bg-lilac-100 sm:size-[26px]">
+                  <i data-lucide="search" class="h-3 w-3 text-brand-600 sm:h-3.5 sm:w-3.5" aria-hidden="true"></i>
+                </span>
+                <span class="font-sans text-xs font-bold leading-tight text-ink-950 sm:text-[17px]">Try a product</span>
+              </div>
+
+              <div
+                class="hero-chip hero-chip--matched flex max-w-[10.5rem] items-center gap-2 rounded-xl border border-border-hairline bg-surface-0 px-2 py-2 shadow-card sm:max-w-none sm:gap-3 sm:rounded-2xl sm:px-3 sm:py-3"
+              >
+                <span class="flex size-5 shrink-0 items-center justify-center rounded-full bg-ink-950 sm:size-[26px]">
+                  <i data-lucide="compass" class="h-3 w-3 text-white sm:h-3.5 sm:w-3.5" aria-hidden="true"></i>
+                </span>
+                <span class="font-sans text-xs font-bold leading-tight text-ink-950 sm:text-[17px]">Find your way</span>
+              </div>
+            </div>
+
+            <nav aria-label="Popular pages" class="w-full max-w-[860px] pb-10 sm:pb-16">
+              <p class="text-center font-mono text-xs font-bold uppercase tracking-[0.16em] text-ink-body">
+                Popular pages
+              </p>
+              <ul class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
                 <li>
                   <a
                     href="/pages/verify.html"
-                    class="inline-flex h-11 items-center rounded-full border border-border-subtle bg-surface-0 px-4 font-sans text-sm font-medium text-ink-800 no-underline transition-colors duration-fast ease-premium hover:bg-lilac-25 hover:text-ink-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
-                    >FacePe Verify</a
+                    class="group flex h-full flex-col items-center gap-3 rounded-card border border-border-subtle bg-surface-0 px-4 py-5 text-center no-underline transition duration-fast ease-premium hover:-translate-y-0.5 hover:border-brand-600 hover:shadow-card focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
                   >
+                    <span class="flex size-10 items-center justify-center rounded-full bg-lilac-25 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+                      <i data-lucide="shield-check" class="h-5 w-5" aria-hidden="true"></i>
+                    </span>
+                    <span class="font-sans text-sm font-bold text-ink-950">FacePe Verify</span>
+                  </a>
                 </li>
                 <li>
                   <a
                     href="/pages/selfcheckout.html"
-                    class="inline-flex h-11 items-center rounded-full border border-border-subtle bg-surface-0 px-4 font-sans text-sm font-medium text-ink-800 no-underline transition-colors duration-fast ease-premium hover:bg-lilac-25 hover:text-ink-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
-                    >FacePe Self-Checkout</a
+                    class="group flex h-full flex-col items-center gap-3 rounded-card border border-border-subtle bg-surface-0 px-4 py-5 text-center no-underline transition duration-fast ease-premium hover:-translate-y-0.5 hover:border-brand-600 hover:shadow-card focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
                   >
+                    <span class="flex size-10 items-center justify-center rounded-full bg-lilac-25 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+                      <i data-lucide="scan-face" class="h-5 w-5" aria-hidden="true"></i>
+                    </span>
+                    <span class="font-sans text-sm font-bold text-ink-950">Self-Checkout</span>
+                  </a>
                 </li>
                 <li>
                   <a
                     href="/pages/online.html"
-                    class="inline-flex h-11 items-center rounded-full border border-border-subtle bg-surface-0 px-4 font-sans text-sm font-medium text-ink-800 no-underline transition-colors duration-fast ease-premium hover:bg-lilac-25 hover:text-ink-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
-                    >FacePe Online</a
+                    class="group flex h-full flex-col items-center gap-3 rounded-card border border-border-subtle bg-surface-0 px-4 py-5 text-center no-underline transition duration-fast ease-premium hover:-translate-y-0.5 hover:border-brand-600 hover:shadow-card focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
                   >
+                    <span class="flex size-10 items-center justify-center rounded-full bg-lilac-25 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+                      <i data-lucide="globe" class="h-5 w-5" aria-hidden="true"></i>
+                    </span>
+                    <span class="font-sans text-sm font-bold text-ink-950">FacePe Online</span>
+                  </a>
                 </li>
                 <li>
                   <a
                     href="/pages/background.html"
-                    class="inline-flex h-11 items-center rounded-full border border-border-subtle bg-surface-0 px-4 font-sans text-sm font-medium text-ink-800 no-underline transition-colors duration-fast ease-premium hover:bg-lilac-25 hover:text-ink-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
-                    >FacePe AI Avatar</a
+                    class="group flex h-full flex-col items-center gap-3 rounded-card border border-border-subtle bg-surface-0 px-4 py-5 text-center no-underline transition duration-fast ease-premium hover:-translate-y-0.5 hover:border-brand-600 hover:shadow-card focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
                   >
+                    <span class="flex size-10 items-center justify-center rounded-full bg-lilac-25 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+                      <i data-lucide="user-round" class="h-5 w-5" aria-hidden="true"></i>
+                    </span>
+                    <span class="font-sans text-sm font-bold text-ink-950">AI Avatar</span>
+                  </a>
                 </li>
-                <li>
+                <li class="col-span-2 sm:col-span-1">
                   <a
                     href="/pages/contact.html"
-                    class="inline-flex h-11 items-center rounded-full border border-border-subtle bg-surface-0 px-4 font-sans text-sm font-medium text-ink-800 no-underline transition-colors duration-fast ease-premium hover:bg-lilac-25 hover:text-ink-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
-                    >Contact us</a
+                    class="group flex h-full flex-col items-center gap-3 rounded-card border border-border-subtle bg-surface-0 px-4 py-5 text-center no-underline transition duration-fast ease-premium hover:-translate-y-0.5 hover:border-brand-600 hover:shadow-card focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
                   >
+                    <span class="flex size-10 items-center justify-center rounded-full bg-lilac-25 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+                      <i data-lucide="mail" class="h-5 w-5" aria-hidden="true"></i>
+                    </span>
+                    <span class="font-sans text-sm font-bold text-ink-950">Contact us</span>
+                  </a>
                 </li>
               </ul>
             </nav>
@@ -135,6 +194,6 @@
         </div>
       </section>
     </main>
-    <script src="js/boot-page.js" data-module="js/main.js"></script>
+    <script src="/js/boot-page.js" data-module="/js/main.js"></script>
   </body>
 </html>
