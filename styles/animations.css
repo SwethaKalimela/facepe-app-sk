@@ -2359,3 +2359,293 @@
     transition: none;
   }
 }
+
+/* Online hero — Figma 3110:16584 (mobile), 3139:32243 (desktop) */
+/* 1024–1279: stacked (avoids squeezing the visual). 1280+: side-by-side. */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  #hero-online-section .hero-online__layout {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #hero-online-section .hero-online__copy {
+    max-width: none;
+    text-align: center;
+  }
+
+  #hero-online-section .hero-online__actions {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  #hero-online-section .hero-online__layout {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #hero-online-section .hero-online__copy {
+    flex-shrink: 0;
+    max-width: 519px;
+    text-align: left;
+  }
+
+  #hero-online-section .hero-online__actions {
+    justify-content: flex-start;
+  }
+}
+
+.hero-online-visual-wrap {
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+  width: 100%;
+}
+
+@media (min-width: 1280px) {
+  .hero-online-visual-wrap {
+    flex: 1 1 0;
+    justify-content: flex-end;
+    max-width: 694px;
+    min-width: 0;
+  }
+
+  .hero-online-visual {
+    margin-left: auto;
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.hero-online-visual {
+  height: 232px;
+  margin-inline: auto;
+  max-width: 364px;
+  position: relative;
+  width: 100%;
+}
+
+.hero-online-visual__frame {
+  background: rgb(249 246 255 / 0.8);
+  border: 1px dashed #e0d5ff;
+  border-radius: 34.865px 34.865px 7.873px 10.122px;
+  height: 85.3%;
+  left: 20.6%;
+  opacity: 0.8;
+  position: absolute;
+  top: 9.9%;
+  width: 68.7%;
+}
+
+.hero-online-visual__star {
+  pointer-events: none;
+  position: absolute;
+  z-index: 15;
+}
+
+.hero-online-visual__star--top {
+  height: 8px;
+  left: 42.1%;
+  top: 0;
+  width: 8px;
+}
+
+.hero-online-visual__star--bottom {
+  bottom: 6%;
+  height: 8px;
+  right: 6.5%;
+  width: 8px;
+}
+
+.hero-online-visual__media {
+  height: 72.4%;
+  left: 21.2%;
+  position: absolute;
+  top: 27.2%;
+  width: 69.3%;
+  z-index: 10;
+}
+
+.hero-online-visual__image {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  width: 100%;
+}
+
+.hero-online-chip {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 9999px;
+  display: flex;
+  gap: 4.5px;
+  padding: 6px;
+  position: absolute;
+  z-index: 20;
+}
+
+.hero-online-chip__icon {
+  align-items: center;
+  border-radius: 9999px;
+  display: flex;
+  flex-shrink: 0;
+  height: 16px;
+  justify-content: center;
+  width: 16px;
+}
+
+.hero-online-chip__icon--lilac {
+  background: rgb(186 154 253 / 0.2);
+}
+
+.hero-online-chip__icon--green {
+  background: rgb(143 207 146 / 0.2);
+}
+
+.hero-online-chip__icon--red {
+  background: rgb(255 0 4 / 0.2);
+}
+
+.hero-online-chip__icon img {
+  display: block;
+  height: 9px;
+  width: 9px;
+}
+
+.hero-online-chip__icon--lilac img,
+.hero-online-chip__icon--red img {
+  height: 9px;
+  width: 9px;
+}
+
+.hero-online-chip__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5px;
+  min-width: 0;
+}
+
+.hero-online-chip__value {
+  color: #0f1117;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: -0.056px;
+  line-height: 1.2;
+}
+
+.hero-online-chip__label {
+  color: #5e6472;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 6px;
+  font-weight: 500;
+  letter-spacing: 0.45px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.hero-online-chip--era {
+  left: 0;
+  /* max-width: 37%; */
+  top: 62.9%;
+}
+
+.hero-online-chip--fraud {
+  left: 13.5%;
+  /* max-width: 27%; */
+  top: 1.9%;
+}
+
+.hero-online-chip--cart {
+  left: 70.6%;
+  /* max-width: 29.4%; */
+  top: 12.1%;
+}
+
+@media (min-width: 640px) {
+  .hero-online-visual {
+    height: 412px;
+    max-width: 694px;
+  }
+
+  .hero-online-visual__frame {
+    border-radius: 62px 62px 14px 18px;
+    height: 85.4%;
+    left: 22%;
+    top: 9.95%;
+    width: 64.1%;
+  }
+
+  .hero-online-visual__star--top {
+    height: 14px;
+    left: 34.6%;
+    top: 0;
+    width: 14px;
+  }
+
+  .hero-online-visual__star--bottom {
+    bottom: 8%;
+    height: 14px;
+    right: 10.5%;
+    width: 14px;
+  }
+
+  .hero-online-visual__media {
+    height: 72.6%;
+    left: 22.9%;
+    top: 27.2%;
+    width: 64.7%;
+  }
+
+  .hero-online-chip {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .hero-online-chip__icon {
+    height: 28px;
+    width: 28px;
+  }
+
+  .hero-online-chip__icon img {
+    height: 14px;
+    width: 14px;
+  }
+
+  .hero-online-chip__icon--lilac img,
+  .hero-online-chip__icon--red img {
+    height: 16px;
+    width: 16px;
+  }
+
+  .hero-online-chip__value {
+    font-size: 14px;
+    letter-spacing: -0.1px;
+  }
+
+  .hero-online-chip__label {
+    font-size: 12px;
+    letter-spacing: 0.8px;
+  }
+
+  .hero-online-chip--era {
+    left: 0;
+    /* max-width: 34.6%; */
+    top: 64.8%;
+  }
+
+  .hero-online-chip--fraud {
+    left: 15.4%;
+    /* max-width: 25.2%; */
+    top: 1.9%;
+  }
+
+  .hero-online-chip--cart {
+    left: 72.5%;
+    /* max-width: 27.4%; */
+    top: 15.5%;
+  }
+}

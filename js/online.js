@@ -141,9 +141,72 @@ function initOnlineFlowTabs(root = document) {
   });
 }
 
+/** @param {ParentNode} root */
+function debugHeroOnlineLayout(root) {
+  const visual = root.querySelector("[data-hero-online-visual]");
+  if (!(visual instanceof HTMLElement)) return;
+
+  const measure = () => {
+    const section = root.querySelector("#hero-online-section");
+    const row = section?.querySelector(".container-page > div");
+    const wrap = visual.parentElement;
+    const sectionStyle = section instanceof HTMLElement ? getComputedStyle(section) : null;
+    const rowStyle = row instanceof HTMLElement ? getComputedStyle(row) : null;
+    const visualRect = visual.getBoundingClientRect();
+    const wrapRect = wrap instanceof HTMLElement ? wrap.getBoundingClientRect() : null;
+    const chips = [...visual.querySelectorAll("[data-hero-online-chip]")].map((chip) => {
+      const el = /** @type {HTMLElement} */ (chip);
+      const rect = el.getBoundingClientRect();
+      const name = el.getAttribute("data-hero-online-chip") ?? "unknown";
+      const overflowRight = rect.right - visualRect.right;
+      const overflowLeft = visualRect.left - rect.left;
+      return {
+        name,
+        left: Math.round(rect.left - visualRect.left),
+        top: Math.round(rect.top - visualRect.top),
+        width: Math.round(rect.width),
+        overflowRight: Math.round(overflowRight),
+        overflowLeft: Math.round(overflowLeft),
+        clipped: overflowRight > 1 || overflowLeft > 1,
+      };
+    });
+
+    // #region agent log
+    fetch("http://127.0.0.1:7368/ingest/21cae3c4-b5a2-4e23-80d2-495230f9c8f2", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "099c44" },
+      body: JSON.stringify({
+        sessionId: "099c44",
+        runId: "post-fix-1440",
+        hypothesisId: "G",
+        location: "online.js:debugHeroOnlineLayout",
+        message: "hero online layout metrics",
+        data: {
+          viewportW: window.innerWidth,
+          layoutMode: rowStyle?.flexDirection ?? "unknown",
+          sectionOverflow: sectionStyle?.overflow,
+          wrapW: wrapRect ? Math.round(wrapRect.width) : null,
+          visualW: Math.round(visualRect.width),
+          visualH: Math.round(visualRect.height),
+          visualMinWidthOk:
+            (window.innerWidth < 1280 && rowStyle?.flexDirection === "column") ||
+            (window.innerWidth >= 1280 && rowStyle?.flexDirection === "row" && visualRect.width >= 480),
+          chips,
+        },
+        timestamp: Date.now(),
+      }),
+    }).catch(() => {});
+    // #endregion
+  };
+
+  measure();
+  window.addEventListener("resize", measure, { passive: true });
+}
+
 /** @param {ParentNode} [root] */
 export function initOnlinePage(root = document) {
   mountIcons(root);
   initOnlineFlowTabs(root);
   initFaqAccordion(root);
+  debugHeroOnlineLayout(root);
 }
