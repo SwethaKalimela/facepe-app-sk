@@ -117,9 +117,63 @@ function initBackgroundFlowTabs(root = document) {
   });
 }
 
+/** @param {ParentNode} root */
+function debugPricingFeaturedBg(root = document) {
+  const article = root.querySelector("[data-pricing-featured]");
+  const bg = root.querySelector("[data-pricing-featured-bg]");
+  if (!article || !bg) return;
+
+  const articleStyles = getComputedStyle(article);
+  const bgStyles = getComputedStyle(bg);
+  const figmaExpected =
+    "linear-gradient(133.28deg, rgb(91, 33, 255) 22.36%, rgb(223, 208, 255) 110.33%)";
+
+  // #region agent log
+  fetch("http://127.0.0.1:7368/ingest/21cae3c4-b5a2-4e23-80d2-495230f9c8f2", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "79ff8f" },
+    body: JSON.stringify({
+      sessionId: "79ff8f",
+      runId: "pre-fix",
+      hypothesisId: "A",
+      location: "background.js:debugPricingFeaturedBg",
+      message: "Featured pricing article computed background",
+      data: {
+        articleBgImage: articleStyles.backgroundImage,
+        articleBgColor: articleStyles.backgroundColor,
+        hasDarkGradient: articleStyles.backgroundImage.includes("#1c1f2e"),
+      },
+      timestamp: Date.now(),
+    }),
+  }).catch(() => {});
+  // #endregion
+
+  // #region agent log
+  fetch("http://127.0.0.1:7368/ingest/21cae3c4-b5a2-4e23-80d2-495230f9c8f2", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "79ff8f" },
+    body: JSON.stringify({
+      sessionId: "79ff8f",
+      runId: "pre-fix",
+      hypothesisId: "B",
+      location: "background.js:debugPricingFeaturedBg",
+      message: "Featured pricing overlay layer computed background",
+      data: {
+        bgImage: bgStyles.backgroundImage,
+        bgDisplay: bgStyles.display,
+        matchesFigmaPurple: bgStyles.backgroundImage.includes("91, 33, 255"),
+        figmaExpected,
+      },
+      timestamp: Date.now(),
+    }),
+  }).catch(() => {});
+  // #endregion
+}
+
 /** @param {ParentNode} [root] */
 export function initBackgroundPage(root = document) {
   mountIcons(root);
   initBackgroundFlowTabs(root);
   initFaqAccordion(root);
+  debugPricingFeaturedBg(root);
 }

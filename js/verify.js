@@ -65,7 +65,7 @@ const VERIFY_DEPLOY = {
       { value: "<1hr", lines: ["Per device", "installation time"] },
     ],
     image:
-      "../assets/images/figma-mcp/ff898ccf-3afe-4181-90bf-b82939b86047.png",
+      "../assets/images/site/ff898ccf-3afe-4181-90bf-b82939b86047.png",
     imageAlt: "FacePe Verify deployment at a bank branch",
   },
   atm: {
@@ -82,7 +82,7 @@ const VERIFY_DEPLOY = {
       { value: "24/7", lines: ["Self-service", "availability"] },
     ],
     image:
-      "../assets/images/figma-mcp/264bc9bb-fd9c-4020-866c-d2f4ad87c069.png",
+      "../assets/images/site/264bc9bb-fd9c-4020-866c-d2f4ad87c069.png",
     imageAlt: "FacePe Verify at an ATM network",
   },
   healthcare: {
@@ -99,7 +99,7 @@ const VERIFY_DEPLOY = {
       { value: "99%", lines: ["Match", "accuracy"] },
     ],
     image:
-      "../assets/images/figma-mcp/50e52fb9-b569-4855-8d49-3726453ebc3a.png",
+      "../assets/images/site/50e52fb9-b569-4855-8d49-3726453ebc3a.png",
     imageAlt: "FacePe Verify in a healthcare setting",
   },
   enterprise: {
@@ -116,7 +116,7 @@ const VERIFY_DEPLOY = {
       { value: "SOC 2", lines: ["Type II", "compliant"] },
     ],
     image:
-      "../assets/images/figma-mcp/31822284-0a6c-4a9d-9810-4dfb921e3f36.png",
+      "../assets/images/site/31822284-0a6c-4a9d-9810-4dfb921e3f36.png",
     imageAlt: "FacePe Verify for enterprise onboarding",
   },
 };
