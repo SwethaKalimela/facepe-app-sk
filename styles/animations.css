@@ -773,6 +773,55 @@
   }
 }
 
+@media (max-width: 430px) {
+  .bridge-card__visual.bridge-card__visual--phones {
+    padding-bottom: 0;
+  }
+
+  .bridge-card__visual.bridge-card__visual--kiosk {
+    justify-content: flex-end;
+    padding: 0;
+  
+  }
+  .bridge-card__visual.bridge-card__visual--kiosk img{
+    position: relative;
+    left: 15%
+  }
+  .bridge__cta-path {
+    display: inline-flex;
+    width: fit-content;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .bridge-card__visual.bridge-card__visual--kiosk img,
+  .bridge-card__visual.bridge-card__visual--hero .bridge-chip--dark,
+  .bridge-card__visual.bridge-card__visual--hero .bridge-chip--gradient {
+    display: none;
+  }
+  .bridge-card--face .bridge-card__grid--face {
+    display: block;
+  }
+
+  .bridge-card--face, .bridge-card--face .bridge-card__grid--face, .bridge-card--verify {
+    min-height: unset !important;
+  }
+}
+
+@media (min-width: 490px) and (max-width: 830px) {
+  .bridge__row.bridge__row--equal {
+    grid-template-columns: auto auto;
+  }
+  .bridge-card__actions {
+    align-items: center;
+    justify-content: center;
+  }
+  .bridge-checklist--inline {
+    justify-content: center;
+  }
+}
+
+
 @media (min-width: 1024px) {
   .bridge-card,
   .bridge-card--pay .bridge-card__grid,
@@ -817,19 +866,25 @@
   }
 
   .bridge-card__photo {
-    max-height: 54%;
+    /* max-height: 54%; */
+    width: 100%;
     position: absolute;
     top: 9%;
   }
+  .bridge-card__main.bridge-card__main--overlay {
+    margin-top: 2.75rem;
+  }
 
   .bridge-chip--dark {
-    right: 18%;
-    top: 54%;
+    top: 74%;
+    right: 20%;
+    transform: rotate(6deg);
   }
 
   .bridge-chip--gradient {
-    right: 22%;
-    top: 61%;
+    top: 86%;
+    right: 20%;
+    transform: rotate(-6deg);
   }
 }
 
