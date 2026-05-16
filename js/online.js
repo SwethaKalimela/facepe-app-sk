@@ -7,50 +7,62 @@ const ONLINE_IMG = "/assets/images/online";
 const ONLINE_FLOW = {
   pay: {
     step: "STEP 01",
-    title: 'Customer clicks "Pay with FacePe"',
     titleHtml: 'Customer clicks &ldquo;Pay with <span class="text-brand-600">FacePe</span>&rdquo;',
     desc: "At checkout, the FacePe button appears alongside other payment methods — embedded, single-click, no redirect.",
-    showPills: true,
-    image: `${ONLINE_IMG}/flow-step-01-pay-with-facepe.png`,
+    pills: ["Embedded Checkout", "Single-click Trigger"],
+    pillStyle: "gradient",
+    media: "layers",
     imageAlt: "Mobile checkout screen showing Pay with FacePe button",
   },
   face: {
     step: "STEP 02",
-    title: "Face detected",
-    titleHtml: "Face <span class=\"text-brand-600\">detected</span>",
-    desc: "3D liveness runs in the browser or app. A depth map confirms a real person — not a photo or video replay.",
-    showPills: false,
+    titleHtml: 'Face detected in <span class="text-brand-600">real time</span>',
+    desc: "The browser camera captures a 3D depth-mapped scan in milliseconds. No download. No app required.",
+    pills: ["Browser camera", "3D depth-map"],
     image: `${ONLINE_IMG}/flow-step-02-face-detected.png`,
-    imageAlt: "FacePe scanning a customer's face during online checkout",
+    imageAlt: "FacePe 3D face scan during online checkout",
   },
   identity: {
     step: "STEP 03",
-    title: "Identity verified",
-    titleHtml: "Identity <span class=\"text-brand-600\">verified</span>",
-    desc: "Biometric template matched against enrollment. Risk score and device fingerprint checked in parallel.",
-    showPills: false,
+    titleHtml: 'Identity <span class="text-brand-600">authenticated</span>',
+    desc: "Encrypted template matched against the on-device profile at 99.8% confidence no biometric ever leaves the device.",
+    pills: ["On-device template", "99.8% confidence"],
     image: `${ONLINE_IMG}/flow-step-03-identity-verified.png`,
-    imageAlt: "Identity verification confirmed on FacePe checkout",
+    imageAlt: "On-device identity authentication during FacePe checkout",
   },
   payment: {
     step: "STEP 04",
-    title: "Payment authorized",
-    titleHtml: "Payment <span class=\"text-brand-600\">authorized</span>",
-    desc: "Payment token sent to your processor — Stripe, Razorpay, PayPal, or Cashfree. No OTP or CVV step required.",
-    showPills: false,
+    titleHtml: 'Payment confirmed <span class="text-brand-600">instantly</span>',
+    desc: "Charge authorized through your existing processor Stripe, PayPal, Razorpay under one face scan.",
+    pills: ["Sub-2s authorization", "Your processor"],
     image: `${ONLINE_IMG}/flow-step-04-payment-authorized.png`,
-    imageAlt: "Payment authorization completing via FacePe",
+    imageAlt: "Payment confirmed instantly via FacePe",
   },
   receipt: {
     step: "STEP 05",
-    title: "Receipt delivered",
-    titleHtml: "Receipt <span class=\"text-brand-600\">delivered</span>",
-    desc: "Order confirmed, digital receipt sent, and an immutable audit log written for chargeback defense.",
-    showPills: false,
-    image: `${ONLINE_IMG}/flow-step-05-receipt-delivered.jpg`,
-    imageAlt: "Checkout complete with receipt delivered",
+    titleHtml: 'Receipt <span class="text-brand-600">delivered</span>',
+    desc: "Digital receipt and immutable audit record sent to the shopper. Conversion logged to your dashboard.",
+    pills: ["Digital receipt", "Audit record"],
+    image: `${ONLINE_IMG}/flow-step-05-receipt-delivered.png`,
+    imageAlt: "Digital receipt and audit record delivered after checkout",
   },
 };
+
+/** @param {string[]} pillTexts @param {"gradient" | "lilac"} style */
+function renderOnlinePills(pillTexts, style = "lilac") {
+  if (!pillTexts.length) return "";
+  const [first, ...rest] = pillTexts;
+  const firstClass =
+    style === "gradient"
+      ? "inline-flex h-[43px] items-center rounded-[24px] border border-border-neutral/40 bg-gradient-to-br from-brand-600/20 to-lilac-100/10 px-3 text-[13px] font-medium text-brand-600"
+      : "inline-flex h-[43px] items-center rounded-[24px] bg-lilac-100 px-3 text-[13px] font-medium text-brand-600";
+  const restClass =
+    "inline-flex h-[43px] items-center rounded-[24px] border border-border-neutral/40 bg-white/20 px-3 text-[13px] font-medium text-ink-body";
+  return [
+    `<span class="${firstClass}">${first}</span>`,
+    ...rest.map((text) => `<span class="${restClass}">${text}</span>`),
+  ].join("");
+}
 
 /** @param {ParentNode} root */
 function mountIcons(root = document) {
@@ -82,6 +94,8 @@ function initOnlineFlowTabs(root = document) {
   const desc = container.querySelector("[data-online-flow-desc]");
   const pills = container.querySelector("[data-online-flow-pills]");
   const image = container.querySelector("[data-online-flow-image]");
+  const layers = container.querySelector("[data-online-flow-layers]");
+  const phone = container.querySelector("[data-online-flow-phone]");
 
   /** @param {keyof typeof ONLINE_FLOW} key */
   const apply = (key) => {
@@ -90,14 +104,30 @@ function initOnlineFlowTabs(root = document) {
     if (label) label.textContent = data.step;
     if (title) title.innerHTML = data.titleHtml;
     if (desc) desc.textContent = data.desc;
-    if (image instanceof HTMLImageElement) {
-      image.src = data.image;
-      image.alt = data.imageAlt;
+
+    const useLayers = data.media === "layers";
+    if (layers instanceof HTMLElement) {
+      layers.hidden = !useLayers;
     }
-    if (pills instanceof HTMLElement) {
-      pills.hidden = !data.showPills;
+    if (image instanceof HTMLImageElement) {
+      image.hidden = useLayers;
+      if (!useLayers && data.image) {
+        image.src = data.image;
+        image.alt = data.imageAlt;
+      }
+    }
+    if (phone instanceof HTMLImageElement && useLayers) {
+      phone.alt = data.imageAlt;
+    }
+    if (pills instanceof HTMLElement && data.pills?.length) {
+      pills.innerHTML = renderOnlinePills(data.pills, data.pillStyle ?? "lilac");
+      pills.hidden = false;
+    } else if (pills instanceof HTMLElement) {
+      pills.hidden = true;
     }
   };
+
+  apply("pay");
 
   container.querySelectorAll("[data-online-flow-tab]").forEach((btn) => {
     btn.addEventListener("click", () => {
