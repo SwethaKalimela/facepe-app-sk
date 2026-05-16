@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-/** FacePe tokens — Figma Home `3139:29850`, footer `3139:30809`, FAQ `3139:30758`, hero/nav `3139:29852` / `3139:29938` */
 
 export default {
   content: [
@@ -67,7 +66,6 @@ export default {
         "btn-ghost": "46px",
       },
       maxWidth: {
-        /** Figma artboard — 100px gutter each side → 1240px content area */
         page: "1440px",
         content: "1240px",
       },

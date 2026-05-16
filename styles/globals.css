@@ -40,9 +40,8 @@ html {
   }
 }
 
-/* —— Responsive rhythm (Figma 3110:13093 mobile · 3139 desktop) —— */
+/* —— Responsive rhythm —— */
 
-/* Figma 3110:13093 mobile inner y=20 · ~64px between section frames · 3139 desktop y=60 */
 .py-section-r {
   padding-bottom: 2rem;
   padding-top: 2rem;
@@ -55,7 +54,7 @@ html {
   }
 }
 
-/* Social proof + steps share one Figma band — avoid double 60px gap on desktop */
+/* Social proof + steps  */
 .pt-section-social-r {
   padding-top: 2rem;
 }
@@ -248,7 +247,7 @@ html {
   }
 }
 
-/* Hero floating chips — Figma 3110:13135 (clear face center on mobile) */
+/* Hero floating chips  */
 .hero-chip {
   position: absolute;
   z-index: 20;

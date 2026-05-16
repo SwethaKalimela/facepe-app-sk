@@ -1,5 +1,5 @@
 /**
- * Stacked card scroll animation — Figma 3139:30415
+ * Stacked card scroll animation 
  * @param {ParentNode} [root]
  */
 export function initUnifiedCommerceStack(root = document) {

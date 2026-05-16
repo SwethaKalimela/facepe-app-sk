@@ -1,4 +1,4 @@
-/* Steps panel — Figma 3139:29968 / 3139:34070 (527px cards) */
+
 .steps-panel__visual-bg {
   background-color: #f9f6ff;
   pointer-events: none;
@@ -28,7 +28,6 @@
   width: auto;
 }
 
-/* Step 1 — Figma 3139:34095: phone mock left / top (justify-start) */
 [data-step-visual][data-step-align="start"] .steps-panel__hero-wrap {
   align-items: flex-start;
   justify-content: flex-start;
@@ -42,7 +41,6 @@
   width: auto;
 }
 
-/* Step 3 — Figma 3139:34125: 492px kiosk visual */
 [data-step-visual][data-step-visual="3"] .steps-panel__hero-image {
   max-width: min(100%, 492px);
 }
@@ -226,7 +224,7 @@
   }
 }
 
-/* Bridge section — Figma 3139:30202 */
+/* Bridge section  */
 .bridge {
   overflow-x: clip;
 }
@@ -841,7 +839,7 @@
   }
 }
 
-/* Unified commerce — stacked scroll cards (Figma 3139:30415 / 3139:30877) */
+/* Unified commerce  */
 .unified-commerce__header {
   display: flex;
   flex-direction: column;
@@ -1221,7 +1219,7 @@
   }
 }
 
-/* Why FacePe Wins — featured comparison card (Figma 3139:30594) */
+/* Why FacePe Wins  */
 .why-wins-card--featured {
   background: linear-gradient(161.17deg, #5f15ee 14.76%, #dfd0ff 98.32%);
 }
