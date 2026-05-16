@@ -48,7 +48,7 @@ tailwind.config = {
         gutter: "100px",
         "section-y": "60px",
         "section-y-footer": "74px",
-        "nav-h": "100px",
+        "nav-h": "80px",
         "faq-split": "80px",
         "footer-columns": "170px",
         15: "15px",
