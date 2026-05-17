@@ -1,4 +1,3 @@
-
 .steps-panel__visual-bg {
   background-color: #f9f6ff;
   pointer-events: none;
@@ -470,7 +469,9 @@
   justify-content: center;
   padding: 0.75rem 1.25rem;
   text-decoration: none;
-  transition: filter 150ms ease, background 150ms ease;
+  transition:
+    filter 150ms ease,
+    background 150ms ease;
   white-space: nowrap;
 }
 
@@ -781,11 +782,10 @@
   .bridge-card__visual.bridge-card__visual--kiosk {
     justify-content: flex-end;
     padding: 0;
-  
   }
-  .bridge-card__visual.bridge-card__visual--kiosk img{
+  .bridge-card__visual.bridge-card__visual--kiosk img {
     position: relative;
-    left: 15%
+    left: 15%;
   }
   .bridge__cta-path {
     display: inline-flex;
@@ -803,7 +803,9 @@
     display: block;
   }
 
-  .bridge-card--face, .bridge-card--face .bridge-card__grid--face, .bridge-card--verify {
+  .bridge-card--face,
+  .bridge-card--face .bridge-card__grid--face,
+  .bridge-card--verify {
     min-height: unset !important;
   }
 }
@@ -820,7 +822,6 @@
     justify-content: center;
   }
 }
-
 
 @media (min-width: 1024px) {
   .bridge-card,
@@ -1136,7 +1137,10 @@
   line-height: 1.45;
   padding: 0.75rem 1.3125rem;
   text-decoration: none;
-  transition: background 150ms ease, color 150ms ease, box-shadow 150ms ease;
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    box-shadow 150ms ease;
   white-space: nowrap;
 }
 
@@ -1622,7 +1626,9 @@
 
 .about-timeline__card-inner {
   border-radius: 20px;
-  transition: background 0.2s ease, padding 0.2s ease;
+  transition:
+    background 0.2s ease,
+    padding 0.2s ease;
 }
 
 .about-timeline__card--active .about-timeline__card-inner {
@@ -2267,7 +2273,9 @@
   text-transform: capitalize;
   color: #2d2d2d;
   text-decoration: none;
-  transition: border-color 150ms ease, background-color 150ms ease;
+  transition:
+    border-color 150ms ease,
+    background-color 150ms ease;
 }
 
 .about-careers__role:hover {
@@ -2290,7 +2298,9 @@
   justify-content: center;
   border-radius: 58px;
   background: linear-gradient(90deg, #9c6cfe 0%, #5000ea 98%);
-  box-shadow: 0 10px 7.5px rgba(0, 0, 0, 0.1), 0 4px 3px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 10px 7.5px rgba(0, 0, 0, 0.1),
+    0 4px 3px rgba(0, 0, 0, 0.1);
   font-size: 14px;
   font-weight: 700;
   color: #fff;
@@ -2944,7 +2954,12 @@
 .hero-home__rings {
   clip-path: inset(0 0 24% 0);
   inset: 0;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 72%,
+    transparent 100%
+  );
   mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
   overflow: hidden;
   pointer-events: none;
@@ -2954,7 +2969,7 @@
 
 .hero-home__ring {
   border-radius: 50%;
-  bottom: 44%;
+  bottom: 58%;
   left: 50%;
   position: absolute;
   transform: translate(-50%, 50%);
@@ -3019,6 +3034,13 @@
   transform: scale(1.05);
   transform-origin: bottom center;
   width: 100%;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 82%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(to bottom, #000 0%, #000 82%, transparent 100%);
 }
 
 .hero-home__scan {
@@ -3153,7 +3175,12 @@
 
   .hero-home__rings {
     clip-path: inset(0 0 22% 0);
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 74%, transparent 100%);
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 74%,
+      transparent 100%
+    );
     mask-image: linear-gradient(to bottom, #000 0%, #000 74%, transparent 100%);
   }
 }
@@ -3210,6 +3237,63 @@
     left: 0;
     max-width: 11rem;
     white-space: normal;
+  }
+}
+
+/* —— Smaller dashed rings on mobile so they don't crowd the portrait —— */
+@media (max-width: 639px) {
+  .hero-home__ring {
+    bottom: 52%;
+  }
+
+  .hero-home__ring--outer {
+    max-height: 280px;
+    max-width: 280px;
+  }
+
+  .hero-home__ring--mid {
+    max-height: 220px;
+    max-width: 220px;
+  }
+
+  .hero-home__ring--inner {
+    max-height: 170px;
+    max-width: 170px;
+  }
+
+  .hero-home__ring--glow {
+    max-height: 250px;
+    max-width: 250px;
+  }
+}
+
+/* —— Lift the portrait up on small phones so the bottom fade clears the chip —— */
+@media (max-width: 430px) {
+  .hero-home__portrait-wrap {
+    bottom: 8%;
+  }
+
+  .hero-home__portrait {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(to bottom, #000 0%, #000 92%, transparent 100%);
+  }
+}
+
+/* —— Quieter background grid lines below desktop —— */
+@media (max-width: 1023px) {
+  .hero-home__grid-line {
+    stroke-opacity: 0.1;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .hero-home__grid-line {
+    stroke-opacity: 0.16;
   }
 }
 
