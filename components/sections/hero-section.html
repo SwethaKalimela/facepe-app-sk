@@ -1,31 +1,95 @@
 <script>if(location.pathname.toLowerCase().includes('/components/'))location.replace('/404.html')</script>
 <section id="hero-section"
-  class="hero-section relative overflow-hidden bg-surface-page pb-5 pt-8 sm:pb-8 sm:pt-10 lg:min-h-[856px] lg:py-0"
+  class="hero-home relative overflow-x-clip bg-surface-page pb-12 pt-8 sm:pb-16 sm:pt-10 lg:min-h-[856px] lg:pb-20 lg:pt-[72px]"
   aria-labelledby="hero-heading">
-  <div class="hero-section__decor pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-    <div class="absolute -left-36 top-[354px] size-[287px] rounded-full bg-brand-600/5 blur-3xl"></div>
-    <div class="absolute -right-20 top-[717px] size-[287px] rounded-full bg-brand-600/5 blur-3xl"></div>
-    <div
-      class="absolute right-[8%] top-[562px] h-[120px] w-[363px] opacity-5 bg-gradient-to-r from-brand-600 via-lilac-300 to-lilac-200">
-    </div>
-    <div
-      class="absolute -left-44 bottom-0 h-[167px] w-[450px] opacity-5 bg-gradient-to-br from-lilac-300 via-lilac-200 to-brand-600">
-    </div>
+
+  <div class="hero-home__decor pointer-events-none absolute inset-0" aria-hidden="true">
+    <svg class="hero-home__grid" viewBox="0 0 1440 856" preserveAspectRatio="xMidYMid slice" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="hero-home-line-h" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#5507EB" />
+          <stop offset="1" stop-color="#666666" stop-opacity="0.28" />
+        </linearGradient>
+        <linearGradient id="hero-home-line-v" x1="0" y1="0" x2="0" y2="1" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#5507EB" />
+          <stop offset="1" stop-color="#666666" stop-opacity="0.28" />
+        </linearGradient>
+        <linearGradient id="hero-home-line-d" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#5507EB" />
+          <stop offset="1" stop-color="#666666" stop-opacity="0.28" />
+        </linearGradient>
+        <linearGradient id="hero-home-glow-l" x1="0" y1="0" x2="1" y2="1" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#C8AEFF" />
+          <stop offset="50%" stop-color="#9D6EFF" />
+          <stop offset="100%" stop-color="#5B21FF" />
+        </linearGradient>
+        <linearGradient id="hero-home-glow-r" x1="1" y1="0" x2="0" y2="1" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#5B21FF" />
+          <stop offset="50%" stop-color="#C8AEFF" />
+          <stop offset="100%" stop-color="#9D6EFF" />
+        </linearGradient>
+      </defs>
+      <line class="hero-home__grid-line" x1="0" y1="562" x2="1440" y2="562" stroke="url(#hero-home-line-h)"
+        stroke-opacity="0.3" />
+      <line class="hero-home__grid-line hero-home__grid-line--delay-1" x1="0" y1="799" x2="1440" y2="799"
+        stroke="url(#hero-home-line-h)" stroke-opacity="0.3" />
+      <line class="hero-home__grid-line hero-home__grid-line--delay-2 hero-home__grid-line--sm" x1="0" y1="947"
+        x2="1440" y2="947" stroke="url(#hero-home-line-h)" stroke-opacity="0.3" />
+      <line class="hero-home__grid-line hero-home__grid-line--delay-3" x1="275" y1="408" x2="275" y2="980"
+        stroke="url(#hero-home-line-v)" stroke-opacity="0.3" />
+      <line class="hero-home__grid-line hero-home__grid-line--delay-4 hero-home__grid-line--lg" x1="1145" y1="399"
+        x2="1145" y2="1013" stroke="url(#hero-home-line-v)" stroke-opacity="0.3" />
+      <line class="hero-home__grid-line hero-home__grid-line--delay-5 hero-home__grid-line--md" x1="1358" y1="363"
+        x2="137" y2="1120" stroke="url(#hero-home-line-d)" stroke-opacity="0.28" />
+      <rect class="hero-home__glow-rect" x="-175" y="697" width="450" height="167" fill="url(#hero-home-glow-l)"
+        opacity="0.05" />
+      <rect class="hero-home__glow-rect hero-home__glow-rect--delay" x="1146" y="562" width="363" height="120"
+        fill="url(#hero-home-glow-r)" opacity="0.05" />
+    </svg>
+
+    <img src="/assets/images/background/hero-decor-blob.png" alt="" width="287" height="287"
+      class="hero-home__blob hero-home__blob--left hidden sm:block" decoding="async" />
+    <img src="/assets/images/background/hero-decor-blob.png" alt="" width="287" height="287"
+      class="hero-home__blob hero-home__blob--right hidden sm:block" decoding="async" />
+
+    <img src="/assets/images/background/hero-star-purple.svg" alt="" width="14" height="15"
+      class="hero-home__star hero-home__star--a" decoding="async" />
+    <img src="/assets/images/background/hero-star-purple.svg" alt="" width="14" height="15"
+      class="hero-home__star hero-home__star--b hidden sm:block" decoding="async" />
+    <img src="/assets/images/background/hero-star-blue.svg" alt="" width="14" height="15"
+      class="hero-home__star hero-home__star--c hidden md:block" decoding="async" />
+    <img src="/assets/images/background/hero-star-blue.svg" alt="" width="14" height="15"
+      class="hero-home__star hero-home__star--d hidden lg:block" decoding="async" />
+
+    <span class="hero-home__cross hero-home__cross--a" aria-hidden="true"></span>
+    <span class="hero-home__cross hero-home__cross--b hidden sm:block" aria-hidden="true"></span>
+    <span class="hero-home__cross hero-home__cross--c hidden md:block" aria-hidden="true"></span>
+
+    <span class="hero-home__dot hero-home__dot--1 hidden sm:block" aria-hidden="true"></span>
+    <span class="hero-home__dot hero-home__dot--2 hidden sm:block" aria-hidden="true"></span>
+    <span class="hero-home__dot hero-home__dot--3 hidden md:block" aria-hidden="true"></span>
+    <span class="hero-home__dot hero-home__dot--4 hidden md:block" aria-hidden="true"></span>
+    <span class="hero-home__dot hero-home__dot--5 hidden lg:block" aria-hidden="true"></span>
+    <span class="hero-home__dot hero-home__dot--6 hidden lg:block" aria-hidden="true"></span>
   </div>
 
   <div class="container-page relative">
-    <div class="flex flex-col items-center gap-8 pt-4 sm:gap-10 sm:pt-8 lg:gap-12 lg:pt-[72px]">
-      <div class="max-w-[641px] text-center">
-        <h1 id="hero-heading" class="text-display-home-r font-bold text-ink-900">
+    <div class="hero-home__inner flex flex-col items-center gap-8 sm:gap-10 lg:gap-12">
+      <div class="hero-home__copy max-w-[641px] text-center">
+        <h1 id="hero-heading"
+          class="hero-home__title text-display-home-r font-bold text-ink-900 motion-safe:animate-[hero-home-fade-up_0.7s_cubic-bezier(0.22,1,0.36,1)_both]">
           Pay with Your Identity.<br />
           Not Your Wallet.
         </h1>
-        <p class="mt-3 text-body-lg-r text-ink-body sm:mt-4">
+        <p
+          class="mt-3 text-body-lg-r text-ink-body sm:mt-4 motion-safe:animate-[hero-home-fade-up_0.7s_cubic-bezier(0.22,1,0.36,1)_0.08s_both]">
           FacePe verifies the person, not just the card. Secure biometric payments and fraud-resistant infrastructure.
         </p>
-        <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row">
+        <div
+          class="mt-6 flex flex-col items-center justify-center gap-3 sm:mt-8 sm:flex-row motion-safe:animate-[hero-home-fade-up_0.7s_cubic-bezier(0.22,1,0.36,1)_0.16s_both]">
           <a href="/pages/contact.html"
-            class="inline-flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-gradient-primary px-5 font-sans text-[15px] font-bold text-white transition duration-fast ease-premium hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 sm:w-auto">
+            class="inline-flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-gradient-primary px-5 font-sans text-[15px] font-bold text-white shadow-primary transition duration-fast ease-premium hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 sm:w-auto">
             <i data-lucide="arrow-down-to-line" class="h-4 w-4 shrink-0" aria-hidden="true"></i>
             Download the App
           </a>
@@ -37,43 +101,43 @@
         </div>
       </div>
 
-      <div class="relative w-full max-w-[685px] pb-10 sm:pb-16 lg:pb-24">
-        <div class="relative mx-auto flex justify-center">
-          <div
-            class="absolute left-1/2 top-8 size-[300px] -translate-x-1/2 rounded-full border-2 border-dashed border-lilac-200 opacity-80 lg:size-[367px]">
+      <div
+        class="hero-home__visual-wrap w-full max-w-[685px] motion-safe:animate-[hero-home-fade-up_0.85s_cubic-bezier(0.22,1,0.36,1)_0.2s_both]">
+        <div class="hero-home__visual" role="group" aria-label="Biometric payment illustration">
+          <div class="hero-home__rings" aria-hidden="true">
+            <span class="hero-home__ring hero-home__ring--outer"></span>
+            <span class="hero-home__ring hero-home__ring--mid"></span>
+            <span class="hero-home__ring hero-home__ring--inner"></span>
+            <span class="hero-home__ring hero-home__ring--glow"></span>
           </div>
-          <div
-            class="absolute left-1/2 top-14 size-[240px] -translate-x-1/2 rounded-full border border-dashed border-lilac-200 opacity-50 lg:size-[300px]">
+
+          <div class="hero-home__portrait-wrap">
+            <span class="hero-home__scan" aria-hidden="true"></span>
+            <img src="/assets/images/home/hero-image.png"
+              alt="Person using FacePe biometric face verification for secure payment"
+              width="438" height="438" class="hero-home__portrait" decoding="async" fetchpriority="high" />
           </div>
-          <img src="../../assets/images/home/hero-image.png"
-            alt="Person completing a FacePe biometric face scan for payment" width="438" height="404"
-            class="relative z-10 w-full max-w-[438px] object-contain" decoding="async" />
-        </div>
 
-        <div
-          class="hero-chip hero-chip--verified flex max-w-[9.5rem] items-center gap-2 rounded-xl border border-border-hairline bg-surface-0 px-2 py-2 shadow-chip sm:max-w-none sm:gap-3 sm:rounded-2xl sm:px-3 sm:py-3">
-          <span
-            class="flex size-5 shrink-0 items-center justify-center rounded-full bg-[rgba(143,207,146,0.8)] sm:size-[26px]">
-            <i data-lucide="check" class="h-3 w-3 text-white sm:h-3.5 sm:w-3.5" aria-hidden="true"></i>
-          </span>
-          <span class="font-sans text-xs font-bold leading-tight text-ink-950 sm:text-[17px]">Verified in 0.3s</span>
-        </div>
+          <div class="hero-home-chip hero-home-chip--verified">
+            <span class="hero-home-chip__icon hero-home-chip__icon--green" aria-hidden="true">
+              <i data-lucide="badge-check" class="size-3.5 sm:size-4"></i>
+            </span>
+            <span class="hero-home-chip__label">Verified in 0.3s</span>
+          </div>
 
-        <div
-          class="hero-chip hero-chip--liveness flex max-w-[8.5rem] items-center gap-2 rounded-xl border border-border-hairline bg-surface-0 px-2 py-2 shadow-card sm:max-w-none sm:gap-3 sm:rounded-2xl sm:px-3 sm:py-3">
-          <span class="flex size-5 shrink-0 items-center justify-center rounded-full bg-lilac-100 sm:size-[26px]">
-            <i data-lucide="shield" class="h-3 w-3 text-brand-600 sm:h-3.5 sm:w-3.5" aria-hidden="true"></i>
-          </span>
-          <span class="font-sans text-xs font-bold leading-tight text-ink-950 sm:text-[17px]">3D Liveness</span>
-        </div>
+          <div class="hero-home-chip hero-home-chip--matched">
+            <span class="hero-home-chip__icon hero-home-chip__icon--dark" aria-hidden="true">
+              <i data-lucide="zap" class="size-3.5 sm:size-4"></i>
+            </span>
+            <span class="hero-home-chip__label">Face matched · $420 sent</span>
+          </div>
 
-        <div
-          class="hero-chip hero-chip--matched flex max-w-[10.5rem] items-center gap-2 rounded-xl border border-border-hairline bg-surface-0 px-2 py-2 shadow-card sm:max-w-none sm:gap-3 sm:rounded-2xl sm:px-3 sm:py-3">
-          <span class="flex size-5 shrink-0 items-center justify-center rounded-full bg-ink-950 sm:size-[26px]">
-            <i data-lucide="zap" class="h-3 w-3 text-white sm:h-3.5 sm:w-3.5" aria-hidden="true"></i>
-          </span>
-          <span class="font-sans text-xs font-bold leading-tight text-ink-950 sm:text-[17px]">Face matched · $420
-            sent</span>
+          <div class="hero-home-chip hero-home-chip--liveness">
+            <span class="hero-home-chip__icon hero-home-chip__icon--lilac" aria-hidden="true">
+              <i data-lucide="shield-check" class="size-3.5 sm:size-4"></i>
+            </span>
+            <span class="hero-home-chip__label">3D Liveness</span>
+          </div>
         </div>
       </div>
     </div>
