@@ -7,9 +7,9 @@ const STEPS = {
   1: {
     label: "01",
 
-    title: 'Download <span class="text-[#5b21ff]">&amp; Register</span>',
+    title: 'Download <span class="text-[#5b21ff]">and Sign Up</span>',
 
-    desc: "Download FacePe, create your account with name, email & phone. Takes under a minute.",
+    desc: "Download the app and enter a few details to create your account in seconds.",
 
     listHtml: `
 
@@ -62,18 +62,18 @@ const STEPS = {
     label: "02",
 
     title:
-      'Enroll Your Face &amp; Link <span class="text-[#5b21ff]">Your Card</span>',
+      'Enroll your face and Link <span class="text-[#5b21ff]">Your Card</span>',
 
-    desc: "Scan your face in 30 seconds. Link a secure card; details aren't stored.",
+    desc: "Enroll your face with a quick scan and securely connect your card—all in under 30 seconds.",
 
     list: [
-      '<span class="font-semibold text-ink-950">3D face</span> scan via front camera',
+      '<span class="font-semibold text-ink-950">Secure 3D facial verification</span> using your front camera',
 
-      '<span class="font-semibold text-ink-950">Card tokenized by Stripe,</span> not stored raw',
+      '<span class="font-semibold text-ink-950">Securely link your card with Stripe-powered</span> encryption',
 
-      '<span class="font-semibold text-ink-950">Set your default</span> card for payments',
+      '<span class="font-semibold text-ink-950">Add your preferred card</span> for seamless payments',
 
-      '<span class="font-semibold text-ink-950">One-time setup,</span> <span class="text-[#5b21ff]">never repeat this again</span>',
+      '<span class="font-semibold text-ink-950">Complete setup once</span> <span class="text-[#5b21ff]"> and pay seamlessly every time</span>',
     ],
 
     image: "../../assets/images/home/step-02.png",
@@ -87,16 +87,16 @@ const STEPS = {
 
     title: 'Walk Up. <span class="text-[#5b21ff]">Look. Done.</span>',
 
-    desc: "Walk up to any FacePe terminal, look at the camera, and you're done.",
+    desc: "Walk up to any FacePe kiosk or ATM and complete your purchase with just a quick glance.",
 
     list: [
-      "Face scanned in under 1 second",
+      "Face scan completed in under 1 second",
 
-      "Identity verified and payment authorized.",
+      "Instantly verify your identity and authorize payment",
 
-      "Push notification confirms payment",
+      "Confirm transactions securely through push notifications",
 
-      "Works in retail, banking, QSR, online.",
+      "Works across retail, banking, QSR, and online platforms",
     ],
 
     image: "../../assets/images/home/step-03.png",
