@@ -64,7 +64,7 @@ const VERIFY_DEPLOY = {
       { value: "66%", lines: ["Account takeover", "fraud reduction"] },
       { value: "<1hr", lines: ["Per device", "installation time"] },
     ],
-    image: "../assets/images/site/ff898ccf-3afe-4181-90bf-b82939b86047.png",
+    image: "../../assets/images/verify/deployments/deployments-01.png",
     imageAlt: "FacePe Verify deployment at a bank branch",
   },
   atm: {
@@ -80,7 +80,7 @@ const VERIFY_DEPLOY = {
       { value: "99%", lines: ["Verification", "accuracy"] },
       { value: "24/7", lines: ["Self-service", "availability"] },
     ],
-    image: "../assets/images/site/264bc9bb-fd9c-4020-866c-d2f4ad87c069.png",
+    image: "../../assets/images/verify/deployments/deployments-02.png",
     imageAlt: "FacePe Verify at an ATM network",
   },
   healthcare: {
@@ -96,7 +96,7 @@ const VERIFY_DEPLOY = {
       { value: "80%", lines: ["Fewer manual", "ID checks"] },
       { value: "99%", lines: ["Match", "accuracy"] },
     ],
-    image: "../assets/images/site/50e52fb9-b569-4855-8d49-3726453ebc3a.png",
+    image: "../../assets/images/verify/deployments/deployments-03.png",
     imageAlt: "FacePe Verify in a healthcare setting",
   },
   enterprise: {
@@ -112,7 +112,7 @@ const VERIFY_DEPLOY = {
       { value: "99%", lines: ["Identity match", "accuracy"] },
       { value: "SOC 2", lines: ["Type II", "compliant"] },
     ],
-    image: "../assets/images/site/31822284-0a6c-4a9d-9810-4dfb921e3f36.png",
+    image: "../../assets/images/verify/deployments/deployments-04.png",
     imageAlt: "FacePe Verify for enterprise onboarding",
   },
 };
@@ -215,7 +215,7 @@ function initVerifyDeployTabs(root = document) {
       benefits.innerHTML = data.benefits
         .map(
           (b) =>
-            `<li class="flex items-center gap-3 rounded-xl border border-border-subtle bg-surface-0 px-5 py-3.5 text-sm text-ink-950">
+            `<li class="flex items-center gap-3 rounded-xl border border-border-subtle bg-lilac-25 px-5 py-3.5 text-sm text-ink-950">
               <i data-lucide="check" class="h-4 w-4 shrink-0 text-brand-600" aria-hidden="true"></i>
               ${b}
             </li>`,
