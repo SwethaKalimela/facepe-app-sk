@@ -7,9 +7,10 @@ const ONLINE_IMG = "/assets/images/online";
 const ONLINE_FLOW = {
   pay: {
     step: "STEP 01",
-    titleHtml: 'Customer clicks &ldquo;Pay with <span class="text-brand-600">FacePe</span>&rdquo;',
-    desc: "At checkout, the FacePe button appears alongside other payment methods — embedded, single-click, no redirect.",
-    pills: ["Embedded Checkout", "Single-click Trigger"],
+    titleHtml:
+      'Customer selects &ldquo;Pay with <span class="text-brand-600">FacePe</span>&rdquo;',
+    desc: "FacePe integrates directly into the checkout flow — no redirects, no interruptions.",
+    pills: ["Embedded Checkout", "One-click checkout"],
     pillStyle: "gradient",
     media: "layers",
     imageAlt: "Mobile checkout screen showing Pay with FacePe button",
@@ -17,31 +18,32 @@ const ONLINE_FLOW = {
   face: {
     step: "STEP 02",
     titleHtml: 'Face detected in <span class="text-brand-600">real time</span>',
-    desc: "The browser camera captures a 3D depth-mapped scan in milliseconds. No download. No app required.",
-    pills: ["Browser camera", "3D depth-map"],
+    desc: "The browser camera captures a 3D depth-mapped scan in milliseconds — no downloads or apps required.",
+    pills: ["Browser camera", "3D depth scan"],
     image: `${ONLINE_IMG}/flow-step-02-face-detected.png`,
     imageAlt: "FacePe 3D face scan during online checkout",
   },
   identity: {
     step: "STEP 03",
-    titleHtml: 'Identity <span class="text-brand-600">authenticated</span>',
-    desc: "Encrypted template matched against the on-device profile at 99.8% confidence no biometric ever leaves the device.",
-    pills: ["On-device template", "99.8% confidence"],
+    titleHtml: 'Identity <span class="text-brand-600">verified</span>',
+    desc: "Encrypted biometric matching happens directly on-device with 99.8% accuracy — no biometric data ever leaves the device.",
+    pills: ["On-device template", "99.8% accuracy"],
     image: `${ONLINE_IMG}/flow-step-03-identity-verified.png`,
     imageAlt: "On-device identity authentication during FacePe checkout",
   },
   payment: {
     step: "STEP 04",
-    titleHtml: 'Payment confirmed <span class="text-brand-600">instantly</span>',
-    desc: "Charge authorized through your existing processor Stripe, PayPal, Razorpay under one face scan.",
-    pills: ["Sub-2s authorization", "Your processor"],
+    titleHtml:
+      '<span class="text-brand-600">Instant payment</span> confirmation',
+    desc: "Payments are authorized through your existing processor — including Stripe, PayPal, and Razorpay — using a single face scan.",
+    pills: ["Sub-2-second authorization", "Works with your processor"],
     image: `${ONLINE_IMG}/flow-step-04-payment-authorized.png`,
     imageAlt: "Payment confirmed instantly via FacePe",
   },
   receipt: {
     step: "STEP 05",
     titleHtml: 'Receipt <span class="text-brand-600">delivered</span>',
-    desc: "Digital receipt and immutable audit record sent to the shopper. Conversion logged to your dashboard.",
+    desc: "A digital receipt and immutable audit record are instantly delivered to the shopper and securely logged to your dashboard.",
     pills: ["Digital receipt", "Audit record"],
     image: `${ONLINE_IMG}/flow-step-05-receipt-delivered.png`,
     imageAlt: "Digital receipt and audit record delivered after checkout",
@@ -120,7 +122,10 @@ function initOnlineFlowTabs(root = document) {
       phone.alt = data.imageAlt;
     }
     if (pills instanceof HTMLElement && data.pills?.length) {
-      pills.innerHTML = renderOnlinePills(data.pills, data.pillStyle ?? "lilac");
+      pills.innerHTML = renderOnlinePills(
+        data.pills,
+        data.pillStyle ?? "lilac",
+      );
       pills.hidden = false;
     } else if (pills instanceof HTMLElement) {
       pills.hidden = true;
@@ -150,31 +155,38 @@ function debugHeroOnlineLayout(root) {
     const section = root.querySelector("#hero-online-section");
     const row = section?.querySelector(".container-page > div");
     const wrap = visual.parentElement;
-    const sectionStyle = section instanceof HTMLElement ? getComputedStyle(section) : null;
+    const sectionStyle =
+      section instanceof HTMLElement ? getComputedStyle(section) : null;
     const rowStyle = row instanceof HTMLElement ? getComputedStyle(row) : null;
     const visualRect = visual.getBoundingClientRect();
-    const wrapRect = wrap instanceof HTMLElement ? wrap.getBoundingClientRect() : null;
-    const chips = [...visual.querySelectorAll("[data-hero-online-chip]")].map((chip) => {
-      const el = /** @type {HTMLElement} */ (chip);
-      const rect = el.getBoundingClientRect();
-      const name = el.getAttribute("data-hero-online-chip") ?? "unknown";
-      const overflowRight = rect.right - visualRect.right;
-      const overflowLeft = visualRect.left - rect.left;
-      return {
-        name,
-        left: Math.round(rect.left - visualRect.left),
-        top: Math.round(rect.top - visualRect.top),
-        width: Math.round(rect.width),
-        overflowRight: Math.round(overflowRight),
-        overflowLeft: Math.round(overflowLeft),
-        clipped: overflowRight > 1 || overflowLeft > 1,
-      };
-    });
+    const wrapRect =
+      wrap instanceof HTMLElement ? wrap.getBoundingClientRect() : null;
+    const chips = [...visual.querySelectorAll("[data-hero-online-chip]")].map(
+      (chip) => {
+        const el = /** @type {HTMLElement} */ (chip);
+        const rect = el.getBoundingClientRect();
+        const name = el.getAttribute("data-hero-online-chip") ?? "unknown";
+        const overflowRight = rect.right - visualRect.right;
+        const overflowLeft = visualRect.left - rect.left;
+        return {
+          name,
+          left: Math.round(rect.left - visualRect.left),
+          top: Math.round(rect.top - visualRect.top),
+          width: Math.round(rect.width),
+          overflowRight: Math.round(overflowRight),
+          overflowLeft: Math.round(overflowLeft),
+          clipped: overflowRight > 1 || overflowLeft > 1,
+        };
+      },
+    );
 
     // #region agent log
     fetch("http://127.0.0.1:7368/ingest/21cae3c4-b5a2-4e23-80d2-495230f9c8f2", {
       method: "POST",
-      headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "099c44" },
+      headers: {
+        "Content-Type": "application/json",
+        "X-Debug-Session-Id": "099c44",
+      },
       body: JSON.stringify({
         sessionId: "099c44",
         runId: "post-fix-1440",
@@ -189,8 +201,11 @@ function debugHeroOnlineLayout(root) {
           visualW: Math.round(visualRect.width),
           visualH: Math.round(visualRect.height),
           visualMinWidthOk:
-            (window.innerWidth < 1280 && rowStyle?.flexDirection === "column") ||
-            (window.innerWidth >= 1280 && rowStyle?.flexDirection === "row" && visualRect.width >= 480),
+            (window.innerWidth < 1280 &&
+              rowStyle?.flexDirection === "column") ||
+            (window.innerWidth >= 1280 &&
+              rowStyle?.flexDirection === "row" &&
+              visualRect.width >= 480),
           chips,
         },
         timestamp: Date.now(),
