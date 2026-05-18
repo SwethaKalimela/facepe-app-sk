@@ -21,6 +21,10 @@ export default {
         brand: {
           600: "#5f15ee",
         },
+        green: {
+          DEFAULT: "#009E5C",
+          600: "#009E5C",
+        },
         surface: {
           page: "#fefeff",
           0: "#ffffff",
@@ -148,6 +152,8 @@ export default {
       },
       backgroundImage: {
         "gradient-primary": "linear-gradient(90deg, #9c6cfe 0%, #5000ea 98%)",
+        "gradient-trust-pill":
+          "linear-gradient(174.99deg, rgba(95, 21, 238, 0.2) 5.77%, rgba(200, 174, 255, 0.1) 46.18%), linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%)",
         "gradient-primary-vertical":
           "linear-gradient(180deg, #9c6cfe 0%, #5000ea 98%)",
       },

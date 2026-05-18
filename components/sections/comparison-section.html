@@ -10,7 +10,8 @@
           Break the fear
         </span>
         <h2 id="comparison-heading" class="mt-5 text-heading-2-r text-ink-950 sm:mt-6">
-          Your face already unlocks everything.<br />Why not payments?
+          Your face already unlocks everything.<br /><span class="bg-gradient-primary bg-clip-text text-transparent">Why
+            not payments?</span>
         </h2>
         <p class="mt-4 text-body-lg-r text-ink-body">
           You use your face to unlock your phone daily. FacePe takes the same speed, security, and simplicity and
@@ -26,22 +27,23 @@
         <div class="mt-4 flex flex-wrap gap-3">
           <span
             class="inline-flex items-center gap-2 rounded-full border border-border-subtle bg-surface-0 px-3 py-2.5 text-sm font-bold text-ink-950">
-            <i data-lucide="smartphone" class="h-3.5 w-3.5" aria-hidden="true"></i> Unlocking phones
+            <i data-lucide="smartphone" class="h-3.5 w-3.5 text-brand-600" aria-hidden="true"></i> Unlocking phones
           </span>
           <span
             class="inline-flex items-center gap-2 rounded-full border border-border-subtle bg-surface-0 px-3 py-2.5 text-sm font-bold text-ink-950">
-            <i data-lucide="door-open" class="h-3.5 w-3.5" aria-hidden="true"></i> Unlocking doors
+            <i data-lucide="door-open" class="h-3.5 w-3.5 text-brand-600" aria-hidden="true"></i> Unlocking doors
           </span>
           <span
             class="inline-flex items-center gap-2 rounded-full border border-border-subtle bg-surface-0 px-3 py-2.5 text-sm font-bold text-ink-950">
-            <i data-lucide="plane" class="h-3.5 w-3.5" aria-hidden="true"></i> Boarding flights
+            <i data-lucide="plane" class="h-3.5 w-3.5 text-brand-600" aria-hidden="true"></i> Boarding flights
           </span>
         </div>
 
         <p class="mt-8 text-sm font-medium text-ink-700">Why not for payments?</p>
         <div
-          class="mt-3 inline-flex items-center gap-3 rounded-full border border-border-subtle bg-surface-0 px-4 py-3 shadow-chip">
-          <i data-lucide="badge-check" class="h-6 w-6 text-brand-600" aria-hidden="true"></i>
+          class="mt-3 inline-flex items-center gap-2.5 rounded-[58px] border-[0.4px] border border-border-subtle bg-gradient-trust-pill p-3"
+          data-trust-pill>
+          <i data-lucide="badge-check" class="h-6 w-6 fill-green-600 text-white" aria-hidden="true"></i>
           <span class="font-bold text-ink-950">FacePe payment — same trust</span>
         </div>
 
@@ -57,39 +59,37 @@
         </div>
       </div>
 
-      <div class="space-y-5">
-        <article class="rounded-card border border-border-subtle bg-surface-0 p-7 shadow-card">
-          <span class="rounded bg-accordion-toggle-idle px-3 py-1 text-xs font-bold uppercase text-ink-700">Old
-            perception</span>
-          <h3 class="mt-4 text-xl font-bold text-ink-950">Financial fear held payment back.</h3>
-          <p class="mt-2 text-body-faq text-ink-700">Biometric payment pilots raised concerns, and consumers feared
-            financial security risks.
-            .</p>
-        </article>
-        <article class="rounded-card border border-border-subtle bg-surface-0 p-7 shadow-card">
-          <span class="rounded bg-lilac-100 px-3 py-1 text-xs font-bold uppercase text-brand-600">New reality</span>
-          <h3 class="mt-4 text-xl font-bold text-ink-950">FacePe is built on a different foundation.</h3>
-          <p class="mt-2 text-body-faq text-ink-700">With local biometric storage, advanced 3D liveness anti-spoofing,
-            and compliance with SOC 2, PCI-DSS, and GDPR standards, security is built into every transaction.</p>
-        </article>
-        <article
-          class="rounded-[44px] border border-[#ededed] bg-gradient-to-br from-brand-600/10 via-lilac-200/40 to-surface-0 p-3 shadow-card ring-2 ring-brand-600/30">
-          <div
-            class="flex h-full flex-col rounded-[28px] bg-gradient-to-b from-surface-0 to-lilac-100/80 p-6 shadow-card">
-            <div class="flex items-start justify-between gap-3">
-              <span class="flex size-11 items-center justify-center rounded-xl bg-surface-0 shadow-chip">
-                <i data-lucide="wallet" class="size-8 text-brand-600" aria-hidden="true"></i>
-              </span>
-              <span
-                class="rounded-full border border-border-neutral/40 bg-white/20 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-ink-body">The
-                FacePe
-                difference</span>
+      <div class="comparison-cards flex flex-col">
+        <article class="comparison-card">
+          <div class="comparison-card__inner">
+            <span class="comparison-card__pill">Old perception</span>
+            <div class="comparison-card__copy">
+              <h3 class="text-xl font-bold leading-[25px] tracking-[-0.4px] text-ink-950">Financial fear held payment back.</h3>
+              <p class="text-sm leading-5 text-ink-body">Biometric payment pilots raised concerns, and consumers feared
+                financial security risks.</p>
             </div>
-            <h3 class="mt-4 text-heading-3 text-ink-950">Your face—now your wallet.</h3>
-            <p class="mt-4 flex-1 text-sm leading-5 text-ink-body">
-              FacePe extends the trust you already place in facial recognition into every checkout, kiosk, and payment
-              experience.
-            </p>
+          </div>
+        </article>
+        <article class="comparison-card">
+          <div class="comparison-card__inner">
+            <span class="comparison-card__pill">New reality</span>
+            <div class="comparison-card__copy">
+              <h3 class="text-xl font-bold leading-[25px] tracking-[-0.4px] text-ink-950">FacePe is built on a different foundation.</h3>
+              <p class="text-sm leading-[21.7px] text-ink-body">With local biometric storage, advanced 3D liveness anti-spoofing,
+                and compliance with SOC 2, PCI-DSS, and GDPR standards, security is built into every transaction.</p>
+            </div>
+          </div>
+        </article>
+        <article class="comparison-card">
+          <div class="comparison-card__inner">
+            <span class="comparison-card__pill comparison-card__pill--brand">The FacePe difference</span>
+            <div class="comparison-card__copy">
+              <h3 class="text-xl font-bold leading-[25px] tracking-[-0.4px] text-ink-950">Your face—now your wallet.</h3>
+              <p class="text-sm leading-[21.7px] text-ink-body">
+                FacePe extends the trust you already place in facial recognition into every checkout, kiosk, and payment
+                experience.
+              </p>
+            </div>
           </div>
         </article>
       </div>

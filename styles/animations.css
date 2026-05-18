@@ -1184,6 +1184,7 @@
   height: 100%;
   max-height: 386px;
   object-fit: cover;
+  object-position: top;
   width: 100%;
 }
 
@@ -1278,6 +1279,188 @@
   .commerce-card__surface {
     min-height: 0;
   }
+}
+
+/* Comparison / product cards — shared shell */
+.comparison-card {
+  border-radius: 32px;
+  border: 1px solid #e2e4eb;
+  background: #fff;
+  padding: 12px;
+  box-shadow:
+    0 1px 1px rgba(15, 17, 23, 0.04),
+    0 1px 1.5px rgba(15, 17, 23, 0.06);
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.comparison-card__inner {
+  border-radius: 28px;
+  padding: 24px;
+  background: #fff;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Comparison section — Figma 3139:30393–30407 */
+.comparison-cards {
+  gap: 20px;
+}
+
+.comparison-cards .comparison-card {
+  padding: 28px;
+  transition:
+    padding 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.comparison-cards .comparison-card__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transition:
+    padding 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.comparison-cards .comparison-card__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comparison-cards .comparison-card__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  border-radius: 9999px;
+  background: #f0f0f0;
+  padding: 6px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0f1117;
+  transition:
+    background 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.comparison-cards .comparison-card__pill--brand {
+  border-radius: 9999px;
+  background: #f0ebff;
+  color: #5f15ee;
+  font-weight: 500;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .comparison-card:hover {
+    padding: 12px;
+    border-color: #ededed;
+    background: linear-gradient(170.51deg, #5f15ee 5.77%, #c8aeff 46.18%, #fff 140.81%);
+    box-shadow: none;
+  }
+
+  .comparison-card:hover .comparison-card__inner {
+    padding: 24px;
+    border-radius: 28px;
+    background: linear-gradient(-1.54deg, #fff 6.08%, #d6c2ff 348.09%);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+  }
+
+  .comparison-cards .comparison-card:hover {
+    padding: 12px;
+    border-color: #ededed;
+    background: linear-gradient(170.51deg, #5f15ee 5.77%, #c8aeff 46.18%, #fff 140.81%);
+    box-shadow:
+      0 12px 28px rgba(95, 21, 238, 0.14),
+      0 4px 12px rgba(15, 17, 23, 0.06);
+    transform: translateY(-3px);
+  }
+
+  .comparison-cards .comparison-card:hover .comparison-card__inner {
+    padding: 24px;
+    border-radius: 28px;
+    background: linear-gradient(-1.54deg, #fff 6.08%, #d6c2ff 348.09%);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.comparison-cards .comparison-card:active,
+.comparison-cards .comparison-card:focus-within {
+  padding: 12px;
+  border-color: #ededed;
+  background: linear-gradient(170.51deg, #5f15ee 5.77%, #c8aeff 46.18%, #fff 140.81%);
+  box-shadow:
+    0 8px 20px rgba(95, 21, 238, 0.12),
+    0 2px 8px rgba(15, 17, 23, 0.05);
+  transform: translateY(-1px);
+}
+
+.comparison-cards .comparison-card:active .comparison-card__inner,
+.comparison-cards .comparison-card:focus-within .comparison-card__inner {
+  padding: 24px;
+  border-radius: 28px;
+  background: linear-gradient(-1.54deg, #fff 6.08%, #d6c2ff 348.09%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+}
+
+.comparison-card:active,
+.comparison-card:focus-within {
+  padding: 12px;
+  border-color: #ededed;
+  background: linear-gradient(170.51deg, #5f15ee 5.77%, #c8aeff 46.18%, #fff 140.81%);
+  box-shadow: none;
+}
+
+.comparison-card:active .comparison-card__inner,
+.comparison-card:focus-within .comparison-card__inner {
+  padding: 24px;
+  border-radius: 28px;
+  background: linear-gradient(-1.54deg, #fff 6.08%, #d6c2ff 348.09%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .comparison-cards .comparison-card,
+  .comparison-cards .comparison-card__inner,
+  .comparison-cards .comparison-card__pill {
+    transition-duration: 0.01ms;
+  }
+
+  .comparison-cards .comparison-card:hover,
+  .comparison-cards .comparison-card:active,
+  .comparison-cards .comparison-card:focus-within {
+    transform: none;
+  }
+}
+
+.products-grid-cards .comparison-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.products-grid-cards .comparison-card__inner {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 /* Why FacePe Wins  */

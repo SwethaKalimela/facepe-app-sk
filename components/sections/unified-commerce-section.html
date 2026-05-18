@@ -30,17 +30,36 @@
       </a>
     </header>
 
-    <div class="unified-commerce__scroll" data-unified-commerce-stack>
+    <div class="unified-commerce__scroll commerce-stack" role="group" aria-label="Commerce feature cards">
+      <input type="radio" name="commerce-stack" id="commerce-stack-1" class="commerce-stack__input" checked
+        tabindex="-1" aria-hidden="true" />
+      <input type="radio" name="commerce-stack" id="commerce-stack-2" class="commerce-stack__input" tabindex="-1"
+        aria-hidden="true" />
+      <input type="radio" name="commerce-stack" id="commerce-stack-3" class="commerce-stack__input" tabindex="-1"
+        aria-hidden="true" />
+      <input type="radio" name="commerce-stack" id="commerce-stack-4" class="commerce-stack__input" tabindex="-1"
+        aria-hidden="true" />
+
       <div class="unified-commerce__stage">
-        <div class="unified-commerce__cards" data-commerce-cards>
+        <div class="unified-commerce__cards">
           <!-- Card 1 — Build for Real Life -->
-          <article class="commerce-card" data-commerce-card aria-hidden="false">
+          <article class="commerce-card" data-card="1">
             <div class="commerce-card__layers" aria-hidden="true">
               <span class="commerce-card__layer commerce-card__layer--3"></span>
               <span class="commerce-card__layer commerce-card__layer--2"></span>
               <span class="commerce-card__layer commerce-card__layer--1"></span>
             </div>
             <div class="commerce-card__surface">
+              <nav class="commerce-card__nav" aria-label="Card navigation">
+                <label for="commerce-stack-4" class="commerce-stack__arrow commerce-stack__arrow--prev"
+                  aria-label="Previous card">
+                  <i data-lucide="chevron-left" aria-hidden="true"></i>
+                </label>
+                <label for="commerce-stack-2" class="commerce-stack__arrow commerce-stack__arrow--next"
+                  aria-label="Next card">
+                  <i data-lucide="chevron-right" aria-hidden="true"></i>
+                </label>
+              </nav>
               <div class="commerce-card__body">
                 <div class="commerce-card__copy">
                   <div class="commerce-card__head">
@@ -106,13 +125,23 @@
           </article>
 
           <!-- Card 2 — Privacy -->
-          <article class="commerce-card" data-commerce-card aria-hidden="true">
+          <article class="commerce-card" data-card="2">
             <div class="commerce-card__layers" aria-hidden="true">
               <span class="commerce-card__layer commerce-card__layer--3"></span>
               <span class="commerce-card__layer commerce-card__layer--2"></span>
               <span class="commerce-card__layer commerce-card__layer--1"></span>
             </div>
             <div class="commerce-card__surface">
+              <nav class="commerce-card__nav" aria-label="Card navigation">
+                <label for="commerce-stack-1" class="commerce-stack__arrow commerce-stack__arrow--prev"
+                  aria-label="Previous card">
+                  <i data-lucide="chevron-left" aria-hidden="true"></i>
+                </label>
+                <label for="commerce-stack-3" class="commerce-stack__arrow commerce-stack__arrow--next"
+                  aria-label="Next card">
+                  <i data-lucide="chevron-right" aria-hidden="true"></i>
+                </label>
+              </nav>
               <div class="commerce-card__body">
                 <div class="commerce-card__copy">
                   <div class="commerce-card__head">
@@ -167,13 +196,23 @@
           </article>
 
           <!-- Card 3 — Onboarding -->
-          <article class="commerce-card" data-commerce-card aria-hidden="true">
+          <article class="commerce-card" data-card="3">
             <div class="commerce-card__layers" aria-hidden="true">
               <span class="commerce-card__layer commerce-card__layer--3"></span>
               <span class="commerce-card__layer commerce-card__layer--2"></span>
               <span class="commerce-card__layer commerce-card__layer--1"></span>
             </div>
             <div class="commerce-card__surface">
+              <nav class="commerce-card__nav" aria-label="Card navigation">
+                <label for="commerce-stack-2" class="commerce-stack__arrow commerce-stack__arrow--prev"
+                  aria-label="Previous card">
+                  <i data-lucide="chevron-left" aria-hidden="true"></i>
+                </label>
+                <label for="commerce-stack-4" class="commerce-stack__arrow commerce-stack__arrow--next"
+                  aria-label="Next card">
+                  <i data-lucide="chevron-right" aria-hidden="true"></i>
+                </label>
+              </nav>
               <div class="commerce-card__body">
                 <div class="commerce-card__copy">
                   <div class="commerce-card__head">
@@ -228,13 +267,23 @@
           </article>
 
           <!-- Card 4 — Commerce speed -->
-          <article class="commerce-card" data-commerce-card aria-hidden="true">
+          <article class="commerce-card" data-card="4">
             <div class="commerce-card__layers" aria-hidden="true">
               <span class="commerce-card__layer commerce-card__layer--3"></span>
               <span class="commerce-card__layer commerce-card__layer--2"></span>
               <span class="commerce-card__layer commerce-card__layer--1"></span>
             </div>
             <div class="commerce-card__surface">
+              <nav class="commerce-card__nav" aria-label="Card navigation">
+                <label for="commerce-stack-3" class="commerce-stack__arrow commerce-stack__arrow--prev"
+                  aria-label="Previous card">
+                  <i data-lucide="chevron-left" aria-hidden="true"></i>
+                </label>
+                <label for="commerce-stack-1" class="commerce-stack__arrow commerce-stack__arrow--next"
+                  aria-label="Next card">
+                  <i data-lucide="chevron-right" aria-hidden="true"></i>
+                </label>
+              </nav>
               <div class="commerce-card__body">
                 <div class="commerce-card__copy">
                   <div class="commerce-card__head">
@@ -290,6 +339,13 @@
           </article>
         </div>
       </div>
+
+      <nav class="commerce-stack__dots" aria-label="Card pagination">
+        <label for="commerce-stack-1" class="commerce-stack__dot"><span class="sr-only">Card 1</span></label>
+        <label for="commerce-stack-2" class="commerce-stack__dot"><span class="sr-only">Card 2</span></label>
+        <label for="commerce-stack-3" class="commerce-stack__dot"><span class="sr-only">Card 3</span></label>
+        <label for="commerce-stack-4" class="commerce-stack__dot"><span class="sr-only">Card 4</span></label>
+      </nav>
     </div>
   </div>
 </section>
