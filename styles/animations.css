@@ -2720,7 +2720,7 @@
 
 @keyframes hero-home-scan {
   0% {
-    top: 18%;
+    top: 5%;
     opacity: 0;
   }
   12% {
@@ -2730,7 +2730,7 @@
     opacity: 0.85;
   }
   100% {
-    top: 78%;
+    top: 68%;
     opacity: 0;
   }
 }
@@ -2941,7 +2941,7 @@
   width: 100%;
 }
 
-.hero-home__visual::after {
+/* .hero-home__visual::after {
   background: linear-gradient(to top, #fefeff 35%, rgb(254 254 255 / 0) 100%);
   bottom: 0;
   content: "";
@@ -2951,7 +2951,7 @@
   position: absolute;
   right: 0;
   z-index: 5;
-}
+} */
 
 .hero-home__rings {
   clip-path: inset(0 0 24% 0);
