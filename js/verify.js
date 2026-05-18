@@ -8,8 +8,8 @@ const VERIFY_FLOW = {
     titlePre: "Enroll ",
     titleEm: "Once",
     titlePost: "",
-    desc: "Customer downloads the FacePe app, registers their face via 3D scan, and uploads a government-issued ID for matching. The whole flow takes under 3 minutes and it's done forever.",
-    badges: ["2 Minutes", "No staff handling, no paper"],
+    desc: "Download the FacePe app, complete a 3D facial scan, and verify your identity using a government-issued ID. Setup takes less than 3 minutes — then you're good to go.",
+    badges: ["Takes 2 minutes", "No paperwork. No staff handling"],
     showStores: true,
     image: "/assets/images/verify/card-01.jpeg",
     imageAlt: "FacePe app enrollment and face registration",
@@ -19,7 +19,7 @@ const VERIFY_FLOW = {
     titlePre: "Arrive at the ",
     titleEm: "branch",
     titlePost: ".",
-    desc: "Walk straight past the queue. Identity is matched the moment the customer steps in front of the FacePe terminal — no documents, no staff handling, no friction.",
+    desc: "Walk past the queue and step in front of the FacePe terminal. Your identity is verified instantly — no documents, no staff handling, no friction.",
     badges: ["No queue", "No physical ID"],
     showStores: false,
     image: "../../assets/images/verify/card-02.jpeg",
@@ -31,7 +31,7 @@ const VERIFY_FLOW = {
     titlePre: "Face scan in ",
     titleEm: "under 5 seconds",
     titlePost: ".",
-    desc: "The 3D depth camera captures a liveness-verified scan. Our facial-matching engine compares the scan to the on-device template at 99.8% confidence.",
+    desc: "A 3D depth face scan instantly verifies your identity against your secure on-device template — with 99.8% accuracy.",
     badges: ["Under 5 sec", "99% accuracy"],
     showStores: false,
     image: "../../assets/images/verify/card-03.jpeg",
@@ -42,7 +42,7 @@ const VERIFY_FLOW = {
     titlePre: "",
     titleEm: "Verified",
     titlePost: "",
-    desc: "An immutable audit record is written. The customer's profile is unlocked at the staff terminal. The whole exchange takes less time than a card swipe.",
+    desc: "Your identity is instantly confirmed and your profile becomes available to staff — all in less time than a card swipe.",
     badges: ["Audit trail", "SOC 2 compliant"],
     showStores: false,
     image: "../../assets/images/verify/card-04.jpeg",
@@ -64,8 +64,7 @@ const VERIFY_DEPLOY = {
       { value: "66%", lines: ["Account takeover", "fraud reduction"] },
       { value: "<1hr", lines: ["Per device", "installation time"] },
     ],
-    image:
-      "../assets/images/site/ff898ccf-3afe-4181-90bf-b82939b86047.png",
+    image: "../assets/images/site/ff898ccf-3afe-4181-90bf-b82939b86047.png",
     imageAlt: "FacePe Verify deployment at a bank branch",
   },
   atm: {
@@ -81,8 +80,7 @@ const VERIFY_DEPLOY = {
       { value: "99%", lines: ["Verification", "accuracy"] },
       { value: "24/7", lines: ["Self-service", "availability"] },
     ],
-    image:
-      "../assets/images/site/264bc9bb-fd9c-4020-866c-d2f4ad87c069.png",
+    image: "../assets/images/site/264bc9bb-fd9c-4020-866c-d2f4ad87c069.png",
     imageAlt: "FacePe Verify at an ATM network",
   },
   healthcare: {
@@ -98,8 +96,7 @@ const VERIFY_DEPLOY = {
       { value: "80%", lines: ["Fewer manual", "ID checks"] },
       { value: "99%", lines: ["Match", "accuracy"] },
     ],
-    image:
-      "../assets/images/site/50e52fb9-b569-4855-8d49-3726453ebc3a.png",
+    image: "../assets/images/site/50e52fb9-b569-4855-8d49-3726453ebc3a.png",
     imageAlt: "FacePe Verify in a healthcare setting",
   },
   enterprise: {
@@ -115,8 +112,7 @@ const VERIFY_DEPLOY = {
       { value: "99%", lines: ["Identity match", "accuracy"] },
       { value: "SOC 2", lines: ["Type II", "compliant"] },
     ],
-    image:
-      "../assets/images/site/31822284-0a6c-4a9d-9810-4dfb921e3f36.png",
+    image: "../assets/images/site/31822284-0a6c-4a9d-9810-4dfb921e3f36.png",
     imageAlt: "FacePe Verify for enterprise onboarding",
   },
 };
