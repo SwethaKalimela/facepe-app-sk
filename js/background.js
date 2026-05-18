@@ -15,32 +15,40 @@ const BACKGROUND_FLOW = {
   recognized: {
     step: "Step 2 · Face Recognized",
     titleHtml: "Face recognized in<br />under 1 second.",
-    desc: "The 3D camera captures facial geometry and matches it against enrolled biometrics. Liveness detection runs simultaneously, rejecting photos, masks, and videos.",
-    pills: ["Under 1 second", "99%+ accuracy", "Anti-spoof active"],
+    desc: "The 3D camera captures facial geometry and matches it against enrolled biometrics in real time. Liveness detection runs simultaneously to block photos, masks, and video spoofing.",
+    pills: ["Under 1 second", "99%+ accuracy", "Anti-spoof protection"],
     image: `${BG_IMG}/flow-recognized.png`,
     imageAlt: "3D camera recognizing a customer at the drive-thru",
   },
   avatar: {
     step: "Step 3 · AI Avatar",
-    titleHtml: "AI avatar greets &amp;<br />takes the order.",
-    desc: "The AI avatar greets the customer by name, shows their usual items, and asks if they want them. The voice is natural and conversational.",
-    pills: ["Personalized greeting", "Order history recalled", "Anti-spoof active"],
+    titleHtml: "AI avatar greets and<br />takes the order.",
+    desc: "The AI avatar greets customers by name, recalls their usual order, and confirms it conversationally using natural voice interaction.",
+    pills: [
+      "Personalized greeting",
+      "Usual order recalled",
+      "Human-like interaction",
+    ],
     image: `${BG_IMG}/flow-avatar.png`,
     imageAlt: "AI avatar greeting a customer and taking their order",
   },
   confirmed: {
     step: "Step 4 · Order Confirmed",
-    titleHtml: "Order confirmed.<br />Payment authorized by face.",
-    desc: "The customer confirms their order. Payment is authorized instantly, with no card or PIN needed. The transaction completes before reaching the pickup.",
+    titleHtml: "Order confirmed.<br />Payment completed by face.",
+    desc: "The customer confirms their order and payment is authorized instantly — no card, phone, or PIN required. Everything is completed before they reach the pickup window.",
     pills: ["Face-based payment", "Zero card contact", "Under 2 seconds total"],
     image: `${BG_IMG}/flow-confirmed.png`,
     imageAlt: "Order confirmed with face-based payment at drive-thru",
   },
   receipt: {
     step: "Step 5 · Receipt Sent",
-    titleHtml: "Receipt sent.<br />Loyalty updated. Done.",
-    desc: "A digital receipt is sent to the customer's phone upon payment. Loyalty points are added automatically, and the merchant dashboard logs the transaction.",
-    pills: ["Face-based payment", "Zero card contact", "Under 2 seconds total"],
+    titleHtml: "Receipt sent.<br />Points updated. Done.",
+    desc: "A digital receipt is sent instantly after payment. Loyalty points update automatically, and the transaction is securely logged to the merchant dashboard.",
+    pills: [
+      "Digital receipt",
+      "Loyalty points added",
+      "Secure transaction logs",
+    ],
     image: `${BG_IMG}/flow-receipt.png`,
     imageAlt: "Digital receipt sent and loyalty updated after checkout",
   },
@@ -98,7 +106,7 @@ function initBackgroundFlowTabs(root = document) {
       pills.innerHTML = data.pills
         .map(
           (text) =>
-            `<span class="inline-flex h-9 items-center gap-2 rounded-full border border-border-subtle bg-surface-0 px-3.5 text-[13px] font-medium text-ink-950 shadow-chip"><i data-lucide="check" class="size-3.5 text-brand-600" aria-hidden="true"></i>${text}</span>`
+            `<span class="inline-flex h-9 items-center gap-2 rounded-full border border-border-subtle bg-surface-0 px-3.5 text-[13px] font-medium text-ink-950 shadow-chip"><i data-lucide="check" class="size-3.5 text-brand-600" aria-hidden="true"></i>${text}</span>`,
         )
         .join("");
       mountIcons(pills);
@@ -131,7 +139,10 @@ function debugPricingFeaturedBg(root = document) {
   // #region agent log
   fetch("http://127.0.0.1:7368/ingest/21cae3c4-b5a2-4e23-80d2-495230f9c8f2", {
     method: "POST",
-    headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "79ff8f" },
+    headers: {
+      "Content-Type": "application/json",
+      "X-Debug-Session-Id": "79ff8f",
+    },
     body: JSON.stringify({
       sessionId: "79ff8f",
       runId: "pre-fix",
@@ -151,7 +162,10 @@ function debugPricingFeaturedBg(root = document) {
   // #region agent log
   fetch("http://127.0.0.1:7368/ingest/21cae3c4-b5a2-4e23-80d2-495230f9c8f2", {
     method: "POST",
-    headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "79ff8f" },
+    headers: {
+      "Content-Type": "application/json",
+      "X-Debug-Session-Id": "79ff8f",
+    },
     body: JSON.stringify({
       sessionId: "79ff8f",
       runId: "pre-fix",
